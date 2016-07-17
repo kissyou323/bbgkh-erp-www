@@ -51,16 +51,14 @@ public class StudyRest {
 
     /**
      * 测试PUT方法
-     * @param id
      * @param members
      * @return
      */
-    @RequestMapping(value = "testHttpClientPut/{id}" , method = RequestMethod.PUT)
+    @RequestMapping(value = "testHttpClientPut" , method = RequestMethod.PUT)
     @ResponseBody
-    public String testHttpClientPut(@PathVariable int id,Members members){
+    public String testHttpClientPut(Members members){
         String jsonString1 = JSON.toJSONString(members);
-        String jsonString = jsonString1+id;
-        return jsonString;
+        return jsonString1;
     }
 
 }
