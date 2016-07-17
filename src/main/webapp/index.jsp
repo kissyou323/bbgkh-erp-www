@@ -8,8 +8,9 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
   <head>
+    <script src="base.js"></script>
     <script src="/resource/js/jquery-2.0.3.min.js"></script>
-    <script src="/resource/js/testRest.js"></script>
+    <script src="${webroot}/resource/js/testRest.js"></script>
     <title>StudyRest</title>
   </head>
   <body>
