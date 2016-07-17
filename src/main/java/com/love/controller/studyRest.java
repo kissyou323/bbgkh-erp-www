@@ -21,6 +21,7 @@ public class StudyRest {
     @RequestMapping(value = "testHttpClientGet",method = RequestMethod.GET)
     @ResponseBody
     public String testHttpClientGet(){
+        System.out.println("GetOK");
         return "GetOK";
     }
 

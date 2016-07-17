@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: Administrator
@@ -8,7 +9,9 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <script src="base.js"></script>
+    <c:set var="rootpath" value="${pageContext.request.contextPath}"/>
+    <script src="${rootpath}/resource/js/base.js"></script>
+    <script src="${rootpath}/resource/js/jquery-2.0.3.min.js"></script>
 </head>
 
 </html>
