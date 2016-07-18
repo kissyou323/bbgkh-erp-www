@@ -3,7 +3,7 @@
 <mapper namespace="com.love.dao.DetailDAO" >
 
     <select id="selectAll" resultType="com.love.model.Detail">
-        select  *  from detail
+        select  *  from details
     </select>
 
 </mapper>

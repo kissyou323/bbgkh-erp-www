@@ -12,10 +12,11 @@ public class BaseController {
 
     @ModelAttribute
     public void initController(HttpServletRequest request, HttpServletResponse response){
-        System.out.println(request.getContextPath());  //   /love
+      /*  System.out.println(request.getContextPath());  //   /love
         System.out.println(request.getRequestURI());   //   /love/detail
-        System.out.println(request.getRequestURL());   //  http://localhost:8080/love/detail
+        System.out.println(request.getRequestURL());   //  http://localhost:8080/love/detail*/
         String webroot=request.getContextPath();
+
         request.setAttribute("webroot",webroot);
     }
 

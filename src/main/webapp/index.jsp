@@ -12,6 +12,6 @@
     <title>home</title>
   </head>
   <body>
-  <input type="text" id="name" placeholder="name" value="aaaaaa" onkeyup="keyup()">
+  <input type="text" id="name" placeholder="name" value="" onkeyup="keyup()">
   </body>
 </html>
