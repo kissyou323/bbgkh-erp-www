@@ -1,10 +1,8 @@
 package com.love.service.impl;
 
-import com.love.dao.DetailDAO;
-import com.love.model.Detail;
+import com.love.dao.ProjectsDAO;
 import com.love.model.Projects;
-import com.love.service.BaseService;
-import com.love.service.DetailService;
+import com.love.service.ProjectsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,26 +12,25 @@ import java.util.List;
  * Created by lixiang on 2016/7/18.
  */
 @Service
-public class DetailServiceImpl  implements DetailService  {
+public class ProjectsServiceImpl implements ProjectsService {
 
     @Autowired
-    private DetailDAO detailDAO;
-
-
-
+    private ProjectsDAO projectsDAO;
 
     @Override
-    public void insert(Detail entity) {
-
+    public void insert(Projects entity) {
+        projectsDAO.insert(entity);
     }
 
     @Override
     public List selectAll() {
-        return detailDAO.selectAll();
+        return projectsDAO.selectAll();
     }
 
     @Override
     public List selectByMem(int id) {
-        return detailDAO.selectByMem(id);
+        return projectsDAO.selectByMem(id);
     }
+
+
 }

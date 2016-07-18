@@ -12,7 +12,14 @@
     <title>homePage</title>
 </head>
 <body>
-用户ID为：${memberId}
+
+<div class="container">
+    用户ID为：${memberId}
+    <input type="button" class="btn btn-default" value="查看所有项目">
+    <input type="button" class="btn btn-default" value="新增项目">
+    <input type="button" class="btn btn-default" value="查看所有明细">
+    <input type="button" class="btn btn-default" value="新增明细">
+</div>
 
 
 </body>
