@@ -7,7 +7,7 @@ function keyup(){
 
     var name =$("#name").val();
     if(name=="lixiang"||name=="yongsamas"){
-        window.location.href="switch/home/"+name;
+        window.location.href=rootpath+"switch/home/"+name;
     }
 
 }
