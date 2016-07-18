@@ -10,8 +10,10 @@
 <html>
 <head>
     <c:set var="rootpath" value="${pageContext.request.contextPath}"/>
-    <script src="${rootpath}/resource/js/base.js"></script>
     <script src="${rootpath}/resource/js/jquery-2.0.3.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.12/datatables.min.css"/>
+    <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.12/datatables.min.js"></script>
+    <script src="${rootpath}/resource/js/base.js"></script>
 </head>
 
 </html>
