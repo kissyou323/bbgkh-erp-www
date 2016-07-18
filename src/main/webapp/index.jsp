@@ -12,6 +12,12 @@
     <title>home</title>
   </head>
   <body>
-  <input type="text" id="name" placeholder="name" value="" onkeyup="keyup()">
+  <div class="container" align="center">
+    <h1 style="padding-top: 200px">登录</h1>
+    <div class="col-lg-4 col-lg-offset-4">
+      <input type="text" id="name"  placeholder="name" value="" onkeyup="keyup()">
+    </div>
+
+  </div>
   </body>
 </html>
