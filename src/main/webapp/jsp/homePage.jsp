@@ -26,7 +26,32 @@
     <input id="addProject" type="button" class="btn btn-default" value="新增项目">
     <input type="button" class="btn btn-default" value="查看所有明细">
     <input type="button" class="btn btn-default" value="新增明细">
+
+
+
+
+    <div class="modal fade" id="detailModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">Modal title</h4>
+                </div>
+                <div class="modal-body">
+                    <table id="detail"></table>
+                    <div id="detailpager"></div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
 </div>
+
+
+
 
 
 </body>
