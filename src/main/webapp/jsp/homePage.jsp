@@ -25,9 +25,7 @@
 
     </div>
 
-
-    <input type="button" class="btn btn-default" value="查看所有项目">
-    <input type="button" class="btn btn-default" value="新增项目">
+    <input id="addProject" type="button" class="btn btn-default" value="新增项目">
     <input type="button" class="btn btn-default" value="查看所有明细">
     <input type="button" class="btn btn-default" value="新增明细">
 </div>

@@ -26,6 +26,10 @@
 
 
 
+    <link rel="stylesheet" href="${rootpath}/resource/jquery-ui-1.12.0/jquery-ui.min.css">
+    <link rel="stylesheet" href="${rootpath}/resource/jquery-ui-1.12.0/jquery-ui.theme.min.css">
+
+
     <link rel="stylesheet" href="${rootpath}/resource/jqgrid/css/ui.jqgrid.css">
 
     <script src="${rootpath}/resource/jqgrid/js/i18n/grid.locale-en.js"></script>
