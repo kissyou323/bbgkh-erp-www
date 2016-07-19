@@ -24,4 +24,13 @@ public class projectsTest {
         list.forEach(x->x.getRemark());
     }
 
+
+    @Test
+    public void testInsert(){
+        Projects projects = new Projects();
+        projects.setTotal(1000);
+        projects.setRemark("aaaaa");
+      //  projectsService.insert(projects);
+    }
+
 }

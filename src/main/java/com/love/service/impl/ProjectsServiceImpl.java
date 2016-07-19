@@ -1,6 +1,7 @@
 package com.love.service.impl;
 
 import com.love.dao.ProjectsDAO;
+import com.love.model.DTO.ProjectsDTO;
 import com.love.model.Projects;
 import com.love.service.ProjectsService;
 import org.springframework.beans.factory.annotation.Autowired;

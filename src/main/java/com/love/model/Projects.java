@@ -1,6 +1,9 @@
 package com.love.model;
 
-import java.util.Date;
+import com.alibaba.fastjson.annotation.JSONField;
+
+import java.sql.Date;
+
 
 /**
  * Created by lixiang on 2016/7/18.
@@ -10,6 +13,8 @@ public class Projects {
     private int total;
     private int already;
     private String remark;
+
+    @JSONField(format="yyyy-MM-dd")
     private Date createTime;
 
     public int getId() {

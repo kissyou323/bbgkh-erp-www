@@ -1,5 +1,7 @@
 package com.love.model;
 
+import com.alibaba.fastjson.annotation.JSONField;
+
 import java.util.Date;
 
 /**
@@ -11,6 +13,7 @@ public class Detail {
     private int inorout;
     private int amount;
     private String remark;
+    @JSONField(format="yyyy-MM-dd HH:mm:ss")
     private Date time;
 
     public int getId() {

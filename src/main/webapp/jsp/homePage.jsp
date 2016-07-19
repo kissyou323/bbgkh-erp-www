@@ -19,10 +19,8 @@
 
     <div>
         <table id="project">
-
         </table>
         <div id="pager"></div>
-
     </div>
 
     <input id="addProject" type="button" class="btn btn-default" value="新增项目">

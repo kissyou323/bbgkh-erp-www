@@ -18,14 +18,14 @@ function testGet(){
 }
 
 function testPost(){
-    $.ajax({
+/*    $.ajax({
         type:"POST",
         url:"testHttpClientPost",
         data:{id:1,name:"yongsamas"},
         success: function (data) {
          //   alert(data);
         }
-    })
+    });*/
 
     var datas={};
     datas.id=1;

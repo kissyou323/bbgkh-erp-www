@@ -6,4 +6,8 @@
         select  *  from projects
     </select>
 
+    <insert id="insert" parameterType="com.love.model.Projects" >
+        INSERT INTO projects (total,remark) VALUES ( #{total},#{remark})
+    </insert>
+
 </mapper>
