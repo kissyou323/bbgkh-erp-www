@@ -35,7 +35,11 @@
     <script src="${rootpath}/resource/jqgrid/js/jquery.jqGrid.min.js"></script>
 
     <script src="${rootpath}/resource/js/base.js"></script>
-
+    <style>
+        .ui-jqgrid .ui-jqgrid-htable th div{
+            height: auto;
+        }
+    </style>
 </head>
 
 </html>
