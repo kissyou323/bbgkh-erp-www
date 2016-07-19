@@ -43,29 +43,42 @@ $(function () {
     });
 
     function showDetail(id){
+
+        $.ajax({
+            type:"Get",
+            url:rootpath+"detail/"+id,
+
+            success: function (datas) {
+              var grid=  jQuery("#detail").jqGrid({
+                    datatype:"local",
+                    colNames:['id','projectid','inorout','amount','remark'],
+                    colModel:[
+                        {name:'id',index:'id',width:75,editable : false},
+                        {name:'projectid',index:'remark',width:75,editable : true,editoptions : {size : 10}},
+                        {name:'inorout',index:'total',width:75,editable : true,editoptions : {size : 10}},
+                        {name:'amount',index:'already',width:75,editable : false},
+                        {name:'remark',index:"createTime",width:200,editable : false}
+                    ],
+                    rowNum:10,
+                    rowList:[15,20,25],
+                    localReader: {
+                        root:"list",
+                        repeatitems: false,
+                    },
+                    caption:"明细列表",
+                    pager:$('#detailpager')
+                }).trigger('reloadGrid');
+                grid.setGridParam({data: datas.list}).trigger('reloadGrid');
+            }
+
+        });
+
+
         console.log(id);
         $('#detail').jqGrid('clearGridData');
         $("#detailModal").modal("show");
-        jQuery("#detail").jqGrid({
-            url:rootpath+"detail/"+id,
-            datatype:"json",
-            colNames:['id','projectid','inorout','amount','remark'],
-            colModel:[
-                {name:'id',index:'id',width:75,editable : false},
-                {name:'projectid',index:'remark',width:75,editable : true,editoptions : {size : 10}},
-                {name:'inorout',index:'total',width:75,editable : true,editoptions : {size : 10}},
-                {name:'amount',index:'already',width:75,editable : false},
-                {name:'remark',index:"createTime",width:200,editable : false}
-            ],
-            rowNum:10,
-            rowList:[15,20,25],
-            jsonReader: {
-                root:"list",
-                repeatitems: false,
-            },
-            caption:"明细列表",
-            pager:$('#detailpager'),
-        }).trigger('reloadGrid');
+
+
 
     }
 
