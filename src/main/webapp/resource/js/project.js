@@ -57,11 +57,11 @@ function showDetail(id){
         success: function (datas) {
             var grid=  jQuery("#detail").jqGrid({
                 datatype:"local",
-                colNames:['id','projectid','inorout','amount','remark'],
+                colNames:['id','项目名称','收入/支出','金额','备注'],
                 colModel:[
                     {name:'id',index:'id',width:75,editable : false},
-                    {name:'projectid',index:'remark',width:75,editable : true,editoptions : {size : 10}},
-                    {name:'inorout',index:'total',width:75,editable : true,editoptions : {size : 10}},
+                    {name:'projectName',index:'projectName',width:75,editable : false},
+                    {name:'inorout',index:'total',width:95,editable : false,formatter:convertoword},
                     {name:'amount',index:'already',width:75,editable : false},
                     {name:'remark',index:"createTime",width:200,editable : false}
                 ],
@@ -69,7 +69,7 @@ function showDetail(id){
                 rowList:[15,20,25],
                 localReader: {
                     root:"list",
-                    repeatitems: false,
+                    repeatitems: false
                 },
                 caption:"明细列表",
                 pager:$('#detailpager')
@@ -84,6 +84,28 @@ function showDetail(id){
 }
 
 
-function addDetail(){
-    $("#addDetailModal").modal('show');
+function saveDetail(){
+    var datas={};
+    datas.projectid=$("#selectProject").val();
+    datas.amount=$("#amount").val();
+    datas.remark=$("#remark").val();
+    datas.inorout=1;
+    $.ajax({
+        url:rootpath+"detail/addDetail",
+        data:datas,
+        success: function (data) {
+            $("#addDetailModal").modal('hide');
+        }
+    })
+
+}
+
+
+function convertoword(cellvalue, options, rowObject){
+    if(cellvalue==0){
+        return "收入";
+    }else{
+        return "支出";
+    }
+
 }

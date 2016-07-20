@@ -10,12 +10,21 @@ import java.sql.Date;
  */
 public class Projects {
     private int id ;
+    private int memId;
     private int total;
     private int already;
     private String remark;
 
     @JSONField(format="yyyy-MM-dd")
     private Date createTime;
+
+    public int getMemId() {
+        return memId;
+    }
+
+    public void setMemId(int memId) {
+        this.memId = memId;
+    }
 
     public int getId() {
         return id;

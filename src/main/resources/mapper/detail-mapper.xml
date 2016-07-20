@@ -6,4 +6,13 @@
         select  *  from details
     </select>
 
+    <select id="selectById" parameterType="Integer" resultType="com.love.model.Detail">
+        select  d.id,d.projectid,p.remark as projectname, d.inorout,d.amount,d.remark,d.time  from details d ,projects p
+        WHERE d.projectid =#{id} and d.projectid = p.id
+    </select>
+
+    <insert id="insert" parameterType="com.love.model.Projects" >
+        INSERT INTO details (projectid,inorout,amount,remark) VALUES ( #{projectId},#{inorout},#{amount},#{remark})
+    </insert>
+
 </mapper>

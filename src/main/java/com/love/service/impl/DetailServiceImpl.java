@@ -33,7 +33,7 @@ public class DetailServiceImpl  implements DetailService  {
     }
 
     @Override
-    public List selectByMem(int id) {
-        return detailDAO.selectByMem(id);
+    public List selectById(int id) {
+        return detailDAO.selectById(id);
     }
 }

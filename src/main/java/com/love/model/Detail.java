@@ -10,11 +10,20 @@ import java.util.Date;
 public class Detail {
     private int id;
     private int projectid;
+    private String projectName;
     private int inorout;
     private int amount;
     private String remark;
     @JSONField(format="yyyy-MM-dd HH:mm:ss")
     private Date time;
+
+    public String getProjectName() {
+        return projectName;
+    }
+
+    public void setProjectName(String projectName) {
+        this.projectName = projectName;
+    }
 
     public int getId() {
         return id;

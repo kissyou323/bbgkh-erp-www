@@ -34,7 +34,7 @@
     </div>
 
     <input id="addProject" type="button" class="btn btn-default" value="新增项目">
-    <input id="addDetail" type="button" class="btn btn-default" value="新增明细" onclick="addDetail()">
+    <input id="addDetail" type="button" class="btn btn-default" value="新增明细"  data-toggle="modal" data-target="#addDetailModal">
 
 
 
@@ -44,7 +44,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title">Modal title</h4>
+                    <h4 class="modal-title">明细列表</h4>
                 </div>
                 <div class="modal-body">
                     <table id="detail"></table>
@@ -79,11 +79,9 @@
                         <div class="form-group">
                             <label for="selectProject" class="col-md-offset-4">项目：</label>
                             <select id="selectProject" class="">
-                                <option>日本</option>
-                                <option>日常</option>
-                                <option>化妆品</option>
-                                <option>这个试一个长一点的</option>
-                                <option>5</option>
+                                <c:forEach items="${sessionScope.get('projects')}" var="project">
+                                    <option value="${project.id}">${project.remark}</option>
+                                </c:forEach>
                             </select>
                         </div>
                         <div class="form-group"><label for="amount" class="col-md-offset-4">金额：</label><input type="text" id="amount"></div>
@@ -92,7 +90,7 @@
                 </div>
 
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-primary">保存</button>
+                    <button type="button" class="btn btn-primary" onclick="saveDetail()">保存</button>
                     <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
                 </div>
             </div><!-- /.modal-content -->

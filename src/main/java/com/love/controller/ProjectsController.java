@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 /**
@@ -26,18 +27,23 @@ public class ProjectsController {
 
     @RequestMapping("")
     @ResponseBody
-    public PageInfo<Projects> project(){
+    public PageInfo<Projects> project(HttpServletRequest request){
+        int memId = (int) request.getSession().getAttribute("memId");
         PageHelper.startPage(1,10);
-        List<Projects> projectses = projectsService.selectAll();
+        List<Projects> projectses = projectsService.selectById(memId);
         PageInfo<Projects> page = new PageInfo<>(projectses);
+        request.getSession(false).setAttribute("projects",projectses);
         return page;
     }
 
     @RequestMapping(value = "addProject" , method= RequestMethod.POST)
-    public void addProject(ProjectsDTO projectsDTO){
+    @ResponseBody
+    public void addProject(ProjectsDTO projectsDTO ,HttpServletRequest request){
+        int memId =(int) request.getSession().getAttribute("memId");
         Projects projects = new Projects();
         projects.setTotal(projectsDTO.getTotal());
         projects.setRemark(projectsDTO.getRemark());
+        projects.setMemId(memId);
         projectsService.insert(projects);
     }
 

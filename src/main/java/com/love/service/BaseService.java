@@ -8,5 +8,5 @@ import java.util.List;
 public   interface BaseService<T> {
     public  void insert( T entity);
     public  List selectAll();
-    public  List selectByMem(int id);
+    public  List selectById(int id);
 }

@@ -29,8 +29,8 @@ public class ProjectsServiceImpl implements ProjectsService {
     }
 
     @Override
-    public List selectByMem(int id) {
-        return projectsDAO.selectByMem(id);
+    public List selectById(int id) {
+        return projectsDAO.selectById(id);
     }
 
 
