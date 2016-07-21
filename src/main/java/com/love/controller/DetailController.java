@@ -36,7 +36,7 @@ public class DetailController extends BaseController{
         PageHelper.startPage(1,10);
         List<Detail> details = detailService.selectById(id);
         PageInfo<Detail> page = new PageInfo<>(details);
-        testMaven();
+
         return page;
     }
     @RequestMapping("addDetail")
@@ -54,9 +54,5 @@ public class DetailController extends BaseController{
         detailService.insert(detail);
         return "OK";
     }
-
-public void testMaven(){
-    System.out.println("out");
-}
 
 }
