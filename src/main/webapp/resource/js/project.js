@@ -86,14 +86,16 @@ function showDetail(id){
 
 function saveDetail(){
     var datas={};
-    datas.projectid=$("#selectProject").val();
+    datas.projectId=$("#selectProject").val();
     datas.amount=$("#amount").val();
     datas.remark=$("#remark").val();
     datas.inorout=1;
     $.ajax({
         url:rootpath+"detail/addDetail",
+        type:"POST",
         data:datas,
         success: function (data) {
+            alert(data);
             $("#addDetailModal").modal('hide');
         }
     })
@@ -108,4 +110,17 @@ function convertoword(cellvalue, options, rowObject){
         return "支出";
     }
 
+}
+
+
+function income(){
+    var money=$("#incomeMoney").val();
+
+    $.ajax({
+        url:rootpath+"projects/income/"+money,
+        type:"Get",
+        success: function (data) {
+            console.log("OK");
+        }
+    })
 }

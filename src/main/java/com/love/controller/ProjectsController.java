@@ -5,12 +5,10 @@ import com.github.pagehelper.PageInfo;
 import com.love.model.DTO.ProjectsDTO;
 import com.love.model.Projects;
 import com.love.service.ProjectsService;
+import org.omg.CORBA.Request;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
@@ -32,7 +30,7 @@ public class ProjectsController {
         PageHelper.startPage(1,10);
         List<Projects> projectses = projectsService.selectById(memId);
         PageInfo<Projects> page = new PageInfo<>(projectses);
-        request.getSession(false).setAttribute("projects",projectses);
+        request.getSession().setAttribute("projects",projectses);
         return page;
     }
 
@@ -47,5 +45,11 @@ public class ProjectsController {
         projectsService.insert(projects);
     }
 
+    @RequestMapping(value = "income/{money}",method = RequestMethod.GET)
+    @ResponseBody
+    public void income(@PathVariable int money,HttpServletRequest request){
+        int memId= (int) request.getSession().getAttribute("memId");
+        projectsService.distribute(memId,money);
+    }
 
 }

@@ -33,4 +33,11 @@ public class projectsTest {
       //  projectsService.insert(projects);
     }
 
+    @Test
+    public void testdistribute(){
+        int id =1;
+        int money =40000;
+        projectsService.distribute(id,money);
+    }
+
 }

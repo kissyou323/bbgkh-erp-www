@@ -45,13 +45,14 @@ public class DetailController extends BaseController{
         List<Projects> projects = (List<Projects>) request.getSession().getAttribute("projects");
 
         Integer already =   projects.stream()
-                .filter(projects1->projects1.getId()==detail.getProjectid())
+                .filter(projects1->projects1.getId()==detail.getProjectId())
                 .map(Projects::getAlready)
                 .collect(Collectors.toList()).get(0);
         if(already<detail.getAmount()){
-            return "所申请超出预算";
+            return "more than expected";
         }
         detailService.insert(detail);
+
         return "OK";
     }
 

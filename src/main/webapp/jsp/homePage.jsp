@@ -1,9 +1,8 @@
 <%--
-  Created by IntelliJ IDEA.
-  User: Administrator
+  Created by lixiang.
+  User: lixiang
   Date: 2016/7/18
   Time: 7:40
-  To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@include file="/base.jsp"%>
@@ -13,15 +12,6 @@
     <script src="${rootpath}/resource/js/project.js"></script>
 </head>
 
-
-<style>
-    .col-center-block {
-        float: none;
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-    }
-</style>
 <body>
 
 <div class="container">
@@ -33,6 +23,7 @@
         <div id="pager"></div>
     </div>
 
+    <input type="button" id="income" class="btn btn-default" value="收入"  data-toggle="modal" data-target="#incomeModal">
     <input id="addProject" type="button" class="btn btn-default" value="新增项目">
     <input id="addDetail" type="button" class="btn btn-default" value="新增明细"  data-toggle="modal" data-target="#addDetailModal">
 
@@ -91,6 +82,25 @@
 
                 <div class="modal-footer">
                     <button type="button" class="btn btn-primary" onclick="saveDetail()">保存</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+    <div id="incomeModal" class="modal fade" role="dialog" aria-labelledby="gridSystemModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="">收入</h4>
+                </div>
+                <div class="modal-body">
+                    <label for="incomeMoney" class="col-md-offset-2">新增金额数:</label>
+                    <input id="incomeMoney" type="text">
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" onclick="income()">保存</button>
                     <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
                 </div>
             </div><!-- /.modal-content -->

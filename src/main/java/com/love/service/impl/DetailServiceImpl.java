@@ -1,6 +1,7 @@
 package com.love.service.impl;
 
 import com.love.dao.DetailDAO;
+import com.love.dao.ProjectsDAO;
 import com.love.model.Detail;
 import com.love.model.Projects;
 import com.love.service.BaseService;
@@ -19,12 +20,22 @@ public class DetailServiceImpl  implements DetailService  {
     @Autowired
     private DetailDAO detailDAO;
 
+    @Autowired
+    private ProjectsDAO projectsDAO;
 
 
 
     @Override
     public void insert(Detail entity) {
-
+        detailDAO.insert(entity);
+        Projects project = new Projects();
+        project.setId(entity.getProjectId());
+        if(entity.getInorout()==1){
+            project.setAlready(-entity.getAmount());
+        }else {
+            project.setAlready(entity.getAmount());
+        }
+        projectsDAO.updateProject(project);
     }
 
     @Override

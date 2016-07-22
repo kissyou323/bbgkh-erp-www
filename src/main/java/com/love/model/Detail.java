@@ -9,7 +9,7 @@ import java.util.Date;
  */
 public class Detail {
     private int id;
-    private int projectid;
+    private int projectId;
     private String projectName;
     private int inorout;
     private int amount;
@@ -33,12 +33,12 @@ public class Detail {
         this.id = id;
     }
 
-    public int getProjectid() {
-        return projectid;
+    public int getProjectId() {
+        return projectId;
     }
 
-    public void setProjectid(int projectid) {
-        this.projectid = projectid;
+    public void setProjectId(int projectId) {
+        this.projectId = projectId;
     }
 
     public int getInorout() {

@@ -33,5 +33,13 @@ public class ProjectsServiceImpl implements ProjectsService {
         return projectsDAO.selectById(id);
     }
 
+    @Override
+    public void updateProject(Projects projects) {
+        projectsDAO.updateProject(projects);
+    }
 
+    @Override
+    public void distribute(int memId, int money) {
+        projectsDAO.distribute(memId,money);
+    }
 }

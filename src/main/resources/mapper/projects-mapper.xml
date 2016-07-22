@@ -3,7 +3,7 @@
 <mapper namespace="com.love.dao.ProjectsDAO" >
 
     <select id="selectAll" resultType="com.love.model.Projects">
-        select  *  from projects
+        select  id,memmid,total,already,remark,createTime  from projects
     </select>
 
     <insert id="insert" parameterType="com.love.model.Projects" >
@@ -13,5 +13,13 @@
     <select id="selectById" parameterType="Integer" resultType="com.love.model.Projects">
         select  p.id , p.remark,p.total,p.already,p.createTime  from projects p where p.memid=#{id}
     </select>
+    
+    <update id="updateProject" parameterType="com.love.model.Projects">
+        UPDATE  projects SET already = already + #{already} WHERE id =#{id}
+    </update>
+
+    <update id="distribute" >
+        UPDATE  projects SET already = already + #{1}*distribute WHERE memid=#{0}
+    </update>
 
 </mapper>

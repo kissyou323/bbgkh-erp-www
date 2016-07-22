@@ -8,4 +8,7 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public interface ProjectsDAO extends BaseDAO<Projects> {
+    public void updateProject(Projects projects);
+
+    public void distribute(int memId,int money);
 }

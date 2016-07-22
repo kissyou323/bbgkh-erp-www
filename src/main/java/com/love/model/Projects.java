@@ -2,18 +2,29 @@ package com.love.model;
 
 import com.alibaba.fastjson.annotation.JSONField;
 
+import java.io.Serializable;
 import java.sql.Date;
 
 
 /**
  * Created by lixiang on 2016/7/18.
  */
-public class Projects {
+public class Projects implements Serializable{
+    private static final long serialVersionUID = 1435360478166529410L;
     private int id ;
     private int memId;
     private int total;
     private int already;
     private String remark;
+    private float distribute;
+
+    public float getDistribute() {
+        return distribute;
+    }
+
+    public void setDistribute(float distribute) {
+        this.distribute = distribute;
+    }
 
     @JSONField(format="yyyy-MM-dd")
     private Date createTime;
