@@ -42,6 +42,7 @@ public class ProjectsController {
         projects.setTotal(projectsDTO.getTotal());
         projects.setRemark(projectsDTO.getRemark());
         projects.setMemId(memId);
+        projects.setDistribute(projectsDTO.getDistribute());
         projectsService.insert(projects);
     }
 

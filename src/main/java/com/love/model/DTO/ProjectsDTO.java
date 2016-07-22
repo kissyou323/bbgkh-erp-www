@@ -9,6 +9,15 @@ public class ProjectsDTO {
     private int total;
     private String remark;
     private String oper;
+    private float distribute;
+
+    public float getDistribute() {
+        return distribute;
+    }
+
+    public void setDistribute(float distribute) {
+        this.distribute = distribute;
+    }
 
     public String getId() {
         return id;

@@ -24,7 +24,7 @@ $(function () {
         },
         caption:"项目列表",
         pager:$('#pager'),
-        editurl : rootpath+"projects/addProject",
+      //  editurl : rootpath+"projects/addProject",
         onSelectRow: function (rowid,status) {
             showDetail(rowid);
         }
@@ -33,7 +33,7 @@ $(function () {
     jQuery("#project").jqGrid('navGrid', '#pager', {edit : false,add : false,del : false});
     jQuery("#project").jqGrid('gridResize',{minWidth:350,maxWidth:800,minHeight:80, maxHeight:350});
 
-    $("#addProject").click(function() {
+    /*$("#addProject").click(function() {
         var datas={};
         datas.total=$("#total").val();
         datas.remark =$("#remark").val();
@@ -41,7 +41,7 @@ $(function () {
             height : 170,
             reloadAfterSubmit : true
         });
-    });
+    });*/
 
 
 });
@@ -120,7 +120,25 @@ function income(){
         url:rootpath+"projects/income/"+money,
         type:"Get",
         success: function (data) {
-            console.log("OK");
+            $("#incomeModal").modal('hide');
+            $("#project").jqGrid().trigger("reloadGrid");
+        }
+    })
+}
+
+
+function saveProject(){
+    var datas={};
+    datas.total=$("#Ptotal").val();
+    datas.remark =$("#Premark").val();
+    datas.distribute =($("#distribute").val())/100;
+    $.ajax({
+        url:rootpath+"projects/addProject",
+        data:datas,
+        type:"POST",
+        success: function (data) {
+            $("#addProjectModal").modal('hide');
+            $("#project").jqGrid().trigger("reloadGrid");
         }
     })
 }

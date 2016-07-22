@@ -7,7 +7,7 @@
     </select>
 
     <insert id="insert" parameterType="com.love.model.Projects" >
-        INSERT INTO projects (memid,total,remark) VALUES ( #{memId},#{total},#{remark})
+        INSERT INTO projects (memid,total,remark,distribute) VALUES ( #{memId},#{total},#{remark},#{distribute})
     </insert>
 
     <select id="selectById" parameterType="Integer" resultType="com.love.model.Projects">
