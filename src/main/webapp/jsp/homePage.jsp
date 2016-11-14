@@ -15,8 +15,8 @@
 <body>
 
 <div class="container">
-    用户ID为：${memberId}
 
+    用户ID为：${memberId}
     <div>
         <table id="project">
         </table>

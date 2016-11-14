@@ -135,15 +135,6 @@
     <build>
         <finalName>love</finalName>
         <plugins>
-            <plugin> <groupId>org.zeroturnaround</groupId>
-                <artifactId>jrebel-maven-plugin</artifactId>
-                <!-- <executions> <execution> <id>generate-rebel-xml</id>
-                <phase>process-resources</phase> <goals> <goal>generate</goal>
-                 </goals> </execution> </executions> -->
-                <configuration>
-                    <rebelXmlDirectory>D:\code\lovehome\lovehome\target\classes</rebelXmlDirectory>
-                </configuration>
-            </plugin>
             <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.0</version>
