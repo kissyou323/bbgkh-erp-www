@@ -1,0 +1,22 @@
+<assembly>
+    <id>assembly</id>
+    <formats>
+        <format>zip</format>
+    </formats>
+
+    <fileSets>
+        <fileSet>
+            <directory>practice-provider/bin</directory>
+            <outputDirectory>bin</outputDirectory>
+        </fileSet>
+        <fileSet>
+            <directory>src/main/resources</directory>
+            <outputDirectory>practice-provider/conf</outputDirectory>
+        </fileSet>
+    </fileSets>
+    <dependencySets>
+        <dependencySet>
+            <outputDirectory>practice-provider/lib</outputDirectory>
+        </dependencySet>
+    </dependencySets>
+</assembly>

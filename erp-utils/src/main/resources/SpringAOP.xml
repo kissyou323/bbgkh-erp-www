@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/aop
+       http://www.springframework.org/schema/aop/spring-aop-4.2.xsd
+       http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
+       ">
+
+
+
+    <bean id="componentA" class="com.lixiang.springAOP.ComponentA"></bean>
+
+    <bean id="pointA" class="com.lixiang.springAOP.PointCutA"></bean>
+
+    <!-- 为Spring容器中配置@AspectJ的bean创建代理，植入切面 -->
+    <aop:aspectj-autoproxy expose-proxy="true"></aop:aspectj-autoproxy>
+
+    <aop:config>
+
+        <aop:aspect ref="componentA">
+            <aop:pointcut id="point" expression="execution(* com.lixiang.springAOP.PointCutA.*(..))" />
+            <aop:before method="before" pointcut-ref="point"></aop:before>
+            <aop:around method="around" pointcut-ref="point"></aop:around>
+        </aop:aspect>
+    </aop:config>
+
+    <bean id="oneDAOimplement" class="com.lixiang.AOPintroduction.DAOImplement"></bean>
+    <bean id="oneDAOExtendsAdvisor" class="com.lixiang.AOPintroduction.DAOExtendsAdvisor"></bean>
+    <bean id="oneDAOImplementProxy" class="org.springframework.aop.framework.ProxyFactoryBean">
+        <property name="proxyInterfaces" >
+            <value>com.lixiang.AOPintroduction.DAOInterface</value>
+        </property>
+        <property name="target">
+            <ref bean="oneDAOimplement"/>
+        </property>
+        <property name="interceptorNames">
+            <list>
+                <value>oneDAOExtendsAdvisor</value>
+            </list>
+        </property>
+    </bean>
+
+
+
+
+
+</beans>

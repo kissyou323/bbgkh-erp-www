@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-4.2.xsd"
+       >
+    <bean name="personBean" class="com.lixiang.methodInject.PersonBean" >
+        <property name="age" value="3"></property>
+        <property name="name" value="xiaodao"></property>
+        <lookup-method name="getDepBean" bean="depBean"></lookup-method>
+    </bean>
+
+
+    <bean name="depBean" class="com.lixiang.methodInject.DepBean" scope="prototype">
+
+    </bean>
+</beans>

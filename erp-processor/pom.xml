@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.bbgkh</groupId>
+        <artifactId>bbgkh-erp</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+
+    <groupId>com.bbgkh</groupId>
+    <artifactId>erp-processor</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+
+
+
+    <properties>
+        <JAVAC_PATH>/Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/bin/javac</JAVAC_PATH>
+        <JAVA_VERSION>1.8</JAVA_VERSION>
+        <ENCODING>UTF-8</ENCODING>
+        <COMPILE_PLUGIN_VERSION>3.1</COMPILE_PLUGIN_VERSION>
+    </properties>
+
+
+    <dependencies>
+
+
+
+
+        <!-- Auto service annotation processor -->
+        <dependency>
+            <groupId>com.google.auto.service</groupId>
+            <artifactId>auto-service</artifactId>
+            <version>1.0-rc2</version>
+            <optional>true</optional>
+        </dependency>
+
+        <!-- Apache Commons StringUtils -->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.0</version>
+        </dependency>
+
+
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${COMPILE_PLUGIN_VERSION}</version>
+                <configuration>
+                    <source>${JAVA_VERSION}</source>
+                    <target>${JAVA_VERSION}</target>
+                    <compilerArgument>-proc:none</compilerArgument>
+                </configuration>
+            </plugin>
+
+        </plugins>
+    </build>
+</project>
