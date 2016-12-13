@@ -25,6 +25,7 @@
 
     <!-- Custom Fonts -->
     <link href="${rsRoot}vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <script> var webRoot ="bbgkh/"</script>
 <@mhead/>
 </head>
 <body>
