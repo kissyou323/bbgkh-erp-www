@@ -1,6 +1,5 @@
 package com.lixiang.annotationPro;
 
-import com.lixiang.main.testJavaPoet;
 
 import javax.annotation.processing.*;
 import javax.lang.model.SourceVersion;
@@ -62,7 +61,7 @@ public class GoYouProcessor extends AbstractProcessor {
 
             }
             
-            new testJavaPoet().generateHelloWorld();
+       //     new testJavaPoet().generateHelloWorld();
            /* com.lixiang.annotation.GoYou goYou  = annotatedElement.getAnnotation(com.lixiang.annotation.GoYou.class);
             String message = "annotation found in " + annotatedElement.getSimpleName();
             processingEnv.getMessager().printMessage(Diagnostic.Kind.NOTE, message);

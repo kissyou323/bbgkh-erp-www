@@ -1,7 +1,7 @@
 package com.lixiang.annotationPro;
 
 import com.lixiang.annotationPro.annotations.ChangeValue;
-import com.lixiang.main.testJavaPoet;
+
 
 import javax.annotation.processing.*;
 import javax.lang.model.SourceVersion;
