@@ -14,12 +14,19 @@ import javax.servlet.http.HttpServletRequest;
  */
 
 @Controller
-public class HomeController {
+public class HomeController extends BaseController{
     @RequestMapping(value = "/")
     @ResponseBody
     public ModelAndView homePage(HttpServletRequest request){
 
         ModelAndView modelAndView = new ModelAndView("home");
+        return modelAndView;
+    }
+    @RequestMapping(value = "home/mainDash")
+    @ResponseBody
+    public ModelAndView getMainPage(HttpServletRequest request){
+
+        ModelAndView modelAndView = new ModelAndView("dashBoard/mainBoard");
         return modelAndView;
     }
 }
