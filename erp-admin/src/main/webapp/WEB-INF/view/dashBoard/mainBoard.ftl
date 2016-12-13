@@ -15,18 +15,19 @@
     <div class="row">
         <div class="col-lg-3 col-md-6">
             <div class="panel panel-primary">
-                <div class="panel-heading">
-                    <div class="row">
-                        <div class="col-xs-3">
-                            <i class="fa fa-comments fa-5x"></i>
-                        </div>
-                        <div class="col-xs-9 text-right">
-                            <div class="huge">26</div>
-                            <div>公共号新消息</div>
+                <a href="javascript:;">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-3">
+                                <i class="fa fa-comments fa-5x"></i>
+                            </div>
+                            <div class="col-xs-9 text-right">
+                                <div class="huge">26</div>
+                                <div>公共号新消息</div>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <a href="javascript:;">
+
                     <div class="panel-footer">
                         <span class="pull-left">查看详情</span>
                         <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -37,18 +38,19 @@
         </div>
         <div class="col-lg-3 col-md-6">
             <div class="panel panel-green">
-                <div class="panel-heading">
-                    <div class="row">
-                        <div class="col-xs-3">
-                            <i class="fa fa-tasks fa-5x"></i>
-                        </div>
-                        <div class="col-xs-9 text-right">
-                            <div class="huge">12</div>
-                            <div>进货</div>
+                <a href="javascript:;">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-3">
+                                <i class="fa fa-tasks fa-5x"></i>
+                            </div>
+                            <div class="col-xs-9 text-right">
+                                <div class="huge">12</div>
+                                <div>进货</div>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <a href="javascript:;">
+
                     <div class="panel-footer">
                         <span class="pull-left">查看详情</span>
                         <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -60,17 +62,17 @@
         <div class="col-lg-3 col-md-6">
             <div class="panel panel-yellow">
                 <a href="javascript:;">
-                <div class="panel-heading">
-                    <div class="row">
-                        <div class="col-xs-3">
-                            <i class="fa fa-shopping-cart fa-5x"></i>
-                        </div>
-                        <div class="col-xs-9 text-right">
-                            <div class="huge">124</div>
-                            <div>卖货</div>
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-3">
+                                <i class="fa fa-shopping-cart fa-5x"></i>
+                            </div>
+                            <div class="col-xs-9 text-right">
+                                <div class="huge">124</div>
+                                <div>卖货</div>
+                            </div>
                         </div>
                     </div>
-                </div>
 
                     <div class="panel-footer">
                         <span class="pull-left">查看详情</span>
@@ -82,18 +84,19 @@
         </div>
         <div class="col-lg-3 col-md-6">
             <div class="panel panel-red">
-                <div class="panel-heading">
-                    <div class="row">
-                        <div class="col-xs-3">
-                            <i class="fa fa-support fa-5x"></i>
-                        </div>
-                        <div class="col-xs-9 text-right">
-                            <div class="huge">13</div>
-                            <div>今日报表</div>
+                <a href="javascript:;">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-3">
+                                <i class="fa fa-support fa-5x"></i>
+                            </div>
+                            <div class="col-xs-9 text-right">
+                                <div class="huge">13</div>
+                                <div>今日报表</div>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <a href="javascript:;">
+
                     <div class="panel-footer">
                         <span class="pull-left">查看详情</span>
                         <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>

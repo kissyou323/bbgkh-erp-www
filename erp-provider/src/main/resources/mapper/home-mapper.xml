@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.bbgkh.dao.DetailDAO" >
+<mapper namespace="com.bbgkh.dao.IHomeDao" >
 
-    <select id="selectAll" resultType="com.bbgkh.model.Detail">
-        select  *  from details
+    <select id="selectAll" resultType="com.bbgkh.model.PO.ProductInfoPO">
+        select  *  from sale
     </select>
 
-    <select id="selectById" parameterType="Integer" resultType="com.bbgkh.model.Detail">
+    <select id="selectById" parameterType="Integer" resultType="com.bbgkh.model.PO.ProductInfoPO">
         select  d.id,d.projectid,p.remark as projectname, d.inorout,d.amount,d.remark,d.time  from details d ,projects p
         WHERE d.projectid =#{id} and d.projectid = p.id
     </select>
 
-    <insert id="insert" parameterType="com.bbgkh.model.Detail" >
+    <insert id="insert" parameterType="com.bbgkh.model.PO.ProductInfoPO" >
         INSERT INTO details (projectid,inorout,amount,remark) VALUES ( #{projectId},#{inorout},#{amount},#{remark})
     </insert>
 

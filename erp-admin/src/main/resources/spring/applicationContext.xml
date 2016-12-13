@@ -8,7 +8,7 @@
 
                         ">
 
- <!--   <import resource="spring-mybatis.xml"/>-->
+    <import resource="classpath*:spring-mybatis.xml"/>
 
     <!--freemarker视图解析 -->
    <!-- <import resource="dispatch-servletFreeMarker.xml"/>  -->

@@ -23,12 +23,14 @@
             <groupId>com.bbgkh</groupId>
             <artifactId>erp-provider</artifactId>
             <version>0.0.1-SNAPSHOT</version>
+            <exclusions>
+                <exclusion>
+                    <artifactId>spring</artifactId>
+                    <groupId>org.springframework</groupId>
+                </exclusion>
+            </exclusions>
         </dependency>
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-core</artifactId>
-            <version>${SpringVersion}</version>
-        </dependency>
+
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
@@ -39,11 +41,7 @@
             <artifactId>spring-beans</artifactId>
             <version>${SpringVersion}</version>
         </dependency>
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-jdbc</artifactId>
-            <version>${SpringVersion}</version>
-        </dependency>
+
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-webmvc</artifactId>
@@ -103,26 +101,7 @@
             <scope>test</scope>
         </dependency>
 
-        <dependency>
-            <groupId>org.mybatis</groupId>
-            <artifactId>mybatis</artifactId>
-            <version>3.2.8</version>
-        </dependency>
-        <dependency>
-            <groupId>org.mybatis</groupId>
-            <artifactId>mybatis-spring</artifactId>
-            <version>1.2.3</version>
-        </dependency>
-        <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-            <version>5.1.30</version>
-        </dependency>
-        <dependency>
-            <groupId>commons-dbcp</groupId>
-            <artifactId>commons-dbcp</artifactId>
-            <version>1.4</version>
-        </dependency>
+
 
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
@@ -141,29 +120,15 @@
             <version>1.9.13</version>
         </dependency>
 
-        <dependency>
-            <groupId>com.github.pagehelper</groupId>
-            <artifactId>pagehelper</artifactId>
-            <version>4.1.6</version>
-        </dependency>
 
-        <dependency>
-            <groupId>com.github.jsqlparser</groupId>
-            <artifactId>jsqlparser</artifactId>
-            <version>0.9.5</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework.webflow</groupId>
-            <artifactId>spring-webflow</artifactId>
-            <version>2.4.4.RELEASE</version>
-        </dependency>
 
         <dependency>
             <groupId>org.freemarker</groupId>
             <artifactId>freemarker</artifactId>
             <version>2.3.23</version>
         </dependency>
+
+
 
     </dependencies>
 

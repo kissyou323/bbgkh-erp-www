@@ -5,13 +5,12 @@
        xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
 
-    <!-- 自动扫描 -->
-    <context:component-scan base-package="com.bbgkh.service" />
-    <context:component-scan base-package="com.bbgkh.dao" />
+
     <!-- 引入配置文件 -->
     <bean id="propertyConfigurer"
           class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
-        <property name="locations" value="classpath:/*.properties" />
+        <property name="locations" value="classpath*:/*.properties" />
+        <property name="ignoreUnresolvablePlaceholders" value="true"/>
     </bean>
 
     <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
@@ -108,21 +107,5 @@
     </tx:advice>
 
 
-    <!--    <bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
-            <property name="messageConverters">
-                <list>
-                    <ref bean="stringHttpMessageConverter" />
-                    <ref bean="jsonHttpMessageConverter" />
-                    &lt;!&ndash; <ref bean="marshallingHttpMessageConverter" /> &ndash;&gt;
-                </list>
-            </property>
-        </bean>-->
-    <!--
-        <bean id="stringHttpMessageConverter" class="org.springframework.http.converter.StringHttpMessageConverter" >
-            <property name = "supportedMediaTypes">
-                <list>
-                    <value>text/plain;charset=UTF-8</value>
-                </list>
-            </property>
-        </bean>-->
+
 </beans>
