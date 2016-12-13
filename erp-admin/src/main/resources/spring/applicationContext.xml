@@ -8,11 +8,11 @@
 
                         ">
 
-    <import resource="spring-mybatis.xml"/>
+ <!--   <import resource="spring-mybatis.xml"/>-->
 
     <!--freemarker视图解析 -->
    <!-- <import resource="dispatch-servletFreeMarker.xml"/>  -->
-    <import resource="webflow_freemarker.xml"/>
+    <!--<import resource="webflow_freemarker.xml"/>-->
 
 
     <!--一个JSP视图的解析-->
@@ -20,18 +20,6 @@
     <import resource="webflow.xml"/>
     -->
 
-    <!--视图解释器 -->
-    <bean id="viewResolver"
-          class="org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver">
-        <property name="viewClass"
-                  value="org.springframework.web.servlet.view.freemarker.FreeMarkerView" />
-        <property name="suffix">
-            <value>.ftl</value>
-        </property>
-        <property name="contentType" value="text/html;charset=UTF-8"></property>
-        <property name="exposeRequestAttributes" value="true" />
-        <property name="exposeSessionAttributes" value="true" />
-        <property name="exposeSpringMacroHelpers" value="true" />
-    </bean>
+
 
 </beans>

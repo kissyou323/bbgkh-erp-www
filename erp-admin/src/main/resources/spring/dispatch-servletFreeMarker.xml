@@ -21,36 +21,43 @@
     <bean id="freemarkerConfig"
           class="org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer">
         <property name="templateLoaderPath" value="/WEB-INF/view/" />
-        <property name="freemarkerSettings">
-            <props>
-                <prop key="template_update_delay">0</prop>
-                <prop key="default_encoding">UTF-8</prop>
-                <prop key="number_format">0.##########</prop>
-                <prop key="datetime_format">yyyy-MM-dd HH:mm:ss</prop>
-                <prop key="classic_compatible">true</prop>
-                <prop key="template_exception_handler">ignore</prop>
-            </props>
-        </property>
+        <property name="freemarkerSettings" ref="freemarkerConfiguration"/>
+        <property name="defaultEncoding" value="UTF-8" />
+    </bean>
+    <!--视图解释器 -->
+    <bean id="viewResolver"	class="org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver">
+        <property name="cache" value="true"/>
+        <property name="viewClass" value="org.springframework.web.servlet.view.freemarker.FreeMarkerView"/>
+        <property name="prefix" value=""/>
+        <property name="suffix" value=".ftl" />
+        <property name="contentType" value="text/html;charset=UTF-8" />
+        <property name="exposeRequestAttributes" value="true" />
+        <property name="exposeSessionAttributes" value="true" />
+        <property name="exposeSpringMacroHelpers" value="true" />
+        <property name="allowSessionOverride" value="true" />
+        <property name="requestContextAttribute" value="request"/>
     </bean>
 
-
-
-<!--    <bean id="viewMappings" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
-        <property name="mappings">
-            <value>/shopping=flowController</value>
-        </property>
-        <property name="defaultHandler">
-            <bean class="org.springframework.web.servlet.mvc.UrlFilenameViewController"></bean>
-        </property>
-    </bean>-->
-    <bean class=
-                  "org.springframework.webflow.mvc.servlet.FlowHandlerMapping">
-        <property name="flowRegistry" ref="flowRegistry" />
+    <bean id="freemarkerConfiguration"  class="org.springframework.beans.factory.config.PropertiesFactoryBean">
+        <property name="location" value="classpath:freemarker.properties" />
     </bean>
 
-    <bean id="flowController" class="org.springframework.webflow.mvc.servlet.FlowHandlerAdapter">
-        <property name="flowExecutor" ref="flowExecutor"></property>
-    </bean>
+    <!--    <bean id="viewMappings" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+            <property name="mappings">
+                <value>/shopping=flowController</value>
+            </property>
+            <property name="defaultHandler">
+                <bean class="org.springframework.web.servlet.mvc.UrlFilenameViewController"></bean>
+            </property>
+        </bean>-->
+    <!--<bean class=-->
+                  <!--"org.springframework.webflow.mvc.servlet.FlowHandlerMapping">-->
+        <!--<property name="flowRegistry" ref="flowRegistry" />-->
+    <!--</bean>-->
+
+    <!--<bean id="flowController" class="org.springframework.webflow.mvc.servlet.FlowHandlerAdapter">-->
+        <!--<property name="flowExecutor" ref="flowExecutor"></property>-->
+    <!--</bean>-->
 
 
     <mvc:resources mapping="/resource/**" location="/resource/"></mvc:resources>
