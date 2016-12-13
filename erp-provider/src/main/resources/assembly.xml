@@ -11,12 +11,12 @@
         </fileSet>
         <fileSet>
             <directory>src/main/resources</directory>
-            <outputDirectory>practice-provider/conf</outputDirectory>
+            <outputDirectory>erp-provider/conf</outputDirectory>
         </fileSet>
     </fileSets>
     <dependencySets>
         <dependencySet>
-            <outputDirectory>practice-provider/lib</outputDirectory>
+            <outputDirectory>erp-provider/lib</outputDirectory>
         </dependencySet>
     </dependencySets>
 </assembly>
