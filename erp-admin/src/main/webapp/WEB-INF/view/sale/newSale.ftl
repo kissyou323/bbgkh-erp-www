@@ -15,27 +15,61 @@
         <div class="col-lg-12">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                  请填写相关信息
+                    请填写相关信息
                 </div>
                 <div class="panel-body">
                     <div class="row">
-                        <div class="col-lg-6">
-                            <form role="form">
+                        <form role="form" method="post" action="/bbgkh/sale/newSaleInfo" >
+                            <div class="col-lg-5">
+
                                 <div class="form-group">
-                                    <label>Text Input</label>
-                                    <input class="form-control">
-                                    <p class="help-block">Example block-level help text here.</p>
+                                    <label>型号</label>
+                                    <input name="productSysNo" class="form-control" >
+
                                 </div>
+                            </div>
+                            <div class="col-lg-5">
+
                                 <div class="form-group">
-                                    <label>Text Input with Placeholder</label>
-                                    <input class="form-control" placeholder="Enter text">
+                                    <label>颜色</label>
+                                    <input name="color" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-lg-5">
+
+                                <div class="form-group">
+                                    <label>尺码</label>
+                                    <input name="size" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-lg-5">
+
+                                <div class="form-group">
+                                    <label>价格</label>
+                                    <input name="salePrice" class="form-control" value="1">
+                                </div>
+                            </div>
+                            <div class="col-lg-5">
+                                <div class="form-group">
+
+                                    <label class="radio-inline">
+                                        <input type="radio" name="sex" id="optionsRadiosInline1" value="1" checked>女裤
+                                    </label>
+                                    <label class="radio-inline">
+                                        <input type="radio" name="sex" id="optionsRadiosInline2" value="2">男裤
+                                    </label>
+
+                                    <input name="saleNum" class="form-group-sm" value="1">
+                                    <label>数量</label>
                                 </div>
 
-                                <button type="submit" class="btn btn-default">Submit Button</button>
-                                <button type="reset" class="btn btn-default">Reset Button</button>
-                            </form>
-                        </div>
+                            </div>
 
+                            <div class="col-lg-5">
+                                <button type="submit" class="col-lg-4 btn btn-primary">点我来提交</button>
+                                <button type="reset" class="btn btn-default">重新输入</button>
+                            </div>
+                        </form>
                     </div>
                     <!-- /.row (nested) -->
                 </div>

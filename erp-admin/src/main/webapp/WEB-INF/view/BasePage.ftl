@@ -12,7 +12,7 @@
     <meta name="viewport" content="minimal-ui=yes,width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
     <meta http-equiv="Cache-Control" content="no-transform " />
     <!-- Bootstrap Core CSS -->
-    <link href="${rsRoot}vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="${rsRoot}vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
 
     <!-- MetisMenu CSS -->
     <link href="${rsRoot}vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
@@ -92,17 +92,17 @@
 <!-- /#wrapper -->
 
 <!-- jQuery -->
-<script src="${rsRoot}vendor/jquery/jquery.min.js"></script>
+<script src="${rsRoot}vendor/jquery/jquery.js"></script>
 
 <!-- Bootstrap Core JavaScript -->
-<script src="${rsRoot}vendor/bootstrap/js/bootstrap.min.js"></script>
+<script src="${rsRoot}vendor/bootstrap/js/bootstrap.js"></script>
 
 <!-- Metis Menu Plugin JavaScript -->
-<script src="${rsRoot}vendor/metisMenu/metisMenu.min.js"></script>
+<script src="${rsRoot}vendor/metisMenu/metisMenu.js"></script>
 
 <!-- Morris Charts JavaScript -->
-<script src="${rsRoot}vendor/raphael/raphael.min.js"></script>
-<script src="${rsRoot}vendor/morrisjs/morris.min.js"></script>
+<script src="${rsRoot}vendor/raphael/raphael.js"></script>
+<script src="${rsRoot}vendor/morrisjs/morris.js"></script>
 <script src="${rsRoot}data/morris-data.js"></script>
 
 <!-- Custom Theme JavaScript -->

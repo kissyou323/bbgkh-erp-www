@@ -1,16 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.bbgkh.dao.IHomeDao" >
+<mapper namespace="com.bbgkh.dao.sale.ISaleDao" >
 
     <select id="selectAll" resultType="com.bbgkh.model.PO.SaleInfoPO">
         select  *  from sale
     </select>
 
     <select id="selectById" parameterType="Integer" resultType="com.bbgkh.model.PO.SaleInfoPO">
-
+        select * from sale where id = #{id}
     </select>
 
-    <insert id="insert" parameterType="com.bbgkh.model.PO.SaleInfoPO" >
+    <insert id="insert" parameterType="com.bbgkh.model.DTO.SaleInfoDTO" >
+        INSERT INTO sale (productSysNo,salePrice,saleNum,sex,color,size)
+        VALUES ( #{productSysNo},#{salePrice},#{saleNum},#{sex},#{color},#{size})
     </insert>
 
 </mapper>

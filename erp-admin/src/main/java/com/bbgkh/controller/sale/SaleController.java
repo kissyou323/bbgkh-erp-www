@@ -1,7 +1,11 @@
 package com.bbgkh.controller.sale;
 
 import com.bbgkh.controller.BaseController;
+import com.bbgkh.model.DTO.SaleInfoDTO;
+import com.bbgkh.service.sale.ISaleService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
@@ -14,12 +18,20 @@ import javax.servlet.http.HttpServletResponse;
  */
 @Controller
 public class SaleController extends BaseController{
+
+    @Autowired
+    private ISaleService saleService;
+
     @RequestMapping(value = "sale/newSalePage")
-    public ModelAndView newSale(HttpServletRequest request, HttpServletResponse response){
+    public ModelAndView newSalePage(HttpServletRequest request, HttpServletResponse response){
 
+        return new ModelAndView("sale/newSale");
+    }
+    @RequestMapping(value = "sale/newSaleInfo" ,method = RequestMethod.POST)
+    public ModelAndView newSaleInfo(SaleInfoDTO saleInfoDTO, HttpServletRequest request, HttpServletResponse response){
 
-
-
+        int a  = saleService.insert(saleInfoDTO);
+        System.out.println("!!!"+a);
         return new ModelAndView("sale/newSale");
     }
 }

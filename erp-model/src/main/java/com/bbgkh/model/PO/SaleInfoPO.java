@@ -9,6 +9,34 @@ public class SaleInfoPO {
     private double salePrice;
     private String saleTime;
     private int saleNum;
+    private int sex;
+    private String color;
+    private String size;
+
+
+    public int getSex() {
+        return sex;
+    }
+
+    public void setSex(int sex) {
+        this.sex = sex;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    public String getSize() {
+        return size;
+    }
+
+    public void setSize(String size) {
+        this.size = size;
+    }
 
     public int getId() {
         return id;

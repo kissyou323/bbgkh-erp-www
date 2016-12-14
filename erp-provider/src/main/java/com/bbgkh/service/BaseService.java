@@ -9,7 +9,7 @@ import java.util.List;
  */
 @Repository
 public   interface BaseService {
-    public  void insert(Object entity);
+    public  int insert(Object entity);
     public  List selectAll();
     public  List selectById(int id);
 }

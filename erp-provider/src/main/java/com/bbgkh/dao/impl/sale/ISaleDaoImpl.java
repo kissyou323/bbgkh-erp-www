@@ -1,18 +1,16 @@
-package com.bbgkh.dao.impl;
+package com.bbgkh.dao.impl.sale;
 
-import com.bbgkh.dao.IHomeDao;
-import org.springframework.stereotype.Repository;
+import com.bbgkh.dao.sale.ISaleDao;
 
 import java.util.List;
 
 /**
- * Created by lixiang on 13/12/2016.
+ * Created by lixiang on 14/12/2016.
  */
-
-public class IHomeDaoImpl implements IHomeDao {
+public class ISaleDaoImpl implements ISaleDao {
     @Override
     public int insert(Object entity) {
-        return 1;
+        return 3;
     }
 
     @Override

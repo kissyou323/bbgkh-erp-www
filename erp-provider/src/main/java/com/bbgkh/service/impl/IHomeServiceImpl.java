@@ -15,13 +15,14 @@ import java.util.List;
  * Created by lixiang on 13/12/2016.
  */
 @Service
-public class IHomeServiceImlp implements IHomeService {
+public class IHomeServiceImpl implements IHomeService {
 
     @Autowired
     private IHomeDao homeDao;
 
     @Override
-    public void insert(Object entity) {
+    public int insert(Object entity) {
+        return 1;
     }
 
     @Override

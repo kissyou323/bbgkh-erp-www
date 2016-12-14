@@ -9,7 +9,7 @@ import java.util.List;
  */
 @Repository
 public interface BaseDAO {
-    public void insert(Object entity);
+    public int insert(Object entity);
 
     public List selectById(int id);
 
