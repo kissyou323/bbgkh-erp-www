@@ -4,6 +4,7 @@ package com.bbgkh.service.impl;
 import com.alibaba.fastjson.JSON;
 import com.bbgkh.dao.IHomeDao;
 import com.bbgkh.model.PO.ProductInfoPO;
+import com.bbgkh.model.PO.SaleInfoPO;
 import com.bbgkh.service.IHomeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -26,9 +27,9 @@ public class IHomeServiceImlp implements IHomeService {
     @Override
     public List selectAll() {
 
-        List<ProductInfoPO> poList =homeDao.selectAll();
-        System.out.println(JSON.toJSONString(poList));
-        return poList;
+        List<SaleInfoPO> soList =homeDao.selectAll();
+        System.out.println(JSON.toJSONString(soList));
+        return soList;
 
     }
 

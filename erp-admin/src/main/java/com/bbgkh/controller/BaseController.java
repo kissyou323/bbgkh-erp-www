@@ -19,7 +19,7 @@ public class BaseController {
         String webroot=request.getContextPath();
 
         request.setAttribute("rsRoot", "/bbgkh/resource/");
-        request.setAttribute("webRoot", "/bbgkh/");
+        request.setAttribute("webRoot", "/bbgkh");
     }
 
 }

@@ -25,7 +25,7 @@
 
     <!-- Custom Fonts -->
     <link href="${rsRoot}vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <script> var webRoot ="bbgkh/"</script>
+    <script> var webRoot ="bbgkh"</script>
 <@mhead/>
 </head>
 <body>
@@ -40,7 +40,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="${webRoot}home/mainDash">步步高裤行在线管理</a>
+            <a class="navbar-brand" href="${webRoot}/home/mainDash">步步高裤行在线管理</a>
         </div>
         <!-- /.navbar-header -->
         <#--右上角的东西-->
@@ -77,7 +77,7 @@
                         </div><!-- /input-group -->
                     </li>
                     <li>
-                        <a href="${webRoot}home/mainDash"><i class="fa fa-dashboard fa-fw"></i>主面板</a>
+                        <a href="${webRoot}/home/mainDash"><i class="fa fa-dashboard fa-fw"></i>主面板</a>
                     </li>
                 </ul>
             </div>
