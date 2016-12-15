@@ -4,45 +4,20 @@ package com.bbgkh.model.PO;
  * Created by lixiang on 14/12/2016.
  */
 public class SaleInfoPO {
-    private int id;
+    private Integer id;
     private String productSysNo;
     private double salePrice;
     private String saleTime;
-    private int saleNum;
-    private int sex;
+    private Integer saleNum;
+    private Integer sex;
     private String color;
     private String size;
 
-
-    public int getSex() {
-        return sex;
-    }
-
-    public void setSex(int sex) {
-        this.sex = sex;
-    }
-
-    public String getColor() {
-        return color;
-    }
-
-    public void setColor(String color) {
-        this.color = color;
-    }
-
-    public String getSize() {
-        return size;
-    }
-
-    public void setSize(String size) {
-        this.size = size;
-    }
-
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -70,11 +45,35 @@ public class SaleInfoPO {
         this.saleTime = saleTime;
     }
 
-    public int getSaleNum() {
+    public Integer getSaleNum() {
         return saleNum;
     }
 
-    public void setSaleNum(int saleNum) {
+    public void setSaleNum(Integer saleNum) {
         this.saleNum = saleNum;
+    }
+
+    public Integer getSex() {
+        return sex;
+    }
+
+    public void setSex(Integer sex) {
+        this.sex = sex;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    public String getSize() {
+        return size;
+    }
+
+    public void setSize(String size) {
+        this.size = size;
     }
 }

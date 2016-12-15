@@ -16,7 +16,8 @@
     <packaging>war</packaging>
 
     <properties>
-        <SpringVersion>4.2.5.RELEASE</SpringVersion>
+        <SpringVersion>5.0.0.M2</SpringVersion>
+        <SpringOldVersion>4.2.5.RELEASE</SpringOldVersion>
     </properties>
     <dependencies>
         <dependency>
@@ -27,10 +28,15 @@
                 <exclusion>
                     <artifactId>spring</artifactId>
                     <groupId>org.springframework</groupId>
+
                 </exclusion>
             </exclusions>
         </dependency>
-
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-core</artifactId>
+            <version>${SpringVersion}</version>
+        </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
@@ -103,22 +109,7 @@
 
 
 
-        <dependency>
-            <groupId>com.fasterxml.jackson.core</groupId>
-            <artifactId>jackson-core</artifactId>
-            <version>2.8.0</version>
-        </dependency>
-        <dependency>
-            <groupId>com.fasterxml.jackson.core</groupId>
-            <artifactId>jackson-databind</artifactId>
-            <version>2.7.4</version>
-        </dependency>
 
-        <dependency>
-            <groupId>org.codehaus.jackson</groupId>
-            <artifactId>jackson-mapper-asl</artifactId>
-            <version>1.9.13</version>
-        </dependency>
 
 
 
