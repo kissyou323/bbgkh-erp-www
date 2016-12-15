@@ -25,12 +25,12 @@
 
     <!-- Custom Fonts -->
     <link href="${rsRoot}vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <script> var webRoot ="bbgkh"</script>
+    <script> var webRoot ="/bbgkh"</script>
 <@mhead/>
 </head>
 <body>
 
-<div id="wrapper">
+<div id="divController">
     <!-- Navigation -->
     <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
         <div class="navbar-header">
@@ -85,28 +85,29 @@
         </div>
         <!-- /.navbar-static-side -->
     </nav>
+    <!-- jQuery -->
+    <script src="${rsRoot}vendor/jquery/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="${rsRoot}vendor/bootstrap/js/bootstrap.js"></script>
+
+    <!-- Metis Menu Plugin JavaScript -->
+    <script src="${rsRoot}vendor/metisMenu/metisMenu.js"></script>
+
+    <!-- Morris Charts JavaScript -->
+    <script src="${rsRoot}vendor/raphael/raphael.js"></script>
+    <script src="${rsRoot}vendor/morrisjs/morris.js"></script>
+    <script src="${rsRoot}data/morris-data.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="${rsRoot}dist/js/sb-admin-2.js"></script>
     <@mbody/>
     <!-- /#page-wrapper -->
 
 </div>
 <!-- /#wrapper -->
 
-<!-- jQuery -->
-<script src="${rsRoot}vendor/jquery/jquery.js"></script>
 
-<!-- Bootstrap Core JavaScript -->
-<script src="${rsRoot}vendor/bootstrap/js/bootstrap.js"></script>
-
-<!-- Metis Menu Plugin JavaScript -->
-<script src="${rsRoot}vendor/metisMenu/metisMenu.js"></script>
-
-<!-- Morris Charts JavaScript -->
-<script src="${rsRoot}vendor/raphael/raphael.js"></script>
-<script src="${rsRoot}vendor/morrisjs/morris.js"></script>
-<script src="${rsRoot}data/morris-data.js"></script>
-
-<!-- Custom Theme JavaScript -->
-<script src="${rsRoot}dist/js/sb-admin-2.js"></script>
 
 </body>
 </html>

@@ -19,7 +19,7 @@
                 </div>
                 <div class="panel-body">
                     <div class="row">
-                        <form role="form" method="post" action="/bbgkh/sale/newSaleInfo" >
+
                             <div class="col-lg-5">
 
                                 <div class="form-group">
@@ -66,11 +66,12 @@
                             </div>
 
                             <div class="col-lg-5">
-                                <button type="submit" class="col-lg-4 btn btn-primary">点我来提交</button>
+                                <button id="submitSale" type="submit" class="col-lg-4 btn btn-primary">点我来提交</button>
                                 <button type="reset" class="btn btn-default">重新输入</button>
                             </div>
-                        </form>
+
                     </div>
+                    <div style="display: none;" id="addSuccess" class="alert col-lg-4 alert-success" role="alert">成功添加</div>
                     <!-- /.row (nested) -->
                 </div>
                 <!-- /.panel-body -->
@@ -81,4 +82,6 @@
     </div>
     <!-- /.row -->
 </div>
+
+<script src="${rsRoot}js/sale/sale.js"></script>
 </#macro>
