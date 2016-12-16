@@ -45,7 +45,7 @@
                     <h3 class="panel-title">Please Sign In</h3>
                 </div>
                 <div class="panel-body">
-                    <form role="form">
+
                         <fieldset>
                             <div class="form-group">
                                 <input class="form-control" id="userName" placeholder="用户名" name="text" type="text" autofocus>
@@ -59,13 +59,22 @@
                                 </label>
                             </div>
                             <!-- Change this to a button or input when using this as a form -->
-                            <a href="javascript:;" id="loginButton" class="btn btn-lg btn-success btn-block">登录</a>
                         </fieldset>
-                    </form>
+                    <div class="row">
+                        <div class="col-lg-9">
+                            <a href="javascript:;" id="loginButton" class=" btn btn-lg btn-success btn-block">登录</a>
+                        </div>
+                        <div class="col-lg-3">
+                            <a href="javascript:;" id="registerButton" class=" btn btn-lg btn-default btn-block">注册</a>
+                        </div>
+                    </div>
                 </div>
+
             </div>
+
         </div>
     </div>
+
 </div>
 
 <!-- jQuery -->
