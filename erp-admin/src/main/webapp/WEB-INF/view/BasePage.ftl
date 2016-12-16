@@ -79,6 +79,12 @@
                     <li>
                         <a href="${webRoot}/home/mainDash"><i class="fa fa-dashboard fa-fw"></i>主面板</a>
                     </li>
+                    <li>
+                        <a href="${webRoot}/sale/newSalePage"><i class="fa fa-dashboard fa-fw"></i>卖货</a>
+                    </li>
+                    <li>
+                        <a href="${webRoot}/report/todayReport"><i class="fa fa-dashboard fa-fw"></i>今日销售</a>
+                    </li>
                 </ul>
             </div>
             <!-- /.sidebar-collapse -->
@@ -95,9 +101,9 @@
     <script src="${rsRoot}vendor/metisMenu/metisMenu.js"></script>
 
     <!-- Morris Charts JavaScript -->
-    <script src="${rsRoot}vendor/raphael/raphael.js"></script>
-    <script src="${rsRoot}vendor/morrisjs/morris.js"></script>
-    <script src="${rsRoot}data/morris-data.js"></script>
+    <#--<script src="${rsRoot}vendor/raphael/raphael.js"></script>-->
+    <#--<script src="${rsRoot}vendor/morrisjs/morris.js"></script>-->
+    <#--<script src="${rsRoot}data/morris-data.js"></script>-->
 
     <!-- Custom Theme JavaScript -->
     <script src="${rsRoot}dist/js/sb-admin-2.js"></script>

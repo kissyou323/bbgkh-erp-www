@@ -29,7 +29,7 @@ public class IHomeServiceImpl implements IHomeService {
     public List selectAll() {
 
         List<SaleInfoPO> soList =homeDao.selectAll();
-        System.out.println(JSON.toJSONString(soList));
+
         return soList;
 
     }

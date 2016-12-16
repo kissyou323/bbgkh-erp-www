@@ -3,7 +3,7 @@
 <mapper namespace="com.bbgkh.dao.IHomeDao" >
 
     <select id="selectAll" resultType="com.bbgkh.model.PO.SaleInfoPO">
-        select  *  from sale
+        SELECT * from sale where TO_DAYS(saleTime) = TO_DAYS(NOW());
     </select>
 
     <select id="selectById" parameterType="Integer" resultType="com.bbgkh.model.PO.SaleInfoPO">

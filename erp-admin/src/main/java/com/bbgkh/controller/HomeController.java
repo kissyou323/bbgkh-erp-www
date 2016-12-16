@@ -33,7 +33,7 @@ public class HomeController extends BaseController{
     @RequestMapping(value = "home/mainDash")
     @ResponseBody
     public ModelAndView getMainPage(HttpServletRequest request){
-        List<ProductInfoPO> poList = homeService.selectAll();
+
         ModelAndView modelAndView = new ModelAndView("dashBoard/mainBoard");
         return modelAndView;
     }
