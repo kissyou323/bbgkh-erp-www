@@ -1,8 +1,7 @@
-package com.bbgkh.service.impl.sale;
+package com.bbgkh.service.impl;
 
-import com.bbgkh.dao.IHomeDao;
-import com.bbgkh.dao.sale.ISaleDao;
-import com.bbgkh.service.sale.ISaleService;
+import com.bbgkh.dao.ISaleDao;
+import com.bbgkh.service.ISaleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

@@ -1,4 +1,4 @@
-package com.bbgkh.service.sale;
+package com.bbgkh.service;
 
 import com.bbgkh.service.BaseService;
 

@@ -2,6 +2,7 @@ package com.bbgkh.controller;
 
 import com.bbgkh.model.PO.ProductInfoPO;
 import com.bbgkh.service.IHomeService;
+import com.sun.net.httpserver.HttpServer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -35,6 +36,8 @@ public class HomeController extends BaseController{
     public ModelAndView getMainPage(HttpServletRequest request){
 
         ModelAndView modelAndView = new ModelAndView("dashBoard/mainBoard");
+
         return modelAndView;
     }
+
 }

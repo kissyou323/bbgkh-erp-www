@@ -48,7 +48,7 @@
                     <form role="form">
                         <fieldset>
                             <div class="form-group">
-                                <input class="form-control" placeholder="用户名" name="text" type="text" autofocus>
+                                <input class="form-control" id="userName" placeholder="用户名" name="text" type="text" autofocus>
                             </div>
                             <div class="form-group">
                                 <input class="form-control" placeholder="密码" name="password" type="password" value="">
@@ -59,7 +59,7 @@
                                 </label>
                             </div>
                             <!-- Change this to a button or input when using this as a form -->
-                            <a href="home/mainDash" class="btn btn-lg btn-success btn-block">登录</a>
+                            <a href="javascript:;" id="loginButton" class="btn btn-lg btn-success btn-block">登录</a>
                         </fieldset>
                     </form>
                 </div>
@@ -79,6 +79,8 @@
 
 <!-- Custom Theme JavaScript -->
 <script src="${rsRoot}dist/js/sb-admin-2.js"></script>
+
+<script src="${rsRoot}js/home.js"></script>
 
 </body>
 

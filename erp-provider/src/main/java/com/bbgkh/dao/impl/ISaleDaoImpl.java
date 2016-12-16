@@ -1,6 +1,6 @@
-package com.bbgkh.dao.impl.sale;
+package com.bbgkh.dao.impl;
 
-import com.bbgkh.dao.sale.ISaleDao;
+import com.bbgkh.dao.ISaleDao;
 
 import java.util.List;
 

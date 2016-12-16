@@ -1,4 +1,4 @@
-package com.bbgkh.dao.sale;
+package com.bbgkh.dao;
 
 import com.bbgkh.dao.BaseDAO;
 import org.springframework.stereotype.Repository;
