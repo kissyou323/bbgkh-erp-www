@@ -9,5 +9,7 @@ import java.util.List;
  * Created by lixiang on 12/16/2016.
  */
 public interface IUserService extends BaseService{
-    List<CustomerPO> validateUser(String uid);
+    List<CustomerPO> validateUser(String uid,String password);
+
+    List<CustomerPO> validateName(String uid);
 }

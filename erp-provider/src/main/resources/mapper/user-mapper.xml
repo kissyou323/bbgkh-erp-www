@@ -9,8 +9,11 @@
     <select id="selectById" parameterType="String" resultType="com.bbgkh.model.PO.CustomerPO">
         select * from customer where uid = #{uid}
     </select>
-    <select id="validateUser" parameterType="String" resultType="com.bbgkh.model.PO.CustomerPO">
+    <select id="validateUser" resultType="com.bbgkh.model.PO.CustomerPO">
         select * from customer where uid = #{uid}
+        <if test="password != null and password!= '' ">
+            AND password = #{password}
+        </if>
     </select>
 
     <insert id="insert" parameterType="com.bbgkh.model.PO.CustomerPO" >

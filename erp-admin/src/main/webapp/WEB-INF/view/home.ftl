@@ -51,7 +51,7 @@
                                 <input class="form-control" id="userName" placeholder="用户名" name="text" type="text" autofocus>
                             </div>
                             <div class="form-group">
-                                <input class="form-control" placeholder="密码" name="password" type="password" value="">
+                                <input class="form-control"  id="password" placeholder="密码" name="password" type="password" value="">
                             </div>
                             <div class="checkbox">
                                 <label>

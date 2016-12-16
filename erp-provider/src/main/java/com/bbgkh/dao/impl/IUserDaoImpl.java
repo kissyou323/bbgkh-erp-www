@@ -25,7 +25,7 @@ public class IUserDaoImpl implements IUserDao {
     }
 
     @Override
-    public List<CustomerPO> validateUser(String uid) {
+    public List<CustomerPO> validateUser(String uid,String password) {
         return null;
     }
 }

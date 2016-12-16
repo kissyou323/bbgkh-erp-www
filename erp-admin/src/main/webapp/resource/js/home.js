@@ -3,32 +3,70 @@
  */
 
 $(function () {
+    $("#registerButton").on("click",function (el) {
+        var name = $("#userName").val();
+        var password =$("#password").val();
+        var customer={
+            name:name,
+            password:password
+        };
+        $.ajax({
+            url:"/bbgkh/user/validateUser/",
+            data:customer,
+            type:'POST',
+            success:function (datas) {
+                console.log(datas);
+
+                if(datas=="fail"){
+                    alert("该用户名已经注册，请换一个重试");
+                    window.location.reload();
+
+                }else{
+                    //代表没有重复，可以注册
+                    $.ajax({
+                        url:"/bbgkh/user/registerUser/",
+                        type:'POST',
+                        data:customer,
+                        success:function (datas) {
+                           alert("注册成功，可以登录啦")
+                        },
+                        fail:function () {
+
+                        }
+                    })
+
+                }
+            },
+            fail:function () {
+
+            }
+        })
+    });
     $("#loginButton").on("click",function (el) {
         var name = $("#userName").val();
+        var password =$("#password").val();
+        var customer={
+            name:name,
+            password:password
+        };
         $.ajax({
-            url:"/bbgkh/user/validateUser/"+name,
-            type:'GET',
+            url:"/bbgkh/user/login/",
+            data:customer,
+            type:'POST',
             success:function (datas) {
-                console.log(datas);
+                if(datas=="ok"){
+                    //说明用户名和密码正确,且已经登录成功
+                    alert("恭喜你，登录成功！")
+
+                }else{
+                    alert("登录失败，请再次尝试");
+                    window.location.reload();
+                }
             },
             fail:function () {
 
             }
         })
-    }),
-        $("#registerButton").on("click",function (el) {
-        var name = $("#userName").val();
-        $.ajax({
-            url:"/bbgkh/user/validateUser/"+name,
-            type:'GET',
-            success:function (datas) {
-
-                console.log(datas);
-            },
-            fail:function () {
-
-            }
-        })
-    })
+    });
 
 })

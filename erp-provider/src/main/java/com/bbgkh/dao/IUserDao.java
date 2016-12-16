@@ -1,6 +1,7 @@
 package com.bbgkh.dao;
 
 import com.bbgkh.model.PO.CustomerPO;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -10,5 +11,5 @@ import java.util.List;
  */
 @Repository
 public interface IUserDao extends BaseDAO {
-    List<CustomerPO> validateUser(String uid);
+    List<CustomerPO> validateUser(@Param("uid") String uid, @Param("password") String password);
 }
