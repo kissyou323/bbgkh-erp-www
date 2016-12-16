@@ -7,7 +7,7 @@
     <groupId>com.bbgkh</groupId>
     <artifactId>erp-provider</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-
+    <packaging>jar</packaging>
     <parent>
         <groupId>com.bbgkh</groupId>
         <artifactId>bbgkh-erp</artifactId>
@@ -128,7 +128,7 @@
                 </configuration>
             </plugin>
 
-            <plugin>
+            <!--<plugin>
                 <artifactId>maven-assembly-plugin</artifactId>
                 <configuration>
                     <descriptor>src/main/resources/assembly.xml</descriptor>
@@ -142,7 +142,7 @@
                         </goals>
                     </execution>
                 </executions>
-            </plugin>
+            </plugin>-->
         </plugins>
     </build>
 </project>

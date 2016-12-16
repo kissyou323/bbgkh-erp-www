@@ -27,8 +27,8 @@
         <!-- mybatis版本号 -->
         <mybatis.version>3.4.1</mybatis.version>
         <!-- log4j日志文件管理包版本 -->
-        <slf4j.version>1.7.7</slf4j.version>
-        <log4j.version>1.2.17</log4j.version>
+
+        <log4j.version>2.7</log4j.version>
         <JAVA_VERSION>1.8</JAVA_VERSION>
         <ENCODING>UTF-8</ENCODING>
         <COMPILE_PLUGIN_VERSION>3.1</COMPILE_PLUGIN_VERSION>
@@ -153,34 +153,38 @@
             <artifactId>jstl</artifactId>
             <version>1.2</version>
         </dependency>
-        <!-- 日志文件管理包 -->
+            <!-- https://mvnrepository.com/artifact/com.alibaba/fastjson -->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>1.2.21</version>
+            </dependency>
+
+            <!-- 日志文件管理包 -->
         <!-- log start -->
-        <dependency>
-            <groupId>log4j</groupId>
-            <artifactId>log4j</artifactId>
-            <version>${log4j.version}</version>
-        </dependency>
+            <!-- log4j2 -->
+            <!-- https://mvnrepository.com/artifact/log4j/log4j -->
+           <!-- <dependency>
+                <groupId>log4j</groupId>
+                <artifactId>log4j</artifactId>
+                <version>1.2.16</version>
+            </dependency>-->
 
-
-        <!-- 格式化对象，方便输出日志 -->
-        <dependency>
-            <groupId>com.alibaba</groupId>
-            <artifactId>fastjson</artifactId>
-            <version>1.2.16</version>
-        </dependency>
-
-
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-api</artifactId>
-            <version>${slf4j.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-log4j12</artifactId>
-            <version>${slf4j.version}</version>
-        </dependency>
+            <dependency>
+                <groupId>org.apache.logging.log4j</groupId>
+                <artifactId>log4j-web</artifactId>
+                <version>${log4j.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.logging.log4j</groupId>
+                <artifactId>log4j-api</artifactId>
+                <version>${log4j.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.logging.log4j</groupId>
+                <artifactId>log4j-core</artifactId>
+                <version>${log4j.version}</version>
+            </dependency>
         <!-- log end -->
         <!-- 映入JSON -->
         <dependency>
@@ -188,7 +192,17 @@
             <artifactId>jackson-mapper-asl</artifactId>
             <version>1.9.13</version>
         </dependency>
-        <!-- 上传组件包 -->
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-log4j12</artifactId>
+                <version>1.7.21</version>
+            </dependency>
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-log4j12</artifactId>
+                <version>1.7.21</version>
+            </dependency>
+            <!-- 上传组件包 -->
         <dependency>
             <groupId>commons-fileupload</groupId>
             <artifactId>commons-fileupload</artifactId>

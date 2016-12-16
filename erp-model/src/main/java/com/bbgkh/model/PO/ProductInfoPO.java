@@ -1,9 +1,11 @@
 package com.bbgkh.model.PO;
 
+import com.bbgkh.model.BaseModel;
+
 /**
  * Created by lixiang on 11/12/2016.
  */
-public class ProductInfoPO {
+public class ProductInfoPO extends BaseModel{
     private int id;
     private String productSysNo;
     private double buyPrice;
