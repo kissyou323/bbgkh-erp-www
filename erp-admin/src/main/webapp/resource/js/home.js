@@ -17,7 +17,7 @@ $(function () {
             success:function (datas) {
                 console.log(datas);
 
-                if(datas=="fail"){
+                if(datas=="false"){
                     alert("该用户名已经注册，请换一个重试");
                     window.location.reload();
 

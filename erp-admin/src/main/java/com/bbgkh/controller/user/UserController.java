@@ -51,7 +51,7 @@ public class UserController extends BaseController{
      * 进行登录
      * @return
      */
-    @PostMapping("user/logn")
+    @PostMapping("user/login")
     @ResponseBody
     public String userLogin(CustomerPO customerPO){
 
