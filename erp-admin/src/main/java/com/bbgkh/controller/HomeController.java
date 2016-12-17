@@ -34,15 +34,18 @@ public class HomeController extends BaseController{
     @ResponseBody
     public ModelAndView homePage(HttpServletRequest request){
 
-        for (Cookie cookie : request.getCookies()) {
+        if (request.getCookies() != null) {
+            for (Cookie cookie : request.getCookies()) {
 
-            if (cookie.getName().equals("uid")) {
-                String uid = cookie.getValue();
-                List<CustomerPO> poList = userService.selectById(uid);
-                request.getSession().setAttribute("customer",poList.get(0));
-                return new ModelAndView("dashBoard/mainBoard");
+                if (cookie.getName().equals("uid")) {
+                    String uid = cookie.getValue();
+                    List<CustomerPO> poList = userService.selectById(uid);
+                    request.getSession().setAttribute("customer",poList.get(0));
+                    return new ModelAndView("dashBoard/mainBoard");
+                }
             }
         }
+
 
         ModelAndView modelAndView = new ModelAndView("home");
         return modelAndView;

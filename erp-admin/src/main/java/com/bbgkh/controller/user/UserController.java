@@ -74,6 +74,7 @@ public class UserController extends BaseController{
             //set cookie and session
             String uid = customerPOS.get(0).getUid();
             Cookie cookie = new Cookie("uid",uid);
+            cookie.setPath("/bbgkh");
             cookie.setMaxAge(7200);
             response.addCookie(cookie);
             request.getSession(true).setAttribute("customer",customerPOS.get(0));

@@ -37,7 +37,12 @@
                             <tr class="odd gradeX">
                                 <td>${saleInfo.productSysNo}</td>
                                 <td>${saleInfo.salePrice}</td>
-                                <td>${saleInfo.sex}</td>
+                                <#if saleInfo.sex==1>
+                                    <td>女裤</td>
+                                <#else >
+                                    <td>男裤</td>
+                                </#if>
+
                                 <td>${saleInfo.color}</td>
                                 <td>${saleInfo.size}</td>
                                 <td>${saleInfo.saleNum}</td>

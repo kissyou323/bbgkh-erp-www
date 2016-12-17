@@ -10,9 +10,9 @@
         select * from sale where id = #{id}
     </select>
 
-    <insert id="insert" parameterType="com.bbgkh.model.DTO.SaleInfoDTO" >
-        INSERT INTO sale (productSysNo,salePrice,saleNum,sex,color,size)
-        VALUES ( #{productSysNo},#{salePrice},#{saleNum},#{sex},#{color},#{size})
+    <insert id="insert" parameterType="com.bbgkh.model.PO.SaleInfoPO" >
+        INSERT INTO sale (uid,productSysNo,salePrice,saleNum,sex,color,size)
+        VALUES (#{uid}, #{productSysNo},#{salePrice},#{saleNum},#{sex},#{color},#{size})
     </insert>
 
 </mapper>

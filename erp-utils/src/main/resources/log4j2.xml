@@ -5,9 +5,9 @@
                 <property name="LOG_LEVEL">INFO</property><!-- 日志输出级别 -->
                 <property name="FILE_SIZE">500MB</property><!--日志切割的最小单位 -->
 
-                <!--<property name="LOG_HOME">/opt/java/logs/bbgkh/</property>-->
+                <property name="LOG_HOME">/opt/java/logs/bbgkh/</property>
                 <!-- <property name="LOG_HOME">/opt/java/logs/mylog/</property> -->
-                <property name="LOG_HOME">E:\logs\bbgkh</property>
+                <!--<property name="LOG_HOME">E:\logs\bbgkh</property>-->
                 <property name="FILE_OUT_NAME">output</property>
                 <property name="FILE_Error_NAME">error</property>
 
