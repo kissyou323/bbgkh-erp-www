@@ -11,5 +11,5 @@ import java.util.List;
 public   interface BaseService {
     public  int insert(Object entity);
     public  List selectAll();
-    public  List selectById(int id);
+    public  List selectById(String id);
 }

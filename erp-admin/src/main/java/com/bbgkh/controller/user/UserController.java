@@ -12,6 +12,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import reactor.core.publisher.Flux;
 
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Stream;
@@ -53,14 +57,29 @@ public class UserController extends BaseController{
      */
     @PostMapping("user/login")
     @ResponseBody
-    public String userLogin(CustomerPO customerPO){
+    public String userLogin(HttpServletRequest request,
+                            HttpServletResponse response,
+                            CustomerPO customerPO){
 
         logger.info("验证登录名，用户输入的用户名为："+customerPO.getName());
         String returnStr = "false";
+        List<CustomerPO> customerPOS = new ArrayList<>();
+        try {
 
-        List<CustomerPO> customerPOS= userService.validateUser(customerPO.getName(),customerPO.getPassword());
+            customerPOS= userService.validateUser(customerPO.getName(),customerPO.getPassword());
+        }catch (Exception e){
+            e.printStackTrace();
+        }
         if (customerPOS.size()>0) {
+            //set cookie and session
+            String uid = customerPOS.get(0).getUid();
+            Cookie cookie = new Cookie("uid",uid);
+            cookie.setMaxAge(7200);
+            response.addCookie(cookie);
+            request.getSession(true).setAttribute("customer",customerPOS.get(0));
             returnStr = "ok";
+
+
         }
 
         return returnStr;

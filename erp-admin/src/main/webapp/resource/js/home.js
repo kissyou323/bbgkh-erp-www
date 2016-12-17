@@ -56,7 +56,8 @@ $(function () {
             success:function (datas) {
                 if(datas=="ok"){
                     //说明用户名和密码正确,且已经登录成功
-                    alert("恭喜你，登录成功！")
+                    alert("恭喜你，登录成功！");
+                    window.location.href="/bbgkh/home/mainDash";
 
                 }else{
                     alert("登录失败，请再次尝试");

@@ -16,7 +16,6 @@
     <packaging>war</packaging>
 
     <properties>
-        <SpringVersion>5.0.0.M2</SpringVersion>
         <SpringOldVersion>4.2.5.RELEASE</SpringOldVersion>
     </properties>
     <dependencies>

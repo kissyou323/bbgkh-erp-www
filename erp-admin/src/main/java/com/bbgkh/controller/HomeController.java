@@ -1,7 +1,9 @@
 package com.bbgkh.controller;
 
+import com.bbgkh.model.PO.CustomerPO;
 import com.bbgkh.model.PO.ProductInfoPO;
 import com.bbgkh.service.IHomeService;
+import com.bbgkh.service.IUserService;
 import com.sun.net.httpserver.HttpServer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -11,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
@@ -24,9 +27,22 @@ public class HomeController extends BaseController{
     @Autowired
     private IHomeService homeService;
 
+    @Autowired
+    private IUserService userService;
+
     @RequestMapping(value = "/")
     @ResponseBody
     public ModelAndView homePage(HttpServletRequest request){
+
+        for (Cookie cookie : request.getCookies()) {
+
+            if (cookie.getName().equals("uid")) {
+                String uid = cookie.getValue();
+                List<CustomerPO> poList = userService.selectById(uid);
+                request.getSession().setAttribute("customer",poList.get(0));
+                return new ModelAndView("dashBoard/mainBoard");
+            }
+        }
 
         ModelAndView modelAndView = new ModelAndView("home");
         return modelAndView;
@@ -34,6 +50,8 @@ public class HomeController extends BaseController{
     @RequestMapping(value = "home/mainDash")
     @ResponseBody
     public ModelAndView getMainPage(HttpServletRequest request){
+
+
 
         ModelAndView modelAndView = new ModelAndView("dashBoard/mainBoard");
 

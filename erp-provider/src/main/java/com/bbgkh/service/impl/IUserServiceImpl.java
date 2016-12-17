@@ -59,7 +59,7 @@ public class IUserServiceImpl implements IUserService {
     }
 
     @Override
-    public List selectById(int uid) {
+    public List selectById(String uid) {
         return userDao.selectById(uid);
     }
 

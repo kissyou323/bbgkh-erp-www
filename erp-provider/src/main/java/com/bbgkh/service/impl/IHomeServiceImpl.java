@@ -35,7 +35,7 @@ public class IHomeServiceImpl implements IHomeService {
     }
 
     @Override
-    public List selectById(int id) {
+    public List selectById(String id) {
         return null;
     }
 }

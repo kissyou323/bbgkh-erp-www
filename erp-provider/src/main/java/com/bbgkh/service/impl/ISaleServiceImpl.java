@@ -27,7 +27,7 @@ public class ISaleServiceImpl implements ISaleService {
     }
 
     @Override
-    public List selectById(int id) {
+    public List selectById(String id) {
         return null;
     }
 }

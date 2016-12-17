@@ -2,11 +2,14 @@ package com.bbgkh.model.PO;
 
 import com.bbgkh.model.BaseModel;
 
+import java.io.Serializable;
+
 /**
  * Created by lixiang on 12/16/2016.
  */
-public class CustomerPO extends BaseModel{
+public class CustomerPO extends BaseModel implements Serializable{
 
+    private static final long serialVersionUID = 7952011612529341638L;
     private Integer id;
     private String name;
     private String password;

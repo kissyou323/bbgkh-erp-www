@@ -11,7 +11,7 @@ import java.util.List;
 public interface BaseDAO {
     public int insert(Object entity);
 
-    public List selectById(int id);
+    public List selectById(String  uid);
 
     public List selectAll();
 }
