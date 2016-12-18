@@ -38,7 +38,13 @@ public class SaleController extends BaseController{
         BeanUtils.copyProperties(saleInfoDTO,saleInfoPO);
         String uid = ((CustomerPO)request.getSession().getAttribute("customer")).getUid();
         saleInfoPO.setUid(uid);
-        int a  = saleService.insert(saleInfoPO);
+        int a  = 3;
+        try {
+           a= saleService.insert(saleInfoPO);
+        } catch (Exception e) {
+            logger.error("插入销售数据失败",e);
+        }
+
         if(a!=1){
             returnStr="fail";
         }

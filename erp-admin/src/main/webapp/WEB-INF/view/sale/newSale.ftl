@@ -50,13 +50,13 @@
                                 </div>
                             </div>
                             <div class="col-lg-5">
-                                <div class="form-group">
+                                <div class="form-group" id="sexValue" data-select="1">
 
                                     <label class="radio-inline">
-                                        <input type="radio" name="sex" id="optionsRadiosInline1" value="1" checked>女裤
+                                        <input type="radio" name="sex" id="sexValue_1" data-value="1" checked>女裤
                                     </label>
                                     <label class="radio-inline">
-                                        <input type="radio" name="sex" id="optionsRadiosInline2" value="2">男裤
+                                        <input type="radio" name="sex" id="sexValue_2" data-value="2">男裤
                                     </label>
 
                                     <input name="saleNum" class="form-group-sm" value="1">
