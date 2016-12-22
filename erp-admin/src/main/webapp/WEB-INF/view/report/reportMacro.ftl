@@ -30,7 +30,7 @@
 
             <td>${saleInfo.color!''}</td>
             <td>${saleInfo.size!''}</td>
-            <td>${saleInfo.saleNum!}</td>
+            <td>${saleInfo.saleNum}</td>
             <td>${saleInfo.saleTime}</td>
         </tr>
         </#list>
