@@ -2,7 +2,7 @@
 <configuration status="OFF" monitorInterval="1800">
         <properties>
                 <!--优先级从高到低依次为：OFF、FATAL、ERROR、WARN、INFO、DEBUG、TRACE、ALL -->
-                <property name="LOG_LEVEL">INFO</property><!-- 日志输出级别 -->
+                <property name="LOG_LEVEL">DEBUG</property><!-- 日志输出级别 -->
                 <property name="FILE_SIZE">500MB</property><!--日志切割的最小单位 -->
 
                 <!--<property name="LOG_HOME">/Users/lixiang/java/logs/bbgkh</property>-->

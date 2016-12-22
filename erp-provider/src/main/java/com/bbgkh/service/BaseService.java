@@ -12,4 +12,5 @@ public   interface BaseService {
     public  int insert(Object entity);
     public  List selectAll();
     public  List selectById(String id);
+
 }

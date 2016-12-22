@@ -28,4 +28,9 @@ public class IReportServiceImpl implements IReportService {
     public List selectById(String uid) {
         return reportDao.selectById(uid);
     }
+
+    @Override
+    public List selectByDay(String uid,String timeStamp) {
+        return reportDao.selectByDay(uid,timeStamp);
+    }
 }

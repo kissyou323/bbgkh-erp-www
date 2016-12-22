@@ -1,6 +1,7 @@
 package com.bbgkh.dao.impl;
 
 import com.bbgkh.dao.IReportDao;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -20,6 +21,11 @@ public class IReportDaoImpl implements IReportDao {
 
     @Override
     public List selectAll() {
+        return null;
+    }
+
+    @Override
+    public List selectByDay(@Param("uid") String uid, @Param("timeStamp")  String timeStamp) {
         return null;
     }
 }

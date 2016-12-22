@@ -9,6 +9,9 @@
     <select id="selectById" parameterType="String" resultType="com.bbgkh.model.PO.SaleInfoPO">
         SELECT * from sale where TO_DAYS(saleTime) = TO_DAYS(NOW()) and uid=#{uid};
     </select>
+    <select id="selectByDay" resultType="com.bbgkh.model.PO.SaleInfoPO">
+        SELECT * from sale where date(saleTime) = FROM_UNIXTIME(#{timeStamp},'%Y-%m-%d')and uid=#{uid};
+    </select>
 
     <insert id="insert" parameterType="com.bbgkh.model.PO.SaleInfoPO" >
     </insert>

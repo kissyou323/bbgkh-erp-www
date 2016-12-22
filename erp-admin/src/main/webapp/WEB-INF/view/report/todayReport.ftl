@@ -1,6 +1,7 @@
+<#import "reportMacro.ftl" as report>
 <#include "../BasePage.ftl">
 <#macro mhead>
-
+<link href="${rsRoot}/data-picker/css/bootstrap-datetimepicker.css" rel="stylesheet" media="screen">
 </#macro>
 <#macro mbody>
 <div id="page-wrapper">
@@ -15,42 +16,20 @@
         <div class="col-lg-12">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    今天的销售情况
+                    <div class="row">
+                        <div class="col-sm-3">
+                            今天的销售情况
+                        </div>
+                        <div class="input-append date form_datetime col-sm-4"  id="datetimepicker"  data-date-format="yyyy-mm-dd">
+                            <input size="16" type="text" placeholder="点此选择日期" readonly>
+                            <span class="add-on"><i class="icon-th"></i></span>
+                        </div>
+                    </div>
+
                 </div>
                 <!-- /.panel-heading -->
-                <div class="panel-body">
-                    <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
-                        <thead>
-                        <tr>
-                            <th>货号</th>
-                            <th>售价</th>
-                            <th>男/女</th>
-                            <th>颜色</th>
-                            <th>尺码</th>
-                            <th>销售数量</th>
-                            <th>销售时间</th>
-
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <#list infoPos as saleInfo>
-                            <tr class="odd gradeX">
-                                <td>${saleInfo.productSysNo}</td>
-                                <td>${saleInfo.salePrice}</td>
-                                <#if saleInfo.sex==1>
-                                    <td>女裤</td>
-                                <#else >
-                                    <td>男裤</td>
-                                </#if>
-
-                                <td>${saleInfo.color}</td>
-                                <td>${saleInfo.size}</td>
-                                <td>${saleInfo.saleNum}</td>
-                                <td>${saleInfo.saleTime}</td>
-                            </tr>
-                        </#list>
-                        </tbody>
-                    </table>
+                <div id="reportDatas" class="panel-body">
+                    <@report.reportData infoPos />
                     <!-- /.table-responsive -->
                 </div>
                 <!-- /.panel-body -->
@@ -62,4 +41,7 @@
     <!-- /.row -->
 
 </div>
+<script type="text/javascript" src="${rsRoot}/data-picker/js/bootstrap-datetimepicker.js" charset="UTF-8"></script>
+<script type="text/javascript" src="${rsRoot}/data-picker/js/locales/bootstrap-datetimepicker.zh-CN.js" charset="UTF-8"></script>
+<script src="${rsRoot}js/report/report.js"></script>
 </#macro>
