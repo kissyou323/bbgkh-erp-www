@@ -1,15 +1,25 @@
-package com.bbgkh.model.PO;
+package com.bbgkh.model.PO.product;
 
 import com.bbgkh.model.BaseModel;
+import com.bbgkh.model.PO.product.attribute.AttributeInfoPO;
 
-/**
+/**这个实体类仅仅用于描述一个产品，而非一个商品
  * Created by lixiang on 11/12/2016.
  */
 public class ProductInfoPO extends BaseModel{
     private int id;
     private String productSysNo;
-    private double buyPrice;
-    private int invotory;
+
+
+    private AttributeInfoPO attributeInfo;
+
+    public AttributeInfoPO getAttributeInfo() {
+        return attributeInfo;
+    }
+
+    public void setAttributeInfo(AttributeInfoPO attributeInfo) {
+        this.attributeInfo = attributeInfo;
+    }
 
     public int getId() {
         return id;
@@ -27,19 +37,5 @@ public class ProductInfoPO extends BaseModel{
         this.productSysNo = productSysNo;
     }
 
-    public double getBuyPrice() {
-        return buyPrice;
-    }
 
-    public void setBuyPrice(double buyPrice) {
-        this.buyPrice = buyPrice;
-    }
-
-    public int getInvotory() {
-        return invotory;
-    }
-
-    public void setInvotory(int invotory) {
-        this.invotory = invotory;
-    }
 }
