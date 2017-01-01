@@ -1,9 +1,7 @@
 package com.bbgkh.service.impl;
 
 
-import com.alibaba.fastjson.JSON;
 import com.bbgkh.dao.IHomeDao;
-import com.bbgkh.model.PO.ProductInfoPO;
 import com.bbgkh.model.PO.SaleInfoPO;
 import com.bbgkh.service.IHomeService;
 import org.springframework.beans.factory.annotation.Autowired;

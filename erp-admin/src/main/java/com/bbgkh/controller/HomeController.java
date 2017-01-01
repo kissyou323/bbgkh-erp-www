@@ -1,15 +1,11 @@
 package com.bbgkh.controller;
 
 import com.bbgkh.model.PO.CustomerPO;
-import com.bbgkh.model.PO.ProductInfoPO;
 import com.bbgkh.service.IHomeService;
 import com.bbgkh.service.IUserService;
-import com.sun.net.httpserver.HttpServer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
