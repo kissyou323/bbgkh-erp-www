@@ -13,10 +13,12 @@ public class UserUtils {
 
        String uid=CookieUtils.getCookieValue(request, "uid").trim();
         if (uid.equals("")) {
-            uid =((CustomerPO)request.getSession().getAttribute("customer")).getUid();
-            if (uid.trim().equals("")) {
-                logger.error("UserUtils中获取uid为空");
+            try {
+                uid =((CustomerPO)request.getSession().getAttribute("customer")).getUid();
+            } catch (Exception e) {
+                logger.info("UserUtils中获取uid为空");
             }
+
         }
         return uid;
     }

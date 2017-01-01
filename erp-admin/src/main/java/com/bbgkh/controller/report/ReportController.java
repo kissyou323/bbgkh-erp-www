@@ -31,7 +31,10 @@ public class ReportController extends BaseController{
     public ModelAndView newSalePage(HttpServletRequest request, HttpServletResponse response){
 
         Map<String , Object> map = new HashMap<>();
-        String uid =((CustomerPO)request.getSession().getAttribute("customer")).getUid();
+        String uid =UserUtils.getUid(request);
+        if (uid.equals("")) {
+            return new ModelAndView("redirect:/");
+        }
         List<SaleInfoPO> infoPos = reportService.selectById(uid);
         map.put("infoPos",infoPos);
 

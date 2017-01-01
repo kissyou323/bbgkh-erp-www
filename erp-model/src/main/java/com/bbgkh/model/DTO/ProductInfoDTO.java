@@ -7,11 +7,29 @@ public class ProductInfoDTO {
 
     private String productSysNo;
 
-    private String sex;
+    private String sexId;
 
-    private String color;
 
-    private String size;
+    private String colorInfoId;
+
+    private String sizeInfoId;
+
+
+    public String getColorInfoId() {
+        return colorInfoId;
+    }
+
+    public void setColorInfoId(String colorInfoId) {
+        this.colorInfoId = colorInfoId;
+    }
+
+    public String getSizeInfoId() {
+        return sizeInfoId;
+    }
+
+    public void setSizeInfoId(String sizeInfoId) {
+        this.sizeInfoId = sizeInfoId;
+    }
 
     public String getProductSysNo() {
         return productSysNo;
@@ -21,27 +39,11 @@ public class ProductInfoDTO {
         this.productSysNo = productSysNo;
     }
 
-    public String getSex() {
-        return sex;
+    public String getSexId() {
+        return sexId;
     }
 
-    public void setSex(String sex) {
-        this.sex = sex;
-    }
-
-    public String getColor() {
-        return color;
-    }
-
-    public void setColor(String color) {
-        this.color = color;
-    }
-
-    public String getSize() {
-        return size;
-    }
-
-    public void setSize(String size) {
-        this.size = size;
+    public void setSexId(String sexId) {
+        this.sexId = sexId;
     }
 }
