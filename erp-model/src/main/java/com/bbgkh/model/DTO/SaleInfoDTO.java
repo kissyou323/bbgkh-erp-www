@@ -5,6 +5,7 @@ package com.bbgkh.model.DTO;
  */
 public class SaleInfoDTO {
 
+    private Integer id;
     private String productSysNo;
     private double salePrice;
     private int saleNum;
@@ -12,6 +13,13 @@ public class SaleInfoDTO {
     private String color;
     private String size;
 
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
     public String getProductSysNo() {
         return productSysNo;

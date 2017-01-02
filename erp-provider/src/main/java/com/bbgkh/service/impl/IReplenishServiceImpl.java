@@ -26,4 +26,9 @@ public class IReplenishServiceImpl  implements IReplenishService{
     public List selectById(String uid) {
         return null;
     }
+
+    @Override
+    public int update(Object entity) {
+        return 0;
+    }
 }

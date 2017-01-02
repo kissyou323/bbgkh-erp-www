@@ -64,6 +64,11 @@ public class IUserServiceImpl implements IUserService {
     }
 
     @Override
+    public int update(Object entity) {
+        return 0;
+    }
+
+    @Override
     public List<CustomerPO> validateUser(String name,String oldPassword) {
         String newName = StringUtils.getUID(name);
         if(oldPassword.trim().equals("")){

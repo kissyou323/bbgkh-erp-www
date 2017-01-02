@@ -14,4 +14,6 @@ public interface BaseDAO {
     public List selectById(String  uid);
 
     public List selectAll();
+
+    public int update(Object entity);
 }

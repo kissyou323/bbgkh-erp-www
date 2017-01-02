@@ -25,6 +25,11 @@ public class IReportDaoImpl implements IReportDao {
     }
 
     @Override
+    public int update(Object entity) {
+        return 0;
+    }
+
+    @Override
     public List selectByDay(@Param("uid") String uid, @Param("timeStamp")  String timeStamp) {
         return null;
     }

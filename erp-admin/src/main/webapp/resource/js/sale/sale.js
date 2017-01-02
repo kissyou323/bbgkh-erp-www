@@ -34,9 +34,14 @@ $(function () {
 
     $("#divController").on('click',"input[id^=sexValue_]",function (el) {
         changeSelected(el);
-    })
+    });
 
-})
+
+
+
+});
+
+
 
 function changeSelected(el) {
 
@@ -58,4 +63,3 @@ function changeSelected(el) {
     //改变值
     $(parentNode).attr("data-select",source.attr("data-value"));
 }
-//method="post" action="/bbgkh/sale/newSaleInfo"

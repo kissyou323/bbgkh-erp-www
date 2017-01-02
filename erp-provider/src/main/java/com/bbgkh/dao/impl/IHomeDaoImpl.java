@@ -24,4 +24,9 @@ public class IHomeDaoImpl implements IHomeDao {
     public List selectAll() {
         return null;
     }
+
+    @Override
+    public int update(Object entity) {
+        return 0;
+    }
 }

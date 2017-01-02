@@ -30,4 +30,9 @@ public class ISaleServiceImpl implements ISaleService {
     public List selectById(String id) {
         return null;
     }
+
+    @Override
+    public int update(Object entity) {
+        return saleDao.update(entity);
+    }
 }

@@ -40,8 +40,9 @@
     </div>
     <!-- /.row -->
 
+    <@report.modifySaleInfo />
 </div>
+</#macro>
 <script type="text/javascript" src="${rsRoot}/data-picker/js/bootstrap-datetimepicker.js" charset="UTF-8"></script>
 <script type="text/javascript" src="${rsRoot}/data-picker/js/locales/bootstrap-datetimepicker.zh-CN.js" charset="UTF-8"></script>
 <script src="${rsRoot}js/report/report.js"></script>
-</#macro>

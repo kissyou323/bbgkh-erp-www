@@ -26,6 +26,11 @@ public class IUserDaoImpl implements IUserDao {
     }
 
     @Override
+    public int update(Object entity) {
+        return 0;
+    }
+
+    @Override
     public List<CustomerPO> validateUser(@Param("uid") String uid, @Param("password") String password) {
         return null;
     }

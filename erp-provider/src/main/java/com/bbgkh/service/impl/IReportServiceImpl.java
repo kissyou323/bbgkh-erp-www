@@ -30,6 +30,11 @@ public class IReportServiceImpl implements IReportService {
     }
 
     @Override
+    public int update(Object entity) {
+        return 0;
+    }
+
+    @Override
     public List selectByDay(String uid,String timeStamp) {
         return reportDao.selectByDay(uid,timeStamp);
     }

@@ -24,4 +24,9 @@ public class IAttributeServiceImpl implements IAttributeService {
     public List selectById(String uid) {
         return null;
     }
+
+    @Override
+    public int update(Object entity) {
+        return 0;
+    }
 }

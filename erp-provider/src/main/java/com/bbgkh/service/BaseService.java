@@ -12,5 +12,6 @@ public   interface BaseService {
     public  int insert(Object entity);
     public  List selectAll();
     public  List selectById(String uid);
+    public  int update(Object entity);
 
 }

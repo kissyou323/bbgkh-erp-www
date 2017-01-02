@@ -36,4 +36,9 @@ public class IHomeServiceImpl implements IHomeService {
     public List selectById(String id) {
         return null;
     }
+
+    @Override
+    public int update(Object entity) {
+        return 0;
+    }
 }

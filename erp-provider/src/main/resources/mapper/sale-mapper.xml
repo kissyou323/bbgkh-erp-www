@@ -14,5 +14,9 @@
         INSERT INTO sale (uid,productSysNo,salePrice,saleNum,sex,color,size)
         VALUES (#{uid}, #{productSysNo},#{salePrice},#{saleNum},#{sex},#{color},#{size})
     </insert>
+    <update id="update" parameterType="com.bbgkh.model.PO.SaleInfoPO" >
+        UPDATE sale SET productSysNo=#{productSysNo},salePrice=#{salePrice},saleNum=#{saleNum},sex=#{sex},color=#{color},
+        size=#{size} WHERE id =#{id} AND uid=#{uid}
+    </update>
 
 </mapper>

@@ -22,4 +22,9 @@ public class IReplenishDaoImpl implements IReplenishDao{
     public List selectAll() {
         return null;
     }
+
+    @Override
+    public int update(Object entity) {
+        return 0;
+    }
 }
