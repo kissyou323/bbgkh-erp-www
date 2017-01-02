@@ -80,6 +80,9 @@
                         <a href="${webRoot}/home/mainDash"><i class="fa fa-dashboard fa-fw"></i>主面板</a>
                     </li>
                     <li>
+                        <a href="${webRoot}/replenish/newReplenish"><i class="fa fa-dashboard fa-fw"></i>进货</a>
+                    </li>
+                    <li>
                         <a href="${webRoot}/sale/newSalePage"><i class="fa fa-dashboard fa-fw"></i>卖货</a>
                     </li>
                     <li>

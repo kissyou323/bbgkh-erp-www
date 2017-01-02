@@ -1,9 +1,11 @@
 package com.bbgkh.model.DTO;
 
+import com.bbgkh.model.BaseModel;
+
 /**
  * Created by lixiang on 12/19/2016.
  */
-public class ProductInfoDTO {
+public class ProductInfoDTO extends BaseModel{
 
     private String productSysNo;
 
@@ -14,6 +16,26 @@ public class ProductInfoDTO {
 
     private String sizeInfoId;
 
+    private String inventory;
+
+    private String buyPrice;
+
+
+    public String getInventory() {
+        return inventory;
+    }
+
+    public void setInventory(String inventory) {
+        this.inventory = inventory;
+    }
+
+    public String getBuyPrice() {
+        return buyPrice;
+    }
+
+    public void setBuyPrice(String buyPrice) {
+        this.buyPrice = buyPrice;
+    }
 
     public String getColorInfoId() {
         return colorInfoId;

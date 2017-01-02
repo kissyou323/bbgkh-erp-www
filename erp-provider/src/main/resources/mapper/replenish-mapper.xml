@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.bbgkh.dao.IReplenishDao" >
+
+    <select id="selectAll" resultType="com.bbgkh.model.PO.CustomerPO">
+        select  *  from sale
+    </select>
+
+    <select id="selectById" parameterType="String" resultType="com.bbgkh.model.PO.CustomerPO">
+        select * from customer where uid = #{uid}
+    </select>
+    <select id="validateUser" resultType="com.bbgkh.model.PO.CustomerPO">
+        select * from customer where uid = #{uid}
+        <if test="password != null and password!= '' ">
+            AND password = #{password}
+        </if>
+    </select>
+
+    <insert id="insert" parameterType="com.bbgkh.model.PO.CustomerPO" >
+        INSERT INTO customer (uid,name,password,mobilePhone,email)
+        VALUES ( #{uid},#{name},#{password},#{mobilePhone},#{email})
+    </insert>
+
+</mapper>

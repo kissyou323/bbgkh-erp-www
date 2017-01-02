@@ -38,7 +38,7 @@
         </div>
         <div class="col-lg-3 col-md-6">
             <div class="panel panel-green">
-                <a href="javascript:;">
+                <a href="${webRoot}/replenish/newReplenish">
                     <div class="panel-heading">
                         <div class="row">
                             <div class="col-xs-3">

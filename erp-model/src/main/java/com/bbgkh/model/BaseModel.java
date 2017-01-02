@@ -8,6 +8,18 @@ public class BaseModel {
     //使用String类型
     private String uid;
 
+    //UID，为公司编号，pid是个人编号
+    //为以后权限控制方便
+    private String pid;
+
+    public String getPid() {
+        return pid;
+    }
+
+    public void setPid(String pid) {
+        this.pid = pid;
+    }
+
     public String getUid() {
         return uid;
     }
