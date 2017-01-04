@@ -11,7 +11,8 @@
         <th>男/女</th>
         <th>颜色</th>
         <th>尺码</th>
-        <th>销售数量</th>
+        <th>数量</th>
+        <th>时间</th>
         <th>操作</th>
 
     </tr>
@@ -31,6 +32,7 @@
             <td id="color_${saleInfo.id}">${saleInfo.color!''}</td>
             <td id="size_${saleInfo.id}">${saleInfo.size!''}</td>
             <td id="saleNum_${saleInfo.id}">${saleInfo.saleNum}</td>
+            <td >${saleInfo.saleTime?datetime("yyyy-mm-dd HH:mm:ss")?time}</td>
             <td>
                 <button  v-on:click="modifySaleInfo" data-value="${saleInfo.id}" class="btn btn-outline btn-default" >修改</button>
             </td>
