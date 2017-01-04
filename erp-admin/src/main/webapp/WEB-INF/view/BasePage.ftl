@@ -12,13 +12,13 @@
     <meta name="viewport" content="minimal-ui=yes,width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
     <meta http-equiv="Cache-Control" content="no-transform " />
     <!-- Bootstrap Core CSS -->
-    <link href="${rsRoot}vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="${rsRoot}vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- MetisMenu CSS -->
     <link href="${rsRoot}vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="${rsRoot}dist/css/sb-admin-2.css" rel="stylesheet">
+    <link href="${rsRoot}dist/css/sb-admin-2.min.css" rel="stylesheet">
 
     <!-- Morris Charts CSS -->
     <link href="${rsRoot}vendor/morrisjs/morris.css" rel="stylesheet">
@@ -26,10 +26,10 @@
     <!-- Custom Fonts -->
     <link href="${rsRoot}vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <!-- jQuery -->
-    <script src="${rsRoot}vendor/jquery/jquery.js"></script>
+    <script src="${rsRoot}vendor/jquery/jquery.min.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="${rsRoot}vendor/bootstrap/js/bootstrap.js"></script>
+    <script src="${rsRoot}vendor/bootstrap/js/bootstrap.min.js"></script>
 
     <!-- Metis Menu Plugin JavaScript -->
     <script src="${rsRoot}vendor/metisMenu/metisMenu.js"></script>
@@ -40,9 +40,9 @@
 <#--<script src="${rsRoot}data/morris-data.js"></script>-->
 
     <!-- Custom Theme JavaScript -->
-    <script src="${rsRoot}dist/js/sb-admin-2.js"></script>
+    <script src="${rsRoot}dist/js/sb-admin-2.min.js"></script>
 
-    <script src="${rsRoot}dist/js/vue.js"></script>
+    <script src="${rsRoot}dist/js/vue.min.js"></script>
     <script> var webRoot ="/bbgkh"</script>
 <@mhead/>
 </head>
