@@ -8,8 +8,23 @@ $(function () {
     Vue.config.devtools = true;
 
 
+    var dataComponent ={
+        saleInfo: {
+            id: 1,
+            productSysNo: 1,
+            salePrice: 1,
+            sex: 1,
+            color: 1,
+            size: 1,
+            saleNum: 1
+        }
+    }
+
     Vue.component('report-data', {
         template:'#reportData-component',
+        data:function(){
+            return dataComponent;
+        },
         methods:{
             modifySaleInfo:function (el) {
 
