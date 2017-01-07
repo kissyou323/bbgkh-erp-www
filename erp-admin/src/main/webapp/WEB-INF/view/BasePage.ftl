@@ -42,7 +42,7 @@
     <!-- Custom Theme JavaScript -->
     <script src="${rsRoot}dist/js/sb-admin-2.min.js"></script>
 
-    <script src="${rsRoot}dist/js/vue.min.js"></script>
+    <script src="${rsRoot}dist/js/vue.js"></script>
     <script> var webRoot ="/bbgkh"</script>
 <@mhead/>
 </head>

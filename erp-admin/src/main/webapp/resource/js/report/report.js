@@ -5,6 +5,36 @@
 
 
 $(function () {
+    Vue.config.devtools = true;
+
+
+    Vue.component('report-data', {
+        template:'#reportData-component',
+        methods:{
+            modifySaleInfo:function (el) {
+
+                var source = $(el.target);
+                var saleInfoId = source.attr("data-value");
+                var saleInfo={
+                    id:saleInfoId,
+                    productSysNo:$("#productSysNo_"+saleInfoId).text(),
+                    salePrice:$("#salePrice_"+saleInfoId).text(),
+                    sex:$("#sex_"+saleInfoId).attr("value"),
+                    color:$("#color_"+saleInfoId).text(),
+                    size:$("#size_"+saleInfoId).text(),
+                    saleNum:$("#saleNum_"+saleInfoId).text(),
+
+                };
+                this.saleInfo =saleInfo;
+
+                // aa.$set(0, Object.assign({},aa[0],{name:'jxj2',age:26}))
+
+
+                $("#modifyModal").modal('show');
+            },
+        }
+    });
+
     var modifyModal = new Vue({
         el:'#page-wrapper',
         data:{
@@ -15,7 +45,7 @@ $(function () {
                 sex:1,
                 color:1,
                 size:1,
-                saleNum:1,
+                saleNum:1
             }
 
         },
