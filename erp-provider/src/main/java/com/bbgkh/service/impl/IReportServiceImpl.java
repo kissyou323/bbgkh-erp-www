@@ -1,11 +1,15 @@
 package com.bbgkh.service.impl;
 
 import com.bbgkh.dao.IReportDao;
+import com.bbgkh.model.BaseInfo;
 import com.bbgkh.service.IReportService;
+import org.apache.commons.collections.map.HashedMap;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by lixiang on 12/17/2016.
@@ -35,7 +39,10 @@ public class IReportServiceImpl implements IReportService {
     }
 
     @Override
-    public List selectByDay(String uid,String timeStamp) {
-        return reportDao.selectByDay(uid,timeStamp);
+    public BaseInfo selectByDay(String uid, String timeStamp) {
+        BaseInfo baseInfo = new BaseInfo("0");
+        List reportInfos = reportDao.selectByDay(uid,timeStamp);
+        baseInfo.setObject(reportInfos);
+        return baseInfo;
     }
 }

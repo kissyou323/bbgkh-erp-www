@@ -9,16 +9,27 @@ $(function () {
 
 
     var dataComponent ={
-        saleInfo: {
-            id: 1,
-            productSysNo: 1,
-            salePrice: 1,
-            sex: 1,
-            color: 1,
-            size: 1,
-            saleNum: 1
+        reportInfos: [
+
+        ]
+    };
+
+    var saleData ={
+        saleInfo:{
+            id:1,
+            productSysNo:1,
+            salePrice:1,
+            sex:1,
+            color:1,
+            size:1,
+            saleNum:1
         }
-    }
+    };
+
+    Vue.filter('time', function (value) {
+        var myDate =new Date(parseInt(value) * 1000);
+        return myDate.getHours()+":"+myDate.getMinutes();
+    })
 
     Vue.component('report-data', {
         template:'#reportData-component',
@@ -26,32 +37,30 @@ $(function () {
             return dataComponent;
         },
         methods:{
-            modifySaleInfo:function (el) {
+            modifySaleInfo:function (index,el) {
 
-                var source = $(el.target);
-                var saleInfoId = source.attr("data-value");
-                var saleInfo={
-                    id:saleInfoId,
-                    productSysNo:$("#productSysNo_"+saleInfoId).text(),
-                    salePrice:$("#salePrice_"+saleInfoId).text(),
-                    sex:$("#sex_"+saleInfoId).attr("value"),
-                    color:$("#color_"+saleInfoId).text(),
-                    size:$("#size_"+saleInfoId).text(),
-                    saleNum:$("#saleNum_"+saleInfoId).text(),
-
-                };
-                this.saleInfo =saleInfo;
-
-                // aa.$set(0, Object.assign({},aa[0],{name:'jxj2',age:26}))
-
+                saleData.saleInfo=dataComponent.reportInfos[index];
 
                 $("#modifyModal").modal('show');
             },
         }
     });
 
+    Vue.component('modify-data', {
+        template:'#modifyData-component',
+        data:function(){
+            return saleData;
+        },
+        methods:{
+
+            saveModify:function () {
+                modifyData();
+            }
+        }
+    });
+
     var modifyModal = new Vue({
-        el:'#page-wrapper',
+        el:'#divController',
         data:{
             saleInfo:{
                 id:1,
@@ -65,57 +74,12 @@ $(function () {
 
         },
         methods:{
-            modifySaleInfo:function (el) {
-
-                var source = $(el.target);
-                var saleInfoId = source.attr("data-value");
-                var saleInfo={
-                    id:saleInfoId,
-                    productSysNo:$("#productSysNo_"+saleInfoId).text(),
-                    salePrice:$("#salePrice_"+saleInfoId).text(),
-                    sex:$("#sex_"+saleInfoId).attr("value"),
-                    color:$("#color_"+saleInfoId).text(),
-                    size:$("#size_"+saleInfoId).text(),
-                    saleNum:$("#saleNum_"+saleInfoId).text(),
-
-                };
-                this.saleInfo =saleInfo;
-
-               // aa.$set(0, Object.assign({},aa[0],{name:'jxj2',age:26}))
 
 
-                $("#modifyModal").modal('show');
-            },
-            saveModify:function () {
-                $.ajax({
-                    url:webRoot+"/sale/modifySaleInfo",
-                    type:'POST',
-                    data:this.saleInfo,
-
-                    success:function (data) {
-                        if(data=="ok"){
-                            $("#addSuccess").show();
-                            setTimeout(function() {
-                                window.location.reload();
-                            }, 1500);
-                        }else{
-                            window.location.reload();
-                        }
-
-                    },
-                    fail:function () {
-                        console.log("fail");
-                    }
-                })
-
-            }
         }
 
     });
 
-    var a =1;
-    var totalAmount=getTotalPrice();
-    $("#totalAmount").html(totalAmount);
 
     $("#datetimepicker").datetimepicker({
         format: "yyyy MM dd",
@@ -125,56 +89,76 @@ $(function () {
         language:'zh-CN'
     }).on('changeDate',function (ev) {
         var timeStamp = ev.date.valueOf()/1000;
+        getReportData(timeStamp)
+    });
+
+
+    var timStamp = Date.parse(new Date())/1000;
+    getReportData(timStamp);
+
+
+
+    function getReportData(timeStamp) {
         $.ajax({
             url:webRoot+"/report/getReport/"+timeStamp,
             type:'GET',
-            dataType:'html',
+            dataType:'json',
             success:function (data) {
-                $("#reportDatas").empty();
-                $("#reportDatas").html(data);
-                var totalAmount=getTotalPrice();
-                $("#totalAmount").html(totalAmount);
+                if(data['error']==0){
+                    dataComponent.reportInfos=data['object'];
+                    getTotalPrice();
+                }else{
+                    alert(data['message'])
+                }
+
             },
             fail:function () {
                 console.log("fail");
             }
         })
-    });
-
-    $("#divController").on('click',"#modifySaleInfo",function (el) {
-
-     //   modifySaleInfo(el,1);
-    });
-});
-
-
-/*function modifySaleInfo(el,type) {
-
-    if(type==1){
-        var source = $(el.target);
-        var saleInfoId = source.attr("data-value");
-        var saleInfo={
-            productSysNo:$("#productSysNo_"+saleInfoId).text(),
-            salePrice:$("#salePrice_"+saleInfoId).text(),
-            sex:$("#sex_"+saleInfoId).attr("value"),
-            color:$("#color_"+saleInfoId).text(),
-            size:$("#size_"+saleInfoId).text(),
-            saleNum:$("#saleNum_"+saleInfoId).text()
-        };
-
-
-
-        $("#modifyModal").modal('show');
     }
 
 
-}*/
+    function modifyData() {
+        $.ajax({
+            url:webRoot+"/sale/modifySaleInfo",
+            type:'POST',
+            data:saleData.saleInfo,
 
-function getTotalPrice() {
-    var total = 0;
-    $("td[data-type=salePrice]").each(function (el) {
-        total+=parseInt(this.innerText);
-    });
-    return total;
-}
+            success:function (data) {
+                if(data=="ok"){
+                    $("#addSuccess").show();
+                    setTimeout(function() {
+                        window.location.reload();
+                    }, 1500);
+                }else{
+                    window.location.reload();
+                }
+
+            },
+            fail:function () {
+                console.log("fail");
+            }
+        })
+    }
+
+
+    function getTotalPrice() {
+        var total = 0;
+        for(var i = 0;i<dataComponent.reportInfos.length;i++){
+            total+=dataComponent.reportInfos[i].salePrice;
+        }
+
+        $("#totalAmount").html(total);
+        return total;
+    }
+
+});
+
+
+
+
+
+
+
 

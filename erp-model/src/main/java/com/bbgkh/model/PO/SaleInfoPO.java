@@ -2,6 +2,8 @@ package com.bbgkh.model.PO;
 
 import com.bbgkh.model.BaseModel;
 
+import java.text.SimpleDateFormat;
+
 /**
  * Created by lixiang on 14/12/2016.
  */

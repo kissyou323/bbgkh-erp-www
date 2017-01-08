@@ -1,15 +1,15 @@
 package com.bbgkh.controller.user;
 
+import com.alibaba.fastjson.JSON;
+import com.bbgkh.controller.BaseConfig;
 import com.bbgkh.controller.BaseController;
+import com.bbgkh.model.BaseInfo;
 import com.bbgkh.model.PO.CustomerPO;
 import com.bbgkh.service.IUserService;
 import com.bbgkh.utils.MD5Utils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 import reactor.core.publisher.Flux;
 
 import javax.servlet.http.Cookie;
@@ -19,6 +19,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Stream;
+
+import static com.bbgkh.controller.BaseConfig.ACCESS;
+import static com.bbgkh.controller.BaseConfig.CHARSET;
 
 /**
  * Created by lixiang on 12/16/2016.
@@ -55,20 +58,21 @@ public class UserController extends BaseController{
      * 进行登录
      * @return
      */
-    @PostMapping("user/login")
+    @RequestMapping(value = {"user/login"} ,produces = {CHARSET})
     @ResponseBody
     public String userLogin(HttpServletRequest request,
                             HttpServletResponse response,
                             CustomerPO customerPO){
 
         logger.info("验证登录名，用户输入的用户名为："+customerPO.getName());
-        String returnStr = "false";
+        BaseInfo baseInfo = null;
         List<CustomerPO> customerPOS = new ArrayList<>();
         try {
 
             customerPOS= userService.validateUser(customerPO.getName(),customerPO.getPassword());
         }catch (Exception e){
             e.printStackTrace();
+            baseInfo = new BaseInfo("101","查询数据库失败");
         }
         if (customerPOS.size()>0) {
             //set cookie and session
@@ -78,12 +82,11 @@ public class UserController extends BaseController{
             cookie.setMaxAge(7200);
             response.addCookie(cookie);
             request.getSession(true).setAttribute("customer",customerPOS.get(0));
-            returnStr = "ok";
+            baseInfo = new BaseInfo("0","登录成功");
 
 
         }
-
-        return returnStr;
+        return JSON.toJSONString(baseInfo);
 
     }
 

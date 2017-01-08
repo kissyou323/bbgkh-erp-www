@@ -104,7 +104,7 @@
                         <a href="${webRoot}/sale/newSalePage"><i class="fa fa-dashboard fa-fw"></i>卖货</a>
                     </li>
                     <li>
-                        <a href="${webRoot}/report/todayReport"><i class="fa fa-dashboard fa-fw"></i>今日销售</a>
+                        <a href="${webRoot}/showPage/report-todayReport"><i class="fa fa-dashboard fa-fw"></i>今日销售</a>
                     </li>
                 </ul>
             </div>
@@ -119,8 +119,6 @@
 
 </div>
 <!-- /#wrapper -->
-
-
 
 </body>
 </html>

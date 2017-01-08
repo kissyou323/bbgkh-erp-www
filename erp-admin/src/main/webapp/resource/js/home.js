@@ -3,6 +3,70 @@
  */
 
 $(function () {
+
+    var loginVue = new Vue({
+        el:'#divController',
+        data:{
+            customerInfo:{
+                name:"",
+                password:""
+            }
+
+        },
+        methods:{
+            login:function () {
+
+                $.ajax({
+                    url:webRoot+"/user/login/",
+                    data:this.customerInfo,
+                    type:'POST',
+                    success:function (datas) {
+                        if(datas['error']==0){
+                            //说明用户名和密码正确,且已经登录成功
+                            alert(datas['message']);
+                            window.location.href=webRoot+"/showPage/dashBoard-mainBoard";
+
+                        }else{
+                            alert(datas['message']);
+                            window.location.reload();
+                        }
+                    },
+                    fail:function () {
+
+                    }
+                });
+
+            },
+            saveModify:function () {
+                $.ajax({
+                    url:webRoot+"/sale/modifySaleInfo",
+                    type:'POST',
+                    data:this.saleInfo,
+
+                    success:function (data) {
+                        if(data=="ok"){
+                            $("#addSuccess").show();
+                            setTimeout(function() {
+                                window.location.reload();
+                            }, 1500);
+                        }else{
+                            window.location.reload();
+                        }
+
+                    },
+                    fail:function () {
+                        console.log("fail");
+                    }
+                })
+
+            }
+        }
+
+    });
+
+
+
+
     $("#registerButton").on("click",function (el) {
         var name = $("#userName").val();
         var password =$("#password").val();
@@ -42,32 +106,6 @@ $(function () {
             }
         })
     });
-    $("#loginButton").on("click",function (el) {
-        var name = $("#userName").val();
-        var password =$("#password").val();
-        var customer={
-            name:name,
-            password:password
-        };
-        $.ajax({
-            url:"/bbgkh/user/login/",
-            data:customer,
-            type:'POST',
-            success:function (datas) {
-                if(datas=="ok"){
-                    //说明用户名和密码正确,且已经登录成功
-                    alert("恭喜你，登录成功！");
-                    window.location.href="/bbgkh/home/mainDash";
 
-                }else{
-                    alert("登录失败，请再次尝试");
-                    window.location.reload();
-                }
-            },
-            fail:function () {
-
-            }
-        })
-    });
 
 })
