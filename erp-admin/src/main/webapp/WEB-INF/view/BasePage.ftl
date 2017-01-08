@@ -9,7 +9,6 @@
     <meta content="black" name="apple-mobile-web-app-status-bar-style" />
     <meta content="telephone=no" name="format-detection" />
     <meta name="applicable-device" content="mobile" />
-    <meta name="viewport" content="minimal-ui=yes,width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
     <meta http-equiv="Cache-Control" content="no-transform " />
     <!-- Bootstrap Core CSS -->
     <link href="${rsRoot}vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
