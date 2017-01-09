@@ -71,12 +71,13 @@ public class UserController extends BaseController{
         BaseInfo baseInfo = null;
 
         Subject subject = SecurityUtils.getSubject() ;
-        UsernamePasswordToken token = new UsernamePasswordToken(customerPO.getName(),customerPO.getPassword()) ;
+        UsernamePasswordToken token = new UsernamePasswordToken(customerPO.getName(),MD5Utils.getMd5(customerPO.getPassword())) ;
         try {
             subject.login(token);
             baseInfo = new BaseInfo("0","登录成功");
         }catch (Exception e){
             //这里将异常打印关闭是因为如果登录失败的话会自动抛异常
+            baseInfo = new BaseInfo("100","登录验证失败");
             e.printStackTrace();
 
         }

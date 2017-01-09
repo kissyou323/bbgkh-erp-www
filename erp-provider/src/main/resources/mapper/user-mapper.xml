@@ -7,18 +7,17 @@
     </sql>
 
     <select id="findUserByUsername" parameterType="String" resultType="com.bbgkh.model.PO.CustomerPO">
-        select uid, name, password
+        select id ,uid, name, password
         from customer where name=#{userName}
     </select>
 
     <select id="findRoles" parameterType="String" resultType="String">
-        SELECT role_name from sec_user_role left join sec_role using(role_id) left join customer using(uid) WHERE name = #{userName}
-    </select>
+SELECT r.role_name from sec_user_role ur left join sec_role r on ur.role_id = r.role_id LEFT JOIN customer c on ur.user_id = c.uid where c.name =#{userName};    </select>
 
     <select id="findPermissions" parameterType="String" resultType="String">
         SELECT permission_name FROM sec_role_permission
         left join sec_role using(role_id)
-        left join sec_permission using(permission_id) WHERE role_name = ?
+        left join sec_permission using(permission_id) WHERE role_name = #{roleName}
     </select>
 
 
