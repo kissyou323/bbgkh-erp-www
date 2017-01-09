@@ -5,8 +5,6 @@
        http://www.springframework.org/schema/beans
        http://www.springframework.org/schema/beans/spring-beans-4.2.xsd">
 
-    <!-- 导入数据库的相关配置 -->
-    <import resource="classpath*:spring-mybatis.xml"/>
 
 
 
@@ -17,19 +15,11 @@
     <!-- 缓存管理 -->
     <bean id="shiroCacheManager" class="org.apache.shiro.cache.MemoryConstrainedCacheManager"></bean>
 
-    <!--
-    使用Shiro自带的JdbcRealm类
-    指定密码匹配所需要用到的加密对象
-    指定存储用户、角色、权限许可的数据源及相关查询语句
-    -->
-    <bean id="MyRealm" class="com.bbgkh.shiro.MyRealm"/>
 
 
 
-    <!-- Shiro安全管理器 -->
-    <bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">
-        <property name="realm" ref="MyRealm"></property>
-    </bean>
+
+
 
     <!-- Shiro的注解配置一定要放在spring-mvc中 -->
 

@@ -1,5 +1,6 @@
 package com.bbgkh.shiro;
 
+import com.bbgkh.dao.IUserDao;
 import com.bbgkh.model.PO.CustomerPO;
 import com.bbgkh.service.IUserService;
 import org.apache.shiro.authc.AuthenticationException;
@@ -23,7 +24,7 @@ import java.util.Set;
 public class MyRealm extends AuthorizingRealm{
 
     @Autowired
-    private IUserService userService;
+    private IUserDao userService;
 
     /**
      * 用于权限的认证

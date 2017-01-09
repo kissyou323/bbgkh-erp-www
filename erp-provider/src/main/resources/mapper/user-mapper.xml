@@ -6,7 +6,7 @@
         uid, name, password
     </sql>
 
-    <select id="findUserByUsername" parameterType="String" resultMap="BaseResultMap">
+    <select id="findUserByUsername" parameterType="String" resultType="com.bbgkh.model.PO.CustomerPO">
         select uid, name, password
         from customer where name=#{userName}
     </select>
