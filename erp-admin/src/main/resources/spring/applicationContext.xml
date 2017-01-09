@@ -8,6 +8,7 @@
 
                         ">
 
+
     <import resource="classpath*:spring-mybatis.xml"/>
 
     <!--freemarker视图解析 -->

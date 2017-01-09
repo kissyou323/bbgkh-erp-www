@@ -2,6 +2,7 @@ package com.bbgkh.service.impl;
 
 
 import com.bbgkh.dao.IUserDao;
+import com.bbgkh.dao.impl.IUserDaoImpl;
 import com.bbgkh.model.PO.CustomerPO;
 import com.bbgkh.service.IUserService;
 import com.bbgkh.utils.BBLogger;
@@ -12,6 +13,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 /**
  * Created by lixiang on 12/16/2016.
@@ -82,5 +84,21 @@ public class IUserServiceImpl implements IUserService {
     public List<CustomerPO> validateName(String uid) {
         String newName = StringUtils.getUID(uid);
         return userDao.validateUser(newName,"");
+    }
+
+    @Override
+    public CustomerPO findUserByUsername(String username) {
+
+        return userDao.findUserByUsername(username);
+    }
+
+    @Override
+    public Set<String> findRoles(String username) {
+        return userDao.findRoles(username);
+    }
+
+    @Override
+    public Set<String> findPermissions(String username) {
+        return userDao.findPermissions(username);
     }
 }

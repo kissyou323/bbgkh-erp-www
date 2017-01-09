@@ -7,6 +7,9 @@ import com.bbgkh.model.BaseInfo;
 import com.bbgkh.model.PO.CustomerPO;
 import com.bbgkh.service.IUserService;
 import com.bbgkh.utils.MD5Utils;
+import org.apache.shiro.SecurityUtils;
+import org.apache.shiro.authc.UsernamePasswordToken;
+import org.apache.shiro.subject.Subject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -66,7 +69,19 @@ public class UserController extends BaseController{
 
         logger.info("验证登录名，用户输入的用户名为："+customerPO.getName());
         BaseInfo baseInfo = null;
-        List<CustomerPO> customerPOS = new ArrayList<>();
+
+        Subject subject = SecurityUtils.getSubject() ;
+        UsernamePasswordToken token = new UsernamePasswordToken(customerPO.getName(),customerPO.getPassword()) ;
+        try {
+            subject.login(token);
+            baseInfo = new BaseInfo("0","登录成功");
+        }catch (Exception e){
+            //这里将异常打印关闭是因为如果登录失败的话会自动抛异常
+            e.printStackTrace();
+
+        }
+
+      /*  List<CustomerPO> customerPOS = new ArrayList<>();
         try {
 
             customerPOS= userService.validateUser(customerPO.getName(),customerPO.getPassword());
@@ -85,7 +100,7 @@ public class UserController extends BaseController{
             baseInfo = new BaseInfo("0","登录成功");
 
 
-        }
+        }*/
         return JSON.toJSONString(baseInfo);
 
     }

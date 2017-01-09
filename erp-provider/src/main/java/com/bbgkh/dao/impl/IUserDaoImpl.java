@@ -5,6 +5,7 @@ import com.bbgkh.model.PO.CustomerPO;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
+import java.util.Set;
 
 /**
  * Created by lixiang on 17/12/2016.
@@ -32,6 +33,21 @@ public class IUserDaoImpl implements IUserDao {
 
     @Override
     public List<CustomerPO> validateUser(@Param("uid") String uid, @Param("password") String password) {
+        return null;
+    }
+
+    @Override
+    public CustomerPO findUserByUsername(String username) {
+        return null;
+    }
+
+    @Override
+    public Set<String> findRoles(String username) {
+        return null;
+    }
+
+    @Override
+    public Set<String> findPermissions(String username) {
         return null;
     }
 }
