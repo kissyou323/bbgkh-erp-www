@@ -9,6 +9,23 @@
                         http://www.springframework.org/schema/context/spring-context.xsd
                         http://www.springframework.org/schema/mvc
                         http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+
+
+    <import resource="classpath:spring/spring-shiro.xml"/>
+
+
+    <!-- 开启shiro注解-->
+    <bean class="org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator"
+          depends-on="lifecycleBeanPostProcessor">
+        <property name="proxyTargetClass" value="true" />
+    </bean>
+
+    <bean class="org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor">
+        <property name="securityManager" ref="securityManager"/>
+    </bean>
+
+
+
     <!-- 自动扫描该包，使SpringMVC认为包下用了@controller注解的类是控制器 -->
     <context:component-scan base-package="com.bbgkh.controller" />
     <!-- 自动扫描 -->
@@ -50,22 +67,6 @@
         <property name="location" value="classpath:freemarker.properties" />
     </bean>
 
-    <!--    <bean id="viewMappings" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
-            <property name="mappings">
-                <value>/shopping=flowController</value>
-            </property>
-            <property name="defaultHandler">
-                <bean class="org.springframework.web.servlet.mvc.UrlFilenameViewController"></bean>
-            </property>
-        </bean>-->
-    <!--<bean class=-->
-                  <!--"org.springframework.webflow.mvc.servlet.FlowHandlerMapping">-->
-        <!--<property name="flowRegistry" ref="flowRegistry" />-->
-    <!--</bean>-->
-
-    <!--<bean id="flowController" class="org.springframework.webflow.mvc.servlet.FlowHandlerAdapter">-->
-        <!--<property name="flowExecutor" ref="flowExecutor"></property>-->
-    <!--</bean>-->
 
 
     <mvc:resources mapping="/resource/**" location="/resource/"></mvc:resources>
