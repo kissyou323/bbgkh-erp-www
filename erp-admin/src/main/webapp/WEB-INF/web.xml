@@ -4,7 +4,12 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          version="3.1">
 
-
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>
+            classpath:/spring/applicationContext.xml
+        </param-value>
+    </context-param>
 
 
     <filter>
@@ -72,12 +77,7 @@
     </servlet-mapping>
 
 
-    <context-param>
-        <param-name>contextConfigLocation</param-name>
-        <param-value>
-            classpath:/spring/applicationContext.xml
-        </param-value>
-    </context-param>
+
 
 
 
