@@ -164,7 +164,6 @@
                 <version>1.2.2</version>
             </dependency>
 
-            <!-- https://mvnrepository.com/artifact/com.alibaba/fastjson -->
             <dependency>
                 <groupId>com.alibaba</groupId>
                 <artifactId>fastjson</artifactId>
@@ -173,13 +172,7 @@
 
             <!-- 日志文件管理包 -->
             <!-- log start -->
-            <!-- log4j2 -->
-            <!-- https://mvnrepository.com/artifact/log4j/log4j -->
-            <!-- <dependency>
-                 <groupId>log4j</groupId>
-                 <artifactId>log4j</artifactId>
-                 <version>1.2.16</version>
-             </dependency>-->
+
 
             <dependency>
                 <groupId>org.apache.logging.log4j</groupId>
@@ -214,11 +207,7 @@
                 <artifactId>slf4j-log4j12</artifactId>
                 <version>1.7.21</version>
             </dependency>
-            <dependency>
-                <groupId>org.slf4j</groupId>
-                <artifactId>slf4j-log4j12</artifactId>
-                <version>1.7.21</version>
-            </dependency>
+
             <!-- 上传组件包 -->
             <dependency>
                 <groupId>commons-fileupload</groupId>
