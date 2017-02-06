@@ -103,11 +103,11 @@
 
                         <ul class="nav nav-second-level">
                             <li>
-                                <a href="${webRoot}/showPage/member-memberMain">新增会员</a>
+                                <a href="${webRoot}/showPage/member-newMember">新增会员</a>
                             </li>
 
                             <li>
-                                <a href="javascript:;">补齐数据</a>
+                                <a href="${webRoot}/showPage/member-oldMemberData">补齐数据</a>
                             </li>
                         </ul>
                         <!-- /.nav-second-level -->
