@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8" />
     <title>步步高裤行在线管理</title>
-    <meta name="Keywords" content="步步高裤行在线管理">
-    <meta name="description" content="步步高裤行在线管理">
+    <meta name="Keywords" content="步步高裤行 在线管理">
+    <meta name="description" content="步步高裤行 在线管理">
     <meta content="yes" name="apple-mobile-web-app-capable" />
     <meta content="black" name="apple-mobile-web-app-status-bar-style" />
     <meta content="telephone=no" name="format-detection" />
@@ -24,8 +24,11 @@
 
     <!-- Custom Fonts -->
     <link href="${rsRoot}vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+    <script src="${rsRoot}dist/js/vue.js"></script>
     <!-- jQuery -->
-    <script src="${rsRoot}vendor/jquery/jquery.min.js"></script>
+    <script src="${rsRoot}vendor/jquery/jquery.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
     <script src="${rsRoot}vendor/bootstrap/js/bootstrap.min.js"></script>
@@ -33,15 +36,10 @@
     <!-- Metis Menu Plugin JavaScript -->
     <script src="${rsRoot}vendor/metisMenu/metisMenu.js"></script>
 
-    <!-- Morris Charts JavaScript -->
-<#--<script src="${rsRoot}vendor/raphael/raphael.js"></script>-->
-<#--<script src="${rsRoot}vendor/morrisjs/morris.js"></script>-->
-<#--<script src="${rsRoot}data/morris-data.js"></script>-->
-
     <!-- Custom Theme JavaScript -->
+
     <script src="${rsRoot}dist/js/sb-admin-2.min.js"></script>
 
-    <script src="${rsRoot}dist/js/vue.js"></script>
     <script> var webRoot ="/bbgkh"</script>
 <@mhead/>
 </head>
@@ -83,28 +81,38 @@
         <div class="navbar-default sidebar" role="navigation">
             <div class="sidebar-nav navbar-collapse">
                 <ul class="nav" id="side-menu">
-                    <li class="sidebar-search">
-                        <div class="input-group custom-search-form">
-                            <input type="text" class="form-control" placeholder="Search...">
-                            <span class="input-group-btn">
-                                <button class="btn btn-default" type="button">
-                                    <i class="fa fa-search"></i>
-                                </button>
-                            </span>
-                        </div><!-- /input-group -->
-                    </li>
+
                     <li>
-                        <a href="${webRoot}/home/mainDash"><i class="fa fa-dashboard fa-fw"></i>主面板</a>
+                        <a href="${webRoot}/showPage/dashBoard-mainBoard"><i class="fa fa-dashboard fa-fw"></i>主面板</a>
                     </li>
+
                     <li>
                         <a href="${webRoot}/replenish/newReplenish"><i class="fa fa-dashboard fa-fw"></i>进货</a>
                     </li>
+
                     <li>
                         <a href="${webRoot}/sale/newSalePage"><i class="fa fa-dashboard fa-fw"></i>卖货</a>
                     </li>
+
                     <li>
-                        <a href="${webRoot}/showPage/report-todayReport"><i class="fa fa-dashboard fa-fw"></i>今日销售</a>
+                        <a href="${webRoot}/showPage/report-todayReport"><i class="fa fa-table fa-fw"></i>今日销售</a>
                     </li>
+
+                    <li>
+                        <a href="javascript:;"><i class="fa fa-sitemap fa-fw"></i> 会员管理<span class="fa arrow"></span></a>
+
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a href="${webRoot}/showPage/member-memberMain">新增会员</a>
+                            </li>
+
+                            <li>
+                                <a href="javascript:;">补齐数据</a>
+                            </li>
+                        </ul>
+                        <!-- /.nav-second-level -->
+                    </li>
+
                 </ul>
             </div>
             <!-- /.sidebar-collapse -->

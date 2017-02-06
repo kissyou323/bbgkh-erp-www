@@ -7,6 +7,7 @@ import com.bbgkh.model.BaseInfo;
 import com.bbgkh.model.PO.CustomerPO;
 import com.bbgkh.service.IUserService;
 import com.bbgkh.utils.MD5Utils;
+import com.bbgkh.utils.StringUtils;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.subject.Subject;
@@ -75,33 +76,19 @@ public class UserController extends BaseController{
         try {
             subject.login(token);
             baseInfo = new BaseInfo("0","登录成功");
-        }catch (Exception e){
-            //这里将异常打印关闭是因为如果登录失败的话会自动抛异常
-            baseInfo = new BaseInfo("100","登录验证失败");
-            e.printStackTrace();
-
-        }
-
-      /*  List<CustomerPO> customerPOS = new ArrayList<>();
-        try {
-
-            customerPOS= userService.validateUser(customerPO.getName(),customerPO.getPassword());
-        }catch (Exception e){
-            e.printStackTrace();
-            baseInfo = new BaseInfo("101","查询数据库失败");
-        }
-        if (customerPOS.size()>0) {
-            //set cookie and session
-            String uid = customerPOS.get(0).getUid();
+            String uid = StringUtils.getUID(customerPO.getName());
             Cookie cookie = new Cookie("uid",uid);
             cookie.setPath("/bbgkh");
             cookie.setMaxAge(7200);
             response.addCookie(cookie);
-            request.getSession(true).setAttribute("customer",customerPOS.get(0));
-            baseInfo = new BaseInfo("0","登录成功");
+            request.getSession(true).setAttribute("customer",customerPO);
+        }catch (Exception e){
+            //这里将异常打印关闭是因为如果登录失败的话会自动抛异常
+            baseInfo = new BaseInfo("100","登录验证失败");
+            logger.error("登录验证失败",e);
 
+        }
 
-        }*/
         return JSON.toJSONString(baseInfo);
 
     }

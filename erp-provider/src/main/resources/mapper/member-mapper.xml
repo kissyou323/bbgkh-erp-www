@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.bbgkh.dao.IMemberDao" >
+
+    <insert id="insert" parameterType="com.bbgkh.model.DTO.MemberInfoDTO" >
+        INSERT INTO members (name,mobilePhone,customerUid)
+        VALUES (#{name}, #{mobilePhone},#{customerUid})
+    </insert>
+
+    <select id="selectAll" resultType="com.bbgkh.model.PO.SaleInfoPO">
+        SELECT * from sale where TO_DAYS(saleTime) = TO_DAYS(NOW()) and uid=#{uid};
+    </select>
+
+    <select id="selectById" parameterType="String" resultType="com.bbgkh.model.PO.SaleInfoPO">
+        SELECT * from sale where TO_DAYS(saleTime) = TO_DAYS(NOW()) and uid=#{uid};
+    </select>
+
+
+
+
+</mapper>
