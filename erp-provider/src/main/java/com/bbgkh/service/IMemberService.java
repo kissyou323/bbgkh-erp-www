@@ -11,4 +11,6 @@ public interface IMemberService {
     BBLogger logger = BBLogger.getLogger(IMemberService.class);
 
     public BaseInfo insert(Object entity);
+
+    public BaseInfo addOldMemberData(Object entity);
 }

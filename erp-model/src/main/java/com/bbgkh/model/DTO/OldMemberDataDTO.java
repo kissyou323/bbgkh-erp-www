@@ -1,27 +1,30 @@
 package com.bbgkh.model.DTO;
 
+import com.bbgkh.model.PO.MemberInfoPO;
+import com.bbgkh.model.PO.SaleInfoPO;
+
 /**
  * Created by lixiang01 on 2/7/2017.
  */
 public class OldMemberDataDTO {
 
-    private MemberInfoDTO memberInfo;
+    private MemberInfoPO memberInfo;
 
-    private SaleInfoDTO saleInfo;
+    private SaleInfoPO saleInfo;
 
-    public MemberInfoDTO getMemberInfo() {
+    public MemberInfoPO getMemberInfo() {
         return memberInfo;
     }
 
-    public void setMemberInfo(MemberInfoDTO memberInfo) {
+    public void setMemberInfo(MemberInfoPO memberInfo) {
         this.memberInfo = memberInfo;
     }
 
-    public SaleInfoDTO getSaleInfo() {
+    public SaleInfoPO getSaleInfo() {
         return saleInfo;
     }
 
-    public void setSaleInfo(SaleInfoDTO saleInfo) {
+    public void setSaleInfo(SaleInfoPO saleInfo) {
         this.saleInfo = saleInfo;
     }
 }

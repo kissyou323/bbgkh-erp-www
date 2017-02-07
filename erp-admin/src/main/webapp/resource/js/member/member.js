@@ -8,6 +8,7 @@ $(function () {
     var oldMemberInfo = {
 
         memberInfo:{
+            name:"",
             mobilePhone:""
         },
         saleInfo:{
@@ -35,6 +36,7 @@ $(function () {
                     data:this.memberInfo,
                     type:'POST',
                     success:function (datas) {
+                        datas = JSON.parse(datas);
                         if(datas['error']==0){
                             $("#addSuccess").show();
                             setTimeout(function() {

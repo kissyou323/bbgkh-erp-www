@@ -102,8 +102,8 @@ $(function () {
         $.ajax({
             url:webRoot+"/report/getReport/"+timeStamp,
             type:'GET',
-            dataType:'json',
             success:function (data) {
+                data = JSON.parse(data);
                 if(data['error']==0){
                     dataComponent.reportInfos=data['object'];
                     getTotalPrice();

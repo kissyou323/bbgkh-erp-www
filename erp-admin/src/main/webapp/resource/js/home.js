@@ -21,6 +21,7 @@ $(function () {
                     data:this.customerInfo,
                     type:'POST',
                     success:function (datas) {
+                        datas = JSON.parse(datas);
                         if(datas['error']==0){
                             //说明用户名和密码正确,且已经登录成功
                             alert(datas['message']);

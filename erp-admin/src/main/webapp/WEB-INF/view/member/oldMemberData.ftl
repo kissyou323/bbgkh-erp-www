@@ -26,6 +26,12 @@
                                 <input v-model="oldMemberInfo.memberInfo.mobilePhone" class="form-control">
                             </div>
                         </div>
+                        <div class="col-lg-5">
+                            <div class="form-group">
+                                <label>姓名</label>
+                                <input v-model="oldMemberInfo.memberInfo.name" class="form-control">
+                            </div>
+                        </div>
 
                         <div class="col-lg-5">
 

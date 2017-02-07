@@ -11,8 +11,8 @@
     </select>
 
     <insert id="insert" parameterType="com.bbgkh.model.PO.SaleInfoPO" >
-        INSERT INTO sale (uid,productSysNo,salePrice,saleNum,sex,color,size)
-        VALUES (#{uid}, #{productSysNo},#{salePrice},#{saleNum},#{sex},#{color},#{size})
+        INSERT INTO sale (uid,productSysNo,salePrice,saleNum,sex,color,size,saleTime)
+        VALUES (#{uid}, #{productSysNo},#{salePrice},#{saleNum},#{sex},#{color},#{size},#{saleTime})
     </insert>
     <update id="update" parameterType="com.bbgkh.model.PO.SaleInfoPO" >
         UPDATE sale SET productSysNo=#{productSysNo},salePrice=#{salePrice},saleNum=#{saleNum},sex=#{sex},color=#{color},

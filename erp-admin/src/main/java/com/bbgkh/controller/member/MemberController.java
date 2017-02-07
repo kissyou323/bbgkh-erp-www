@@ -51,7 +51,13 @@ public class MemberController extends BaseController{
     @ResponseBody
     public String addOldMemberData(@RequestBody OldMemberDataDTO oldMemberInfo, HttpServletRequest request, HttpServletResponse response){
 
+        String uid = UserUtils.getUid(request);
+        if (uid.equals("")){
+            return JSON.toJSONString(new BaseInfo("100","uid为空"));
+        }
+        oldMemberInfo.getSaleInfo().setUid(uid);
 
+        memberService.addOldMemberData(oldMemberInfo);
 
         return JSON.toJSONString(oldMemberInfo);
     }
