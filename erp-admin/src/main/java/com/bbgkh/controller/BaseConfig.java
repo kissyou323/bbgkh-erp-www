@@ -6,4 +6,6 @@ package com.bbgkh.controller;
 public class BaseConfig {
     public static final String ACCESS = "http://localhost:63341";
     public static final String CHARSET ="application/json;charset=UTF-8";
+
+    public static final String CHARSETX ="application/x-www-form-urlencoded;charset=UTF-8";
 }

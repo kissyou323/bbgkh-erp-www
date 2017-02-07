@@ -27,8 +27,10 @@
 
 
     <script src="${rsRoot}dist/js/vue.js"></script>
+
+    <script src="${rsRoot}dist/js/vue-resource.min.js"></script>
     <!-- jQuery -->
-    <script src="${rsRoot}vendor/jquery/jquery.js"></script>
+    <script src="${rsRoot}vendor/jquery/jquery.min.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
     <script src="${rsRoot}vendor/bootstrap/js/bootstrap.min.js"></script>

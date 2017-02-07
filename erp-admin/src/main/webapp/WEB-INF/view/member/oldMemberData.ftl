@@ -20,17 +20,33 @@
                 <div class="panel-body">
                     <div class="row">
 
-
                         <div class="col-lg-5">
-
                             <div class="form-group">
                                 <label>手机号</label>
-                                <input v-model="memberInfo.mobilePhone" class="form-control">
+                                <input v-model="oldMemberInfo.memberInfo.mobilePhone" class="form-control">
                             </div>
                         </div>
 
                         <div class="col-lg-5">
-                            <button id="submitSale" v-on:click="addMember" type="submit" class="col-lg-4 btn btn-primary">点我来提交</button>
+
+                            <div class="form-group">
+                                <label>货号</label>
+                                <input v-model="oldMemberInfo.saleInfo.productSysNo" class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="col-lg-5">
+
+                            <div class="form-group">
+                                <label>价格</label>
+                                <input v-model="oldMemberInfo.saleInfo.salePrice" class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="col-lg-5">
+                            <div class="form-group">
+                                <button id="submitSale" v-on:click="addOldMemberInfo" type="submit" class="col-lg-4 btn btn-primary">点我来提交</button>
+                            </div>
                         </div>
 
                     </div>

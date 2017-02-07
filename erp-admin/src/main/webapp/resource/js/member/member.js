@@ -5,13 +5,26 @@
 $(function () {
 
 
+    var oldMemberInfo = {
+
+        memberInfo:{
+            mobilePhone:""
+        },
+        saleInfo:{
+            productSysNo:"",
+            salePrice:""
+        }
+    };
+
     var memberVue = new Vue({
         el:'#divController',
         data:{
             memberInfo:{
                 name:"",
                 mobilePhone:""
-            }
+            },
+
+            oldMemberInfo:oldMemberInfo
 
         },
         methods:{
@@ -39,11 +52,19 @@ $(function () {
                 });
 
             },
-            saveModify:function () {
-                $.ajax({
-                    url:webRoot+"/sale/modifySaleInfo",
+            addOldMemberInfo:function () {
+                var oldMemberInfo = JSON.stringify(this.oldMemberInfo);
+                this.$http.post(webRoot+"/member/addOldMemberData", this.oldMemberInfo)
+                    .then(function (datas) {
+                        console.log(datas);
+                    }, function (datas) {
+                        console.log(datas);
+                    });
+                /*$.ajax({
+                    url:webRoot+"/member/addOldMemberData",
                     type:'POST',
-                    data:this.saleInfo,
+                    contentType: "application/json",
+                    data:oldMemberInfo,
 
                     success:function (data) {
                         if(data=="ok"){
@@ -59,7 +80,7 @@ $(function () {
                     fail:function () {
                         console.log("fail");
                     }
-                })
+                })*/
 
             }
         }
