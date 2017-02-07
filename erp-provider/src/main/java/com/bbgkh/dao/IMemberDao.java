@@ -1,5 +1,6 @@
 package com.bbgkh.dao;
 
+import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
 /**
@@ -7,4 +8,6 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public interface IMemberDao extends BaseDAO {
+
+    public int addToMemberSale(@Param("memId") Integer memId,@Param("saleId") Integer saleId);
 }

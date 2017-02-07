@@ -56,7 +56,7 @@ public class MemberController extends BaseController{
             return JSON.toJSONString(new BaseInfo("100","uid为空"));
         }
         oldMemberInfo.getSaleInfo().setUid(uid);
-
+        oldMemberInfo.getMemberInfo().setCustomerUid(uid);
         memberService.addOldMemberData(oldMemberInfo);
 
         return JSON.toJSONString(oldMemberInfo);

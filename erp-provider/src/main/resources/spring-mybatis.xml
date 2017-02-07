@@ -79,44 +79,8 @@
     </bean>
 
 
-    <!-- 配置事务 -->
-    <aop:config proxy-target-class="true">
-        <aop:advisor pointcut="execution(* com.bbgkh.service..*withTX(..))"
-                     advice-ref="txAdvice" />
-    </aop:config>
-    <tx:advice id="txAdvice" transaction-manager="transactionManager">
-        <tx:attributes>
-            <tx:method name="query*" propagation="SUPPORTS" rollback-for="Exception" read-only="true" />
-            <tx:method name="apply*" propagation="REQUIRED" rollback-for="Exception" />
-            <tx:method name="copy*" propagation="REQUIRED" rollback-for="Exception" />
-            <tx:method name="change*" propagation="REQUIRED" rollback-for="Exception" />
-            <tx:method name="del*" propagation="REQUIRED" rollback-for="Exception" />
-            <tx:method name="batch*" propagation="REQUIRED" rollback-for="Exception" />
-            <tx:method name="create*" propagation="REQUIRED" rollback-for="Exception" />
-            <tx:method name="modify*" propagation="REQUIRED" rollback-for="Exception" />
-            <tx:method name="save*" propagation="REQUIRED" rollback-for="Exception" />
-            <tx:method name="clear*" propagation="REQUIRED" rollback-for="Exception" />
-            <tx:method name="update*" propagation="REQUIRED" rollback-for="Exception" />
-            <tx:method name="edit*" propagation="REQUIRED" rollback-for="Exception" />
-            <tx:method name="move*" propagation="REQUIRED" rollback-for="Exception" />
-            <tx:method name="remove*" propagation="REQUIRED" rollback-for="Exception" />
-            <tx:method name="delete*" propagation="REQUIRED" rollback-for="Exception" />
-            <tx:method name="add*" propagation="REQUIRED" rollback-for="Exception" />
-            <tx:method name="import*" propagation="REQUIRED" rollback-for="Exception" />
-            <tx:method name="new*" propagation="REQUIRED" rollback-for="Exception" />
-            <tx:method name="gen*" propagation="REQUIRED" rollback-for="Exception" />
-            <tx:method name="insert*" propagation="REQUIRED" rollback-for="Exception" />
-            <tx:method name="adviseUser" propagation="REQUIRED" rollback-for="Exception" />
-            <tx:method name="call*" propagation="REQUIRED" rollback-for="Exception" />
-            <tx:method name="unit*" propagation="REQUIRED" rollback-for="Exception" />
-            <tx:method name="close*" propagation="REQUIRED" rollback-for="Exception" />
-            <tx:method name="execute*" propagation="REQUIRED" rollback-for="Exception" />
-            <tx:method name="email*" propagation="REQUIRED" rollback-for="Exception" />
-            <tx:method name="synchronous*" propagation="REQUIRED" rollback-for="Exception" />
-            <tx:method name="publish*" propagation="REQUIRED" rollback-for="Exception" />
-            <tx:method name="*" propagation="SUPPORTS" read-only="true" />
-        </tx:attributes>
-    </tx:advice>
+
+
 
 
 

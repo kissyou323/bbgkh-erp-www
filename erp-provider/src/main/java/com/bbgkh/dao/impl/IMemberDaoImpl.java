@@ -1,6 +1,7 @@
 package com.bbgkh.dao.impl;
 
 import com.bbgkh.dao.IMemberDao;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -25,6 +26,11 @@ public class IMemberDaoImpl implements IMemberDao {
 
     @Override
     public int update(Object entity) {
+        return 0;
+    }
+
+    @Override
+    public int addToMemberSale( Integer memId,  Integer saleId) {
         return 0;
     }
 }

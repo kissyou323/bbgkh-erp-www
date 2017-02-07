@@ -21,6 +21,7 @@ import org.springframework.transaction.annotation.Transactional;
  * Created by lixiang01 on 2/6/2017.
  */
 @Service
+
 public class IMemberServiceImpl implements IMemberService {
 
     @Autowired
@@ -52,12 +53,15 @@ public class IMemberServiceImpl implements IMemberService {
     }
 
     @Override
+    @Transactional
     public BaseInfo addOldMemberData(Object entity) {
         OldMemberDataDTO oldMemberData = (OldMemberDataDTO) entity;
         MemberInfoPO memberInfo = oldMemberData.getMemberInfo();
         SaleInfoPO saleInfo = oldMemberData.getSaleInfo();
         saleInfo.setSaleTime("2017-01-01 1:1:1");
         saleDao.insert(saleInfo);
+        memberDao.insert(memberInfo);
+        memberDao.addToMemberSale(memberInfo.getId(),saleInfo.getId());
         return null;
     }
 

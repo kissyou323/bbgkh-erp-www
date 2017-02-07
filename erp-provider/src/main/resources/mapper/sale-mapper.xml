@@ -10,7 +10,7 @@
         select * from sale where id = #{id}
     </select>
 
-    <insert id="insert" parameterType="com.bbgkh.model.PO.SaleInfoPO" >
+    <insert id="insert" useGeneratedKeys="true" keyProperty="id" parameterType="com.bbgkh.model.PO.SaleInfoPO" >
         INSERT INTO sale (uid,productSysNo,salePrice,saleNum,sex,color,size,saleTime)
         VALUES (#{uid}, #{productSysNo},#{salePrice},#{saleNum},#{sex},#{color},#{size},#{saleTime})
     </insert>

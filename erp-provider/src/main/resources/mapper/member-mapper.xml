@@ -15,7 +15,10 @@
         SELECT * from sale where TO_DAYS(saleTime) = TO_DAYS(NOW()) and uid=#{uid};
     </select>
 
-
+    <insert id="addToMemberSale">
+        INSERT INTO member_sale (memId , saleId)
+        VALUES (#{memId},#{saleId})
+    </insert>
 
 
 </mapper>

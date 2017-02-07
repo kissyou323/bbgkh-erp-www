@@ -24,7 +24,7 @@ import java.util.Set;
 public class MyRealm extends AuthorizingRealm{
 
     @Autowired
-    private IUserDao userService;
+    private IUserDao userDao;
 
     /**
      * 用于权限的认证
@@ -36,8 +36,8 @@ public class MyRealm extends AuthorizingRealm{
 
         String username = principalCollection.getPrimaryPrincipal().toString() ;
         SimpleAuthorizationInfo info = new SimpleAuthorizationInfo() ;
-        Set<String> roleName = userService.findRoles(username) ;
-        Set<String> permissions = userService.findPermissions(username) ;
+        Set<String> roleName = userDao.findRoles(username) ;
+        Set<String> permissions = userDao.findPermissions(username) ;
         info.setRoles(roleName);
         info.setStringPermissions(permissions);
         return info;
@@ -53,7 +53,7 @@ public class MyRealm extends AuthorizingRealm{
     protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken authenticationToken) throws AuthenticationException {
         //获取用户账号
         String username = authenticationToken.getPrincipal().toString() ;
-        CustomerPO user = userService.findUserByUsername(username) ;
+        CustomerPO user = userDao.findUserByUsername(username) ;
         if (user != null){
             //将查询到的用户账号和密码存放到 authenticationInfo用于后面的权限判断。第三个参数随便放一个就行了。
             AuthenticationInfo authenticationInfo = new SimpleAuthenticationInfo(user.getName(),user.getPassword(),
