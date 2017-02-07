@@ -13,11 +13,23 @@ public class MemberInfoPO extends BaseModel {
     //会员的姓名
     private String name;
 
+    //会员卡号
+    private String cardId;
+
     //会员属于哪一个店子
     private String customerUid;
 
     //会员的手机号
     private String mobilePhone;
+
+
+    public String getCardId() {
+        return cardId;
+    }
+
+    public void setCardId(String cardId) {
+        this.cardId = cardId;
+    }
 
     public Integer getId() {
         return id;

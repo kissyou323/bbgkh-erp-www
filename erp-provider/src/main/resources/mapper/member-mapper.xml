@@ -12,7 +12,7 @@
     </select>
 
     <select id="selectById" parameterType="String" resultType="com.bbgkh.model.PO.SaleInfoPO">
-        SELECT * from sale where TO_DAYS(saleTime) = TO_DAYS(NOW()) and uid=#{uid};
+        SELECT * from members where TO_DAYS(saleTime) = TO_DAYS(NOW()) and uid=#{uid};
     </select>
 
     <insert id="addToMemberSale">
@@ -20,5 +20,8 @@
         VALUES (#{memId},#{saleId})
     </insert>
 
+    <select id="selectByMobileOrCard" parameterType="com.bbgkh.model.DTO.MemberInfoDTO">
+        SELECT id FROM members WHERE
+    </select>
 
 </mapper>

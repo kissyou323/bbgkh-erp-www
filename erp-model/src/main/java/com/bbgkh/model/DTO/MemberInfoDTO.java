@@ -13,8 +13,19 @@ public class MemberInfoDTO extends BaseModel{
     //会员属于哪一个店子
     private String customerUid;
 
+    //会员卡号
+    private String cardId;
+
     //会员的手机号
     private String mobilePhone;
+
+    public String getCardId() {
+        return cardId;
+    }
+
+    public void setCardId(String cardId) {
+        this.cardId = cardId;
+    }
 
     public String getCustomerUid() {
         return customerUid;

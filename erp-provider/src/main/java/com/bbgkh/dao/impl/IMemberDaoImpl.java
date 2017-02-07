@@ -1,6 +1,7 @@
 package com.bbgkh.dao.impl;
 
 import com.bbgkh.dao.IMemberDao;
+import com.bbgkh.model.DTO.MemberInfoDTO;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
@@ -32,5 +33,10 @@ public class IMemberDaoImpl implements IMemberDao {
     @Override
     public int addToMemberSale( Integer memId,  Integer saleId) {
         return 0;
+    }
+
+    @Override
+    public List selectByMobileOrCard(MemberInfoDTO memberInfo) {
+        return null;
     }
 }
