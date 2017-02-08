@@ -13,6 +13,17 @@ public class SaleInfoDTO {
     private String color;
     private String size;
 
+    //会员手机号
+    private String mobilePhone;
+
+    public String getMobilePhone() {
+        return mobilePhone;
+    }
+
+    public void setMobilePhone(String mobilePhone) {
+        this.mobilePhone = mobilePhone;
+    }
+
     public Integer getId() {
         return id;
     }
