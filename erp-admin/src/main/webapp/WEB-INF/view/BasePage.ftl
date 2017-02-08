@@ -9,6 +9,7 @@
     <meta content="black" name="apple-mobile-web-app-status-bar-style" />
     <meta content="telephone=no" name="format-detection" />
     <meta name="applicable-device" content="mobile" />
+    <meta name="viewport" content="minimal-ui=yes,width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
     <meta http-equiv="Cache-Control" content="no-transform " />
     <!-- Bootstrap Core CSS -->
     <link href="${rsRoot}vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -26,12 +27,12 @@
     <link href="${rsRoot}vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
 
-    <script src="${rsRoot}dist/js/vue.js"></script>
+    <script src="${rsRoot}dist/js/vue.min.js"></script>
 
 
     <script src="${rsRoot}dist/js/vue-resource.min.js"></script>
     <!-- jQuery -->
-    <script src="${rsRoot}vendor/jquery/jquery.js"></script>
+    <script src="${rsRoot}vendor/jquery/jquery.min.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
     <script src="${rsRoot}vendor/bootstrap/js/bootstrap.min.js"></script>
@@ -41,7 +42,7 @@
 
     <!-- Custom Theme JavaScript -->
 
-    <script src="${rsRoot}dist/js/sb-admin-2.js"></script>
+    <script src="${rsRoot}dist/js/sb-admin-2.min.js"></script>
 
 
     <script> var webRoot ="/bbgkh"</script>
