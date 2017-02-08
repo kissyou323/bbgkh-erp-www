@@ -20,8 +20,22 @@
         VALUES (#{memId},#{saleId})
     </insert>
 
-    <select id="selectByMobileOrCard" parameterType="com.bbgkh.model.DTO.MemberInfoDTO">
-        SELECT id FROM members WHERE
+    <update id="update" parameterType="com.bbgkh.model.PO.SaleInfoPO" >
+        UPDATE sale SET productSysNo=#{productSysNo},salePrice=#{salePrice},saleNum=#{saleNum},sex=#{sex},color=#{color},
+        size=#{size} WHERE id =#{id} AND uid=#{uid}
+    </update>
+
+    <select id="selectByMobileOrCard" parameterType="com.bbgkh.model.PO.MemberInfoPO" resultType="com.bbgkh.model.PO.MemberInfoPO">
+        SELECT id FROM members WHERE customerUid=#{customerUid}
+        <if test="mobilePhone != null and mobilePhone!= '' ">
+        AND mobilePhone = #{mobilePhone}
+        </if>
+        <if test="cardId != null and cardId!= '' ">
+        AND cardId = #{cardId}
+        </if>
+        <if test="name != null and name!= '' ">
+        AND name = #{name}
+        </if>
     </select>
 
 </mapper>

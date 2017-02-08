@@ -11,6 +11,10 @@ public class BaseInfo {
 
     private Object object;
 
+    public BaseInfo(){
+
+    }
+
     public BaseInfo(String error) {
         this.error = error;
     }

@@ -9,7 +9,7 @@ $(function () {
 
         memberInfo:{
             name:"",
-            mobilePhone:""
+            mobilePhone:"",
         },
         saleInfo:{
             productSysNo:"",
@@ -58,7 +58,16 @@ $(function () {
                 var oldMemberInfo = JSON.stringify(this.oldMemberInfo);
                 this.$http.post(webRoot+"/member/addOldMemberData", this.oldMemberInfo)
                     .then(function (datas) {
-                        console.log(datas);
+                        if(datas['error']==0){
+                            $("#addSuccess").show();
+                            setTimeout(function() {
+                                window.location.reload();
+                            }, 1500);
+
+                        }else{
+                            alert(datas['message']);
+                            window.location.reload();
+                        }
                     }, function (datas) {
                         console.log(datas);
                     });

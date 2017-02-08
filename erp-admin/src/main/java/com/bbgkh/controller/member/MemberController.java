@@ -57,8 +57,8 @@ public class MemberController extends BaseController{
         }
         oldMemberInfo.getSaleInfo().setUid(uid);
         oldMemberInfo.getMemberInfo().setCustomerUid(uid);
-        memberService.addOldMemberData(oldMemberInfo);
+        BaseInfo baseInfo = memberService.addOldMemberData(oldMemberInfo);
 
-        return JSON.toJSONString(oldMemberInfo);
+        return JSON.toJSONString(baseInfo);
     }
 }

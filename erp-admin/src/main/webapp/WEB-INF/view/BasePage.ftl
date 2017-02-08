@@ -28,21 +28,24 @@
 
     <script src="${rsRoot}dist/js/vue.js"></script>
 
+
     <script src="${rsRoot}dist/js/vue-resource.min.js"></script>
     <!-- jQuery -->
-    <script src="${rsRoot}vendor/jquery/jquery.min.js"></script>
+    <script src="${rsRoot}vendor/jquery/jquery.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
     <script src="${rsRoot}vendor/bootstrap/js/bootstrap.min.js"></script>
 
     <!-- Metis Menu Plugin JavaScript -->
-    <script src="${rsRoot}vendor/metisMenu/metisMenu.js"></script>
+
 
     <!-- Custom Theme JavaScript -->
 
-    <script src="${rsRoot}dist/js/sb-admin-2.min.js"></script>
+    <script src="${rsRoot}dist/js/sb-admin-2.js"></script>
+
 
     <script> var webRoot ="/bbgkh"</script>
+
 <@mhead/>
 </head>
 <body>
@@ -100,10 +103,10 @@
                         <a href="${webRoot}/showPage/report-todayReport"><i class="fa fa-table fa-fw"></i>今日销售</a>
                     </li>
 
-                    <li>
+                    <li id="memberManage">
                         <a href="javascript:;"><i class="fa fa-sitemap fa-fw"></i> 会员管理<span class="fa arrow"></span></a>
 
-                        <ul class="nav nav-second-level">
+                        <ul class="nav collapse nav-second-level">
                             <li>
                                 <a href="${webRoot}/showPage/member-newMember">新增会员</a>
                             </li>
@@ -125,7 +128,8 @@
 
     <@mbody/>
     <!-- /#page-wrapper -->
-
+    <#--<script src="${rsRoot}vendor/metisMenu/metisMenu.js"></script>-->
+    <script src="${rsRoot}js/base.js"></script>
 </div>
 <!-- /#wrapper -->
 
