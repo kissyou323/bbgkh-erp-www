@@ -3,6 +3,7 @@ package com.bbgkh.dao.impl;
 import com.bbgkh.dao.IUserDao;
 import com.bbgkh.model.PO.CustomerPO;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 import java.util.Set;

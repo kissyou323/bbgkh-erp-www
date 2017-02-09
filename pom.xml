@@ -13,9 +13,6 @@
         <module>erp-admin</module>
         <module>erp-utils</module>
         <module>erp-provider</module>
-        <module>erp-consumer</module>
-        <module>erp-processor</module>
-        <module>erp-annotation</module>
     </modules>
     <name>bbgkh</name>
     <url>http://maven.apache.org</url>

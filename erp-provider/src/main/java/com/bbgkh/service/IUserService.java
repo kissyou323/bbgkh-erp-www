@@ -2,6 +2,7 @@ package com.bbgkh.service;
 
 import com.bbgkh.model.PO.CustomerPO;
 import com.bbgkh.service.BaseService;
+import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
