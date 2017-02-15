@@ -1,6 +1,7 @@
 package com.bbgkh.service.impl;
 
 import com.bbgkh.dao.ISaleDao;
+import com.bbgkh.model.BaseInfo;
 import com.bbgkh.service.ISaleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -34,5 +35,16 @@ public class ISaleServiceImpl implements ISaleService {
     @Override
     public int update(Object entity) {
         return saleDao.update(entity);
+    }
+
+    @Override
+    public BaseInfo deleteById(String id) {
+        BaseInfo baseInfo ;
+        int a = saleDao.deleteById(id);
+        if (a==1) {
+            baseInfo = new BaseInfo("0","删除销售数据成功");
+        }else
+            baseInfo = new BaseInfo("200","删除销售数据失败");
+        return baseInfo;
     }
 }

@@ -19,4 +19,9 @@
         size=#{size} WHERE id =#{id} AND uid=#{uid}
     </update>
 
+    <delete id="deleteById" parameterType="String">
+        DELETE from sale WHERE id = #{id}
+    </delete>
+
+
 </mapper>

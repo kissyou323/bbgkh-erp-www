@@ -27,4 +27,9 @@ public class ISaleDaoImpl implements ISaleDao {
     public int update(Object entity) {
         return 0;
     }
+
+    @Override
+    public int deleteById(String id) {
+        return 0;
+    }
 }
