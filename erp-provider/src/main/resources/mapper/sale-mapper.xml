@@ -6,7 +6,7 @@
         select  *  from sale
     </select>
 
-    <select id="selectById" parameterType="Integer" resultType="com.bbgkh.model.PO.SaleInfoPO">
+    <select id="selectById" parameterType="String" resultType="com.bbgkh.model.PO.SaleInfoPO">
         select * from sale where id = #{id}
     </select>
 

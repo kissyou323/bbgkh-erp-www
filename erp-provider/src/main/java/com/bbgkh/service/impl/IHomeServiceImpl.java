@@ -2,6 +2,7 @@ package com.bbgkh.service.impl;
 
 
 import com.bbgkh.dao.IHomeDao;
+import com.bbgkh.model.BaseInfo;
 import com.bbgkh.model.PO.SaleInfoPO;
 import com.bbgkh.service.IHomeService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,7 +34,7 @@ public class IHomeServiceImpl implements IHomeService {
     }
 
     @Override
-    public List selectById(String id) {
+    public BaseInfo selectById(String id) {
         return null;
     }
 

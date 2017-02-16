@@ -1,5 +1,6 @@
 package com.bbgkh.controller;
 
+import com.bbgkh.model.BaseInfo;
 import com.bbgkh.model.PO.CustomerPO;
 import com.bbgkh.service.IHomeService;
 import com.bbgkh.service.IUserService;
@@ -35,7 +36,8 @@ public class HomeController extends BaseController{
 
                 if (cookie.getName().equals("uid")) {
                     String uid = cookie.getValue();
-                    List<CustomerPO> poList = userService.selectById(uid);
+                    BaseInfo baseInfo = userService.selectById(uid);
+                    List<CustomerPO> poList = (List<CustomerPO>)baseInfo.getObject();
                     request.getSession().setAttribute("customer",poList.get(0));
                     return new ModelAndView("dashBoard/mainBoard");
                 }

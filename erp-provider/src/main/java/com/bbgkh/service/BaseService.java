@@ -1,5 +1,6 @@
 package com.bbgkh.service;
 
+import com.bbgkh.model.BaseInfo;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -11,7 +12,7 @@ import java.util.List;
 public   interface BaseService {
     public  int insert(Object entity);
     public  List selectAll();
-    public  List selectById(String uid);
+    public  BaseInfo selectById(String uid);
     public  int update(Object entity);
 
 }

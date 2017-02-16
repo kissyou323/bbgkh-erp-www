@@ -2,7 +2,7 @@ package com.bbgkh.service.impl;
 
 
 import com.bbgkh.dao.IUserDao;
-import com.bbgkh.dao.impl.IUserDaoImpl;
+import com.bbgkh.model.BaseInfo;
 import com.bbgkh.model.PO.CustomerPO;
 import com.bbgkh.service.IUserService;
 import com.bbgkh.utils.BBLogger;
@@ -61,8 +61,11 @@ public class IUserServiceImpl implements IUserService {
     }
 
     @Override
-    public List selectById(String uid) {
-        return userDao.selectById(uid);
+    public BaseInfo selectById(String uid) {
+        List<CustomerPO> customerPOS = userDao.selectById(uid);
+        BaseInfo baseInfo = new BaseInfo();
+        baseInfo.setObject(customerPOS);
+        return baseInfo;
     }
 
     @Override

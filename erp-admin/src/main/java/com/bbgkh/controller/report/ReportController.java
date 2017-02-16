@@ -32,21 +32,7 @@ public class ReportController extends BaseController{
     @Autowired
     private IReportService reportService;
 
-    @RequestMapping(value = "report/todayReport")
-    public String newSalePage(HttpServletRequest request, HttpServletResponse response){
 
-        BaseInfo baseInfo = null;
-        Map<String , Object> map = new HashMap<>();
-        String uid =UserUtils.getUid(request);
-        if (uid.equals("")) {
-            baseInfo = new BaseInfo("100","请先登录");
-            return JSON.toJSONString(baseInfo);
-        }
-        List<SaleInfoPO> infoPos = reportService.selectById(uid);
-        map.put("infoPos",infoPos);
-
-        return null;
-    }
 
     @RequestMapping(value = "report/getReport/{timeStamp}",produces = {CHARSET})
     @ResponseBody

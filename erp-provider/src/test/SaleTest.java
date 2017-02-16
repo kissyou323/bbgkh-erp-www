@@ -27,4 +27,10 @@ public class SaleTest {
         System.out.println(JSON.toJSON(baseInfo));
     }
 
+    @Test
+    public void selectById(){
+        BaseInfo baseInfo = saleService.selectById("75");
+        System.out.println(JSON.toJSON(baseInfo));
+    }
+
 }

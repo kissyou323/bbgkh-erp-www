@@ -1,6 +1,7 @@
 package com.bbgkh.service.impl;
 
 
+import com.bbgkh.model.BaseInfo;
 import com.bbgkh.service.IReplenishService;
 import org.springframework.stereotype.Service;
 
@@ -23,7 +24,7 @@ public class IReplenishServiceImpl  implements IReplenishService{
     }
 
     @Override
-    public List selectById(String uid) {
+    public BaseInfo selectById(String uid) {
         return null;
     }
 

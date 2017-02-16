@@ -1,5 +1,6 @@
 package com.bbgkh.service.impl;
 
+import com.bbgkh.model.BaseInfo;
 import com.bbgkh.service.IAttributeService;
 import org.springframework.stereotype.Service;
 
@@ -21,7 +22,7 @@ public class IAttributeServiceImpl implements IAttributeService {
     }
 
     @Override
-    public List selectById(String uid) {
+    public BaseInfo selectById(String uid) {
         return null;
     }
 
