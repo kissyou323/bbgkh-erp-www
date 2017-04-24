@@ -11,13 +11,10 @@ public class MemberInfoPO extends BaseModel {
     private Integer id;
 
     //会员的姓名
-    private String name;
+    private String memberName;
 
     //会员卡号
     private String cardId;
-
-    //会员属于哪一个店子
-    private String customerUid;
 
     //会员的手机号
     private String mobilePhone;
@@ -39,20 +36,12 @@ public class MemberInfoPO extends BaseModel {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getMemberName() {
+        return memberName;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getCustomerUid() {
-        return customerUid;
-    }
-
-    public void setCustomerUid(String customerUid) {
-        this.customerUid = customerUid;
+    public void setMemberName(String memberName) {
+        this.memberName = memberName;
     }
 
     public String getMobilePhone() {

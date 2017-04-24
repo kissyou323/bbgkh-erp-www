@@ -16,6 +16,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
 
@@ -32,66 +33,41 @@ public class IMemberServiceImpl implements IMemberService {
     @Autowired
     private ISaleDao saleDao;
 
-    @Override
-    public BaseInfo insert(Object entity) {
-        MemberInfoDTO memberInfoDTO = (MemberInfoDTO)entity;
-        MemberInfoPO memberInfo = new MemberInfoPO();
-        BeanUtils.copyProperties(memberInfoDTO,memberInfo);
-        BaseInfo baseInfo = new BaseInfo("0","插入会员信息成功");
-
-        int a  = 3;
-        try {
-            MemberInfoPO query = new MemberInfoPO();
-            query.setMobilePhone(memberInfo.getMobilePhone());
-            query.setCustomerUid(memberInfo.getCustomerUid());
-            List<MemberInfoPO> memberInfoS = memberDao.selectByMobileOrCard(query);
-
-            if(memberInfoS.size()>0){
-                //   memberDao.update(memberInfo);
-                baseInfo = new BaseInfo("300","会员信息已存在");
-                return baseInfo;
-            }else{
-                a= memberDao.insert(memberInfo);
-            }
-
-        } catch (Exception e) {
-            logger.error("插入会员信息失败",e);
-            baseInfo = new BaseInfo("200","插入会员信息失败");
-
-        }
-
-        if(a!=1){
-            baseInfo = new BaseInfo("200","插入会员信息失败");
-        }
-        return baseInfo;
-    }
 
     @Override
     @Transactional
-    public BaseInfo addOldMemberData(Object entity) {
+    public BaseInfo addMemberInfo(Object entity) {
 
-        BaseInfo baseInfo = new BaseInfo("0","插入数据成功");
+        BaseInfo baseInfo =null;
 
-        OldMemberDataDTO oldMemberData = (OldMemberDataDTO) entity;
-        MemberInfoPO memberInfo = oldMemberData.getMemberInfo();
-        SaleInfoPO saleInfo = oldMemberData.getSaleInfo();
-        saleInfo.setSaleTime("2017-01-01 1:1:1");
-        //判断如果这个会员不存在的，则进行插入操作， 如果存在，则只进行更新 ，这里只根据手机进行判断
+        MemberInfoDTO memberInfo = (MemberInfoDTO) entity;
+
+        //判断这个会员是否存在
         MemberInfoPO query = new MemberInfoPO();
         query.setMobilePhone(memberInfo.getMobilePhone());
-        query.setCustomerUid(memberInfo.getCustomerUid());
         List<MemberInfoPO> memberInfoS = memberDao.selectByMobileOrCard(query);
+        if(memberInfoS.size()==0){
+            //会员不存在，直接录入
+            query.setMemberName(memberInfo.getMemberName());
+            memberDao.insert(query);
 
-        if(memberInfoS.size()>0){
-         //   memberDao.update(memberInfo);
-            memberInfo.setId(memberInfoS.get(0).getId());
-        }else{
-            memberDao.insert(memberInfo);
         }
-        saleDao.insert(saleInfo);
-        memberDao.addToMemberSale(memberInfo.getId(),saleInfo.getId());
+
+        //如果型号为空，则纯为录入会员信息
+        if(memberInfo.getProductSysNo().trim().equals("")){
+            if(memberInfoS.size()>0){
+                //如果会员已经存在 ， 则返回会员已存在，不用重新录入信息
+                baseInfo = new BaseInfo("1","会员已存在，不用重新录入");
+            }
+        }else {
+            //如果型号不为空，即要录入会员信息，也要录入销售信息
+            SaleInfoPO saleInfo = new SaleInfoPO();
+            BeanUtils.copyProperties(saleInfo,memberInfo);
+            memberDao.addToMemberSale(query.getId(),saleInfo.getId());
+            baseInfo = new BaseInfo("0","录入会员销售数据成功");
+
+        }
+
         return baseInfo ;
     }
-
-
 }

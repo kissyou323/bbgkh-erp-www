@@ -7,17 +7,11 @@ import com.bbgkh.model.BaseModel;
  */
 public class MemberInfoDTO extends BaseModel{
 
-    //会员的姓名
-    private String name;
-
-    //会员属于哪一个店子
-    private String customerUid;
-
-    //会员卡号
     private String cardId;
-
-    //会员的手机号
     private String mobilePhone;
+    private String memberName;
+    private String productSysNo;
+    private String salePrice;
 
     public String getCardId() {
         return cardId;
@@ -27,28 +21,36 @@ public class MemberInfoDTO extends BaseModel{
         this.cardId = cardId;
     }
 
-    public String getCustomerUid() {
-        return customerUid;
-    }
-
-    public void setCustomerUid(String customerUid) {
-        this.customerUid = customerUid;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public String getMobilePhone() {
         return mobilePhone;
     }
 
     public void setMobilePhone(String mobilePhone) {
         this.mobilePhone = mobilePhone;
+    }
+
+    public String getMemberName() {
+        return memberName;
+    }
+
+    public void setMemberName(String memberName) {
+        this.memberName = memberName;
+    }
+
+    public String getProductSysNo() {
+        return productSysNo;
+    }
+
+    public void setProductSysNo(String productSysNo) {
+        this.productSysNo = productSysNo;
+    }
+
+    public String getSalePrice() {
+        return salePrice;
+    }
+
+    public void setSalePrice(String salePrice) {
+        this.salePrice = salePrice;
     }
 
 }

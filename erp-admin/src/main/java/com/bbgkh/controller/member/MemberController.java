@@ -33,32 +33,4 @@ public class MemberController extends BaseController{
     @Autowired
     private IMemberService memberService;
 
-    @RequestMapping(value = "member/newMember" ,method = RequestMethod.POST, produces = {CHARSET} )
-    @ResponseBody
-    public String newSaleInfo(MemberInfoDTO memberInfo, HttpServletRequest request, HttpServletResponse response){
-
-        String uid = UserUtils.getUid(request);
-        if (uid.equals("")){
-            return JSON.toJSONString(new BaseInfo("100","uid为空"));
-        }
-        memberInfo.setCustomerUid(uid);
-        BaseInfo baseInfo = memberService.insert(memberInfo);
-
-        return JSON.toJSONString(baseInfo);
-    }
-
-    @RequestMapping(value = "member/addOldMemberData" ,method = RequestMethod.POST, produces = {CHARSET}  )
-    @ResponseBody
-    public String addOldMemberData(@RequestBody OldMemberDataDTO oldMemberInfo, HttpServletRequest request, HttpServletResponse response){
-
-        String uid = UserUtils.getUid(request);
-        if (uid.equals("")){
-            return JSON.toJSONString(new BaseInfo("100","uid为空"));
-        }
-        oldMemberInfo.getSaleInfo().setUid(uid);
-        oldMemberInfo.getMemberInfo().setCustomerUid(uid);
-        BaseInfo baseInfo = memberService.addOldMemberData(oldMemberInfo);
-
-        return JSON.toJSONString(baseInfo);
-    }
 }
