@@ -12,8 +12,8 @@ import java.util.List;
 @Service
 public class IAttributeServiceImpl implements IAttributeService {
     @Override
-    public int insert(Object entity) {
-        return 0;
+    public BaseInfo insert(Object entity) {
+        return null;
     }
 
     @Override
@@ -27,7 +27,7 @@ public class IAttributeServiceImpl implements IAttributeService {
     }
 
     @Override
-    public int update(Object entity) {
-        return 0;
+    public BaseInfo update(Object entity) {
+        return null;
     }
 }

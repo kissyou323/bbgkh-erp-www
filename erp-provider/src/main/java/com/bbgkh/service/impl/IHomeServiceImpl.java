@@ -20,8 +20,8 @@ public class IHomeServiceImpl implements IHomeService {
     private IHomeDao homeDao;
 
     @Override
-    public int insert(Object entity) {
-        return 1;
+    public BaseInfo insert(Object entity) {
+        return null;
     }
 
     @Override
@@ -39,7 +39,7 @@ public class IHomeServiceImpl implements IHomeService {
     }
 
     @Override
-    public int update(Object entity) {
-        return 0;
+    public BaseInfo update(Object entity) {
+        return null;
     }
 }

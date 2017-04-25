@@ -16,8 +16,8 @@ public class IReportServiceImpl implements IReportService {
     @Autowired
     private IReportDao reportDao;
     @Override
-    public int insert(Object entity) {
-        return 0;
+    public BaseInfo insert(Object entity) {
+        return null;
     }
 
     @Override
@@ -31,8 +31,8 @@ public class IReportServiceImpl implements IReportService {
     }
 
     @Override
-    public int update(Object entity) {
-        return 0;
+    public BaseInfo update(Object entity) {
+        return null;
     }
 
     @Override

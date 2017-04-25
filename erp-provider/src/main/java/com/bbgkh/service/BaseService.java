@@ -10,9 +10,9 @@ import java.util.List;
  */
 @Repository
 public   interface BaseService {
-    public  int insert(Object entity);
+    public  BaseInfo insert(Object entity);
     public  List selectAll();
     public  BaseInfo selectById(String uid);
-    public  int update(Object entity);
+    public  BaseInfo update(Object entity);
 
 }

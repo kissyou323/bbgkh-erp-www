@@ -27,7 +27,7 @@ public class IUserServiceImpl implements IUserService {
     private IUserDao userDao;
 
     @Override
-    public int insert(Object entity) {
+    public BaseInfo insert(Object entity) {
         //将用户名转换成UID
         CustomerPO customerPO = (CustomerPO) entity;
         StringBuffer sb = new StringBuffer();
@@ -52,7 +52,7 @@ public class IUserServiceImpl implements IUserService {
         }
 
 
-        return a;
+        return null;
     }
 
     @Override
@@ -69,8 +69,8 @@ public class IUserServiceImpl implements IUserService {
     }
 
     @Override
-    public int update(Object entity) {
-        return 0;
+    public BaseInfo update(Object entity) {
+        return null;
     }
 
     @Override

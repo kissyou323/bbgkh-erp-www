@@ -50,7 +50,10 @@ public class IMemberServiceImpl implements IMemberService {
             //会员不存在，直接录入
             query.setMemberName(memberInfo.getMemberName());
             memberDao.insert(query);
+            baseInfo=new BaseInfo("0","会员信息录入成功");
 
+        }else{
+            query.setId(memberInfoS.get(0).getId());
         }
 
         //如果型号为空，则纯为录入会员信息
@@ -62,7 +65,10 @@ public class IMemberServiceImpl implements IMemberService {
         }else {
             //如果型号不为空，即要录入会员信息，也要录入销售信息
             SaleInfoPO saleInfo = new SaleInfoPO();
-            BeanUtils.copyProperties(saleInfo,memberInfo);
+            saleInfo.setProductSysNo(memberInfo.getProductSysNo());
+            saleInfo.setSalePrice(Double.parseDouble(memberInfo.getSalePrice()));
+            saleInfo.setUid(memberInfo.getUid());
+            saleDao.insert(saleInfo);
             memberDao.addToMemberSale(query.getId(),saleInfo.getId());
             baseInfo = new BaseInfo("0","录入会员销售数据成功");
 

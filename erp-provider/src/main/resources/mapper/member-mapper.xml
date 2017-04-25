@@ -29,7 +29,7 @@
         <if test="cardId != null and cardId!= '' ">
         AND cardId = #{cardId}
         </if>
-        <if test="name != null and name!= '' ">
+        <if test="memberName != null and memberName!= '' ">
         AND memberName = #{memberName}
         </if>
     </select>

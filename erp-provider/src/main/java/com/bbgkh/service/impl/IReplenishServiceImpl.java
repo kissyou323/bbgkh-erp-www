@@ -14,8 +14,8 @@ import java.util.List;
 public class IReplenishServiceImpl  implements IReplenishService{
 
     @Override
-    public int insert(Object entity) {
-        return 0;
+    public BaseInfo insert(Object entity) {
+        return null;
     }
 
     @Override
@@ -29,7 +29,7 @@ public class IReplenishServiceImpl  implements IReplenishService{
     }
 
     @Override
-    public int update(Object entity) {
-        return 0;
+    public BaseInfo update(Object entity) {
+        return null;
     }
 }

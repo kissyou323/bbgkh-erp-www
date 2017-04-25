@@ -99,21 +99,21 @@ public class UserController extends BaseController{
      * @param customerPO
      * @return
      */
-    @PostMapping ("user/registerUser")
-    @ResponseBody
-    public String registerUser(CustomerPO customerPO){
-
-
-
-        int status =userService.insert(customerPO);
-        String returnStr ="false";
-        if (status ==1){
-            returnStr="ok";
-        }
-
-        return returnStr;
-
-    }
+//    @PostMapping ("user/registerUser")
+//    @ResponseBody
+//    public String registerUser(CustomerPO customerPO){
+//
+//
+//
+//        int status =userService.insert(customerPO);
+//        String returnStr ="false";
+//        if (status ==1){
+//            returnStr="ok";
+//        }
+//
+//        return returnStr;
+//
+//    }
     //#endregion
 
 }
