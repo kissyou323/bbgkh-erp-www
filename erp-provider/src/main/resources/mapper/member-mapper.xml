@@ -3,8 +3,8 @@
 <mapper namespace="com.bbgkh.dao.IMemberDao" >
 
     <insert id="insert" useGeneratedKeys="true" keyProperty="id" parameterType="com.bbgkh.model.PO.MemberInfoPO" >
-        INSERT INTO members (memberName,mobilePhone)
-        VALUES (#{memberName}, #{mobilePhone})
+        INSERT INTO members (memberName,mobilePhone,cardId)
+        VALUES (#{memberName}, #{mobilePhone},#{cardId})
     </insert>
 
     <select id="selectAll" resultType="com.bbgkh.model.PO.SaleInfoPO">

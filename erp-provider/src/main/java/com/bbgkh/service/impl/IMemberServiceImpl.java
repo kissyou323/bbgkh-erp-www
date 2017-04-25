@@ -49,6 +49,11 @@ public class IMemberServiceImpl implements IMemberService {
         if(memberInfoS.size()==0){
             //会员不存在，直接录入
             query.setMemberName(memberInfo.getMemberName());
+            if(!memberInfo.getCardId().trim().equals("")){
+                query.setCardId(memberInfo.getCardId());
+            }else{
+                query.setCardId("");
+            }
             memberDao.insert(query);
             baseInfo=new BaseInfo("0","会员信息录入成功");
 
@@ -64,12 +69,20 @@ public class IMemberServiceImpl implements IMemberService {
             }
         }else {
             //如果型号不为空，即要录入会员信息，也要录入销售信息
-            SaleInfoPO saleInfo = new SaleInfoPO();
-            saleInfo.setProductSysNo(memberInfo.getProductSysNo());
-            saleInfo.setSalePrice(Double.parseDouble(memberInfo.getSalePrice()));
-            saleInfo.setUid(memberInfo.getUid());
-            saleDao.insert(saleInfo);
-            memberDao.addToMemberSale(query.getId(),saleInfo.getId());
+            //对价格进行分析，如果存在多个，则录入多条销售信息
+            String salePrice = memberInfo.getSalePrice();
+            String[] salePrices = salePrice.split("-");
+            for (String price : salePrices) {
+
+                SaleInfoPO saleInfo = new SaleInfoPO();
+                saleInfo.setProductSysNo(memberInfo.getProductSysNo());
+                saleInfo.setSalePrice(Double.parseDouble(price));
+                saleInfo.setUid(memberInfo.getUid());
+                saleInfo.setSaleNum(1);
+                saleDao.insert(saleInfo);
+                memberDao.addToMemberSale(query.getId(),saleInfo.getId());
+            }
+
             baseInfo = new BaseInfo("0","录入会员销售数据成功");
 
         }
