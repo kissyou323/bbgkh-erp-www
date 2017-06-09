@@ -40,4 +40,9 @@ public class IMemberDaoImpl implements IMemberDao {
     public List selectByMobileOrCard(MemberInfoPO memberInfo) {
         return null;
     }
+
+    @Override
+    public List selectMemberSale(Integer memId) {
+        return null;
+    }
 }

@@ -10,7 +10,7 @@
         SELECT * from sale where TO_DAYS(saleTime) = TO_DAYS(NOW()) and uid=#{uid};
     </select>
     <select id="selectByDay" resultType="com.bbgkh.model.PO.SaleInfoPO">
-        SELECT id,productSysNo,color,saleNum,salePrice,sex,size,UNIX_TIMESTAMP(saleTime)as saleTime from sale where date(saleTime) = FROM_UNIXTIME(#{timeStamp},'%Y-%m-%d')and uid=#{uid};
+        SELECT id,productSysNo,color,saleNum,salePrice,sex,size,UNIX_TIMESTAMP(saleTime)as saleTime from sale where date(saleTime) = FROM_UNIXTIME(#{timeStamp},'%Y-%m-%d')and 1=1;
     </select>
 
     <insert id="insert" parameterType="com.bbgkh.model.PO.SaleInfoPO" >

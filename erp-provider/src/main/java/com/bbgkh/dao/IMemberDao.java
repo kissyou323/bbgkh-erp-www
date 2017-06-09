@@ -17,4 +17,6 @@ public interface IMemberDao extends BaseDAO {
 
     public List selectByMobileOrCard(MemberInfoPO memberInfo);
 
+    public List selectMemberSale(@Param("memId") Integer memId);
+
 }

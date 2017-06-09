@@ -42,6 +42,7 @@ public class ISaleServiceImpl implements ISaleService {
         if (saleInfo.getMobilePhone().trim().equals("")){
             //如果会员手机号为空，则只插入销售数据
                 saleDao.insert(saleInfoPO);
+                baseInfo = new BaseInfo("0","插入销售数据成功");
         }else {
             //如果会员手机号不为空，则插入销售数据之后还要同时插入会员-销售数据
             saleDao.insert(saleInfoPO);
@@ -51,6 +52,7 @@ public class ISaleServiceImpl implements ISaleService {
             if(memberInfoPOS.size()>0){
                 //会员数据存在，
                 memberDao.addToMemberSale(memberInfoPOS.get(0).getId(),saleInfoPO.getId());
+                baseInfo = new BaseInfo("0","插入销售数据成功");
             }else{
                 //会员数据不存在，要先去添加会员
                 baseInfo = new BaseInfo("1","会员信息不存在，需要先添加为本店会员");

@@ -7,6 +7,7 @@ import com.bbgkh.model.BaseInfo;
 import com.bbgkh.model.DTO.MemberInfoDTO;
 import com.bbgkh.model.DTO.OldMemberDataDTO;
 import com.bbgkh.model.PO.MemberInfoPO;
+import com.bbgkh.model.PO.Member_SalePO;
 import com.bbgkh.model.PO.SaleInfoPO;
 import com.bbgkh.service.IMemberService;
 import com.bbgkh.utils.UserUtils;
@@ -17,7 +18,9 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.lang.reflect.InvocationTargetException;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 
 /**
@@ -49,7 +52,7 @@ public class IMemberServiceImpl implements IMemberService {
         if(memberInfoS.size()==0){
             //会员不存在，直接录入
             query.setMemberName(memberInfo.getMemberName());
-            if(!memberInfo.getCardId().trim().equals("")){
+            if(null!=memberInfo.getCardId() && !memberInfo.getCardId().trim().equals("")){
                 query.setCardId(memberInfo.getCardId());
             }else{
                 query.setCardId("");
@@ -61,14 +64,14 @@ public class IMemberServiceImpl implements IMemberService {
             query.setId(memberInfoS.get(0).getId());
         }
 
-        //如果型号为空，则纯为录入会员信息
-        if(memberInfo.getProductSysNo().trim().equals("")){
+        //如果价格为空，则纯为录入会员信息
+        if(null==memberInfo.getSalePrice()  || memberInfo.getSalePrice().trim().equals("")){
             if(memberInfoS.size()>0){
                 //如果会员已经存在 ， 则返回会员已存在，不用重新录入信息
                 baseInfo = new BaseInfo("1","会员已存在，不用重新录入");
             }
         }else {
-            //如果型号不为空，即要录入会员信息，也要录入销售信息
+            //如果价格不为空，即要录入会员信息，也要录入销售信息
             //对价格进行分析，如果存在多个，则录入多条销售信息
             String salePrice = memberInfo.getSalePrice();
             String[] salePrices = salePrice.split("-");
@@ -88,5 +91,30 @@ public class IMemberServiceImpl implements IMemberService {
         }
 
         return baseInfo ;
+    }
+
+    //传入一个会员对象，返回已购多少条，已送多少条，还差多少条可再获送一条
+    @Override
+    public BaseInfo queryMemberInfo(Object entity) {
+        BaseInfo baseInfo = null;
+        Map<String , Object> map = new HashMap<>();
+        MemberInfoDTO memberInfoDTO = (MemberInfoDTO) entity;
+        MemberInfoPO memberInfoPO = new MemberInfoPO();
+        BeanUtils.copyProperties(memberInfoDTO,memberInfoPO);
+        List<MemberInfoPO> memberInfoPOS = memberDao.selectByMobileOrCard(memberInfoPO);
+        if (memberInfoPOS.size()>0) {
+            List<Member_SalePO> member_salePOS = memberDao.selectMemberSale(memberInfoPOS.get(0).getId());
+            //获得该会员购买的总条数
+            int haveBuy =  member_salePOS.size();
+            //还需要买多少条才能赠送一条
+            int needBuy = 10-haveBuy % 10;
+
+            map.put("haveBuy",haveBuy);
+            map.put("needBuy",needBuy);
+            baseInfo= new BaseInfo("0","查询成功",map);
+        }else{
+            baseInfo = new BaseInfo("1,","查询会员信息失败");
+        }
+        return baseInfo;
     }
 }

@@ -34,4 +34,8 @@
         </if>
     </select>
 
+    <select id="selectMemberSale" resultType="com.bbgkh.model.PO.Member_SalePO">
+        SELECT id, memId,saleId from member_sale where memId =#{memId}
+    </select>
+
 </mapper>
